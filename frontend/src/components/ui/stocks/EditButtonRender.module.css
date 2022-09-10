@@ -1,0 +1,32 @@
+.btn-edit {
+    background-color: #fff;
+    border: 1px solid gray;
+    border-radius: 6px;
+    color: gray;
+    outline: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: "0px 12px";
+    
+   
+}
+.btn-edit:hover {
+    background-color: gray;
+    color: #fff;
+}
+.btn-delete {
+    background-color: #fff;
+    border: 1px solid red;
+    border-radius: 6px;
+    color: red;
+    outline: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-delete:hover {
+    background-color: red;
+    color: #fff;
+}
