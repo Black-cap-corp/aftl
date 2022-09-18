@@ -2,6 +2,8 @@ const mongoose = require("mongoose");
 const router = require("express").Router();
 const verifyAuth = require("../middleware/auth");
 const workOrderModel = require("../models/workorder");
+const stockSchema = require("../models/stock");
+const stock = require("../models/stock");
 
 router.post("/", verifyAuth, async (req, res) => {
   const { filter } = req.body;
@@ -45,6 +47,36 @@ router.post("/delete", verifyAuth, async (req, res) => {
   } else {
     res.status(400).json({ status: "error", message: "error updating" });
   }
+});
+
+router.post("/getWorkorderByQuery", async (req, res) => {
+  const { filter } = req.body;
+  const result = await workOrderModel.find(
+    { workorder: { $regex: filter }, status: "open" },
+    { _id: 1, workorder: 1, contractors: 1 }
+  );
+  console.log(result);
+  res.status(200).json(result);
+});
+
+router.post("/getStocksForOrder", async (req, res) => {
+  const { workorderId } = req.body;
+  const workorder = await workOrderModel.findOne(
+    { _id: workorderId },
+    { stocks: 1 }
+  );
+
+  const stocksArray = workorder?.stocks?.map((stock) => stock.stockId);
+
+  const stocksResult = await stockSchema.find({ _id: { $in: stocksArray } });
+  const result = stocksResult.map((stock) => {
+    const stockQuantity = workorder.stocks.find(
+      (wStock) => wStock.stockId == stock._id
+    ).stock;
+    return { ...stock._doc, stock: stockQuantity };
+  });
+
+  res.status(200).json(result);
 });
 
 module.exports = router;

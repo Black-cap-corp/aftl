@@ -53,7 +53,6 @@ app.post("/register", async (req, res) => {
       ...user,
     });
   } catch (e) {
-    console.log(e);
     res.status(500).json({
       status: "error",
       message: "Server error occurred",

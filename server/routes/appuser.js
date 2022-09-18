@@ -39,5 +39,18 @@ router.post("/delete", verifyAuth, async (req, res) => {
     res.status(400).json({ status: "error", message: "error updating" });
   }
 });
+router.post("/verifyUser", async (req, res) => {
+  const loginCred = req.body;
+  const result = await AppUser.findOne({ mobile: loginCred.mobile });
+  if (result === null) {
+    res.status(400).send({ status: "error", message: "User not found" });
+  } else {
+    if (result.password !== loginCred.password) {
+      res.status(400).send("Password doesn't match");
+    } else {
+      res.status(200).json({ user: result, status: "success" });
+    }
+  }
+});
 
 module.exports = router;
