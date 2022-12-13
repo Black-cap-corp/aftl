@@ -37,7 +37,7 @@ const LoginForm = () => {
       validateOnMount={true}
       validationSchema={loginSchema}>
       {({isSubmitting, isValid, handleSubmit}) => (
-        <Layout>
+        <Layout level="1">
           <CustomInput
             placeholder="Enter Mobile Number"
             label="Mobile Number"

@@ -19,6 +19,7 @@ const EditButtonRender = (props) => {
   const handleCloseConfirm = () => setShowConfirm(false);
 
   const onEdit = (workorder) => {
+    console.log(props.data.id);
     dispatch(updateAsyncWorkorder({ ...workorder, id: props.data.id }));
     setShow(false);
   };

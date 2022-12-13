@@ -5,6 +5,7 @@ const subDivsionSchema = new mongoose.Schema({
 });
 const divisionSchema = new mongoose.Schema({
   name: String,
+  code: String,
   subdivisions: [subDivsionSchema],
 });
 

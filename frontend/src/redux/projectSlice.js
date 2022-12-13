@@ -5,6 +5,7 @@ import { BASE_URL } from "../constants/AppConstant";
 export const addandUpdateAsync = createAsyncThunk(
   "project/addandUpdateAsync",
   async (operation) => {
+    console.log(operation);
     const jwt = sessionStorage.getItem("auth_token");
     const res = await axios.post(`${BASE_URL}/projects/add`, operation, {
       headers: {
@@ -79,13 +80,14 @@ const projectSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(addandUpdateAsync.fulfilled, (state, action) => {
+        console.log(action.payload);
         const operation = action.payload;
         const findProjectIndex = state.allProjects?.findIndex(
           (project) => project.id === state.selected.projectId
         );
         const findDivisionIndex = state.allProjects[
           findProjectIndex
-        ].divisions?.findIndex(
+        ]?.divisions?.findIndex(
           (division) => division.id === state.selected.divisionId
         );
         switch (true) {

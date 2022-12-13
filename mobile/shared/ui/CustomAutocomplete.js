@@ -25,24 +25,25 @@ const CustomAutocomplete = ({
   onSelectParent,
   data,
   debouncer,
+  clearContractors,
 }) => {
   const [field, meta, helpers] = useField(name);
 
   const onSelect = index => {
-    helpers.setValue(data[index].workorder);
+    helpers.setValue(data[index].displayName);
     onSelectParent(data[index]);
   };
 
   const onChangeText = query => {
     debouncer(query);
     helpers.setValue(query);
-    // setData(movies.filter(item => filter(item, query)));
+    clearContractors();
   };
 
   return (
-    <Layout level="3" style={{marginBottom: 20}}>
+    <Layout style={{marginBottom: 20, backgroundColor: 'transparent'}}>
       <Autocomplete
-        placeholder="Place your Text"
+        placeholder="Search for workorders"
         label={label}
         onSelect={onSelect}
         name={name}

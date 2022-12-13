@@ -5,15 +5,15 @@ const firmModel = require("../models/firm");
 
 router.get("/", verifyAuthToken, async (req, res) => {
   const result = await firmModel.find();
-  console.log(result);
   const data_out = result?.map((firm) => {
     return {
       id: mongoose.Types.ObjectId(firm._id),
       firm: firm.firm,
       contractor: firm.contractor,
+      code: firm.code,
     };
   });
-  console.log(data_out);
+
   res.status(201).json(data_out);
 });
 
@@ -24,6 +24,7 @@ router.post("/add", verifyAuthToken, async (req, res) => {
     id: mongoose.Types.ObjectId(result._id),
     firm: result.firm,
     contractor: result.contractor,
+    code: result.code,
   });
 });
 
@@ -33,7 +34,6 @@ router.post("/update", verifyAuthToken, async (req, res) => {
     { _id: mongoose.Types.ObjectId(element.id) },
     { $set: element }
   );
-  console.log(result, element);
   if (result.acknowledged) {
     res.status(201).json({ status: "success", message: "updated success" });
   } else {

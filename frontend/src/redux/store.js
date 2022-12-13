@@ -8,6 +8,9 @@ import firmReducer from "./firmSlice";
 import workorderReducer from "./workorderSlice";
 import webUserReducer from "./webuserSlice";
 import appUserSlice from "./appUserSlice";
+import IssueReducer from "./issueSlice";
+import ReturnIndentReducer from "./returnsSlice";
+import errorReducer from "./errorSlice";
 
 export const store = configureStore({
   reducer: {
@@ -16,9 +19,12 @@ export const store = configureStore({
     app: appReducer,
     stocks: stockReducer,
     projects: projectReducer,
+    errors: errorReducer,
     firms: firmReducer,
     workorders: workorderReducer,
     webusers: webUserReducer,
     appusers: appUserSlice,
+    issues: IssueReducer,
+    returns: ReturnIndentReducer,
   },
 });

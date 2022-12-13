@@ -2,8 +2,8 @@ import React from "react";
 import { Form, Formik } from "formik";
 import CustomInput from "../../shared/CustomInput";
 
-const ProjectForm = ({ handleSubmit, isEdit = false, formdata }) => {
-  let initialValues = { name: "" };
+const ProjectForm = ({ handleSubmit, isEdit = false, formdata, type }) => {
+  let initialValues = { name: "", ...(type == "divisions" && { code: "" }) };
   if (isEdit) {
     initialValues.name = formdata.name;
   }
@@ -16,10 +16,18 @@ const ProjectForm = ({ handleSubmit, isEdit = false, formdata }) => {
               display: "flex",
               gap: 10,
               justifyContent: "center",
-              alignItems: "flex-end",
+              alignItems: "center",
+              flexDirection: "column",
             }}
           >
-            <CustomInput name="name" placeholder="Enter the project name" />
+            <CustomInput
+              style={{ width: "100%" }}
+              name="name"
+              placeholder="Enter the project name"
+            />
+            {type == "divisions" && (
+              <CustomInput name="code" placeholder="Enter the Code" />
+            )}
             <button className="custom-btn" type="submit">
               Add
             </button>

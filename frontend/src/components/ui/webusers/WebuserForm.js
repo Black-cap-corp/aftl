@@ -22,7 +22,7 @@ const WebuserForm = ({ handleSubmit, isEdit = false, formData }) => {
       onSubmit={handleSubmit}
       validationSchema={webuserSchema}
     >
-      {() => (
+      {({ values }) => (
         <Form>
           <CustomInput label="Name" placeholder="Enter a name" name="name" />
           <CustomInput
@@ -31,11 +31,13 @@ const WebuserForm = ({ handleSubmit, isEdit = false, formData }) => {
             name="password"
           />
           <CustomSelect label="Unit" options={webuserTypeOptions} name="type" />
-          <CustomSelect
-            label="Entitlement"
-            options={webuserEntitlementOptions}
-            name="entitlement"
-          />
+          {values.type == "admin" && (
+            <CustomSelect
+              label="Entitlement"
+              options={webuserEntitlementOptions}
+              name="entitlement"
+            />
+          )}
           <div style={{ textAlign: "right" }}>
             <CustomButton
               style={{ marginTop: 19 }}

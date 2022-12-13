@@ -1,13 +1,13 @@
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, View} from 'react-native';
 import React from 'react';
 import {useField} from 'formik';
-import {Input, Layout} from '@ui-kitten/components';
+import {Input} from '@ui-kitten/components';
 
 const CustomInput = ({label, placeholder, caption, ...props}) => {
   const [field, meta, helpers] = useField(props.name);
 
   return (
-    <Layout level="3">
+    <View style={styles.form_group}>
       <Input
         label={label}
         placeholder={placeholder}
@@ -17,7 +17,7 @@ const CustomInput = ({label, placeholder, caption, ...props}) => {
         onBlur={() => helpers.setTouched(!meta.touched)}
         onChangeText={helpers.setValue}
       />
-    </Layout>
+    </View>
   );
 };
 
@@ -26,5 +26,9 @@ export default CustomInput;
 const styles = StyleSheet.create({
   form_control: {
     marginBottom: 20,
+    backgroundColor: '#fff',
+  },
+  form_group: {
+    backgroundColor: 'transparent',
   },
 });

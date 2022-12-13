@@ -34,7 +34,7 @@ const WorkOrder = () => {
       <h2>Work orders</h2>
       <SearchForm data={projects} showModel={showModel} />
 
-      <Grid columnDefs={colDefs} rowData={workorders} />
+      <Grid columnDefs={colDefs} rowData={workorders} showDownload={true} />
 
       <ModalPopup
         body={<CreateWorkorderForm onSubmit={onWorkorderCreation} />}

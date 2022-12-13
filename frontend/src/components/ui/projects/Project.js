@@ -130,6 +130,7 @@ const Project = ({ data, type }) => {
             isEdit={isEdit}
             formdata={formdata}
             handleSubmit={onSubmithandler}
+            type={type}
           />
         }
         handleHide={handleClose}

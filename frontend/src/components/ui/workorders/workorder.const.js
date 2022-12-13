@@ -2,12 +2,12 @@ import EditButtonRender from "./EditButtonRender";
 
 export const statusOptions = [
   {
-    value: "open",
-    display: "Open",
-  },
-  {
     value: "closed",
     display: "Closed",
+  },
+  {
+    value: "open",
+    display: "Open",
   },
 ];
 
@@ -24,7 +24,7 @@ const getContractors = (params) => {
 };
 
 const StatusRender = (props) => {
-  if (props.value.toLowerCase() === "open") {
+  if (props?.value?.toLowerCase() === "open") {
     return (
       <>
         <span
@@ -64,7 +64,7 @@ export const colDefs = [
     with: 100,
     maxWidth: 100,
     cellStyle: (params) => {
-      if (params.data.status.toLowerCase() === "open") {
+      if (params?.data?.status?.toLowerCase() === "open") {
         return { borderLeft: "3px solid green" };
       } else {
         return { borderLeft: "3px solid red" };
@@ -72,6 +72,7 @@ export const colDefs = [
     },
   },
   { field: "workorder", headerName: "Workorder" },
+  { field: "displayName", headerName: "Display Name" },
   {
     field: "status",
     headerName: "Status",

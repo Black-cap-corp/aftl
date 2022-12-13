@@ -10,4 +10,5 @@ export const colDefs = [
   },
   { field: "firm", headerName: "Firm Name" },
   { field: "contractor", headerName: "Contractor Name" },
+  { field: "code", headerName: "Contractor Code" },
 ];

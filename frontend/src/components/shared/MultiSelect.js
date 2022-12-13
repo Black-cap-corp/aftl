@@ -8,7 +8,7 @@ const MultiSelect = ({ label, options, onChange, selOptions }) => {
     <Form.Group className="" style={{ minWidth: "30rem", maxWidth: "30rem" }}>
       <Form.Label>
         <span>{label}</span>
-        {selOptions?.length < 1 && (
+        {/* {selOptions?.length < 1 && (
           <span
             style={{ color: "red", marginLeft: 20, fontSize: 12 }}
             variant="danger"
@@ -16,7 +16,7 @@ const MultiSelect = ({ label, options, onChange, selOptions }) => {
           >
             Required
           </span>
-        )}
+        )} */}
       </Form.Label>
 
       <Typeahead

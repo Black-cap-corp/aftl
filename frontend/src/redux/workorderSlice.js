@@ -64,14 +64,13 @@ export const deleteAsyncWorkorder = createAsyncThunk(
 export const addAsyncWorkorder = createAsyncThunk(
   "workorder/addAsync",
   async (workorder) => {
-    console.log("i am here");
     const jwt = sessionStorage.getItem("auth_token");
     const res = await axios.post(`${BASE_URL}/workorder/add`, workorder, {
       headers: {
         authorization: jwt,
       },
     });
-    return { res: res.data };
+    return { res: res.data?._doc };
   }
 );
 
@@ -87,6 +86,7 @@ const workorderSlice = createSlice({
       .addCase(updateAsyncWorkorder.fulfilled, (state, action) => {
         const { res } = action.payload;
         if (res.status === "success") {
+          console.log(res.workorder);
           state = state.filter((x) => x.id !== res.workorder.id);
           return [...state, res.workorder];
         }
@@ -98,7 +98,11 @@ const workorderSlice = createSlice({
         }
       })
       .addCase(addAsyncWorkorder.fulfilled, (state, action) => {
-        state = [...state, action.payload.res];
+        console.log(action.payload.res);
+        state = [
+          ...state,
+          { ...action.payload?.res, id: action.payload?.res?._id },
+        ];
 
         return state;
       });

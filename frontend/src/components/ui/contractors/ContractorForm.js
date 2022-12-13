@@ -9,6 +9,7 @@ const ContractorForm = ({ handleSubmit, isEdit = false, formData }) => {
     ? {
         firm: "",
         contractor: "",
+        code: "",
       }
     : formData;
 
@@ -30,6 +31,11 @@ const ContractorForm = ({ handleSubmit, isEdit = false, formData }) => {
             placeholder="Enter Contractor Name"
             name="contractor"
           />
+          <CustomInput
+            label="Contractor Code"
+            placeholder="Enter Contractor Code"
+            name="code"
+          />
 
           <div style={{ textAlign: "right" }}>
             <CustomButton
@@ -47,6 +53,7 @@ const ContractorForm = ({ handleSubmit, isEdit = false, formData }) => {
 const contractorSchema = yup.object().shape({
   firm: yup.string().required("Required"),
   contractor: yup.string().required("Required"),
+  code: yup.string().required("Required"),
 });
 
 export default ContractorForm;

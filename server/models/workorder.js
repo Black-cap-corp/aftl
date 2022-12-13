@@ -22,6 +22,8 @@ const workOrderSchema = mongoose.Schema({
   project: projectShema,
   contractors: [firmSchema],
   stocks: [stockSchema],
+  approvers: { type: [String], default: [] },
+  displayName: String,
 });
 
 module.exports = mongoose.model("workorders", workOrderSchema);

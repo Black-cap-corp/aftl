@@ -1,5 +1,5 @@
 const express = require("express");
-const User = require("../models/user");
+const User = require("../models/webuser");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
 
@@ -10,14 +10,13 @@ router.post("/", async (req, res) => {
     // fetch details of user
     const { name, password } = req.body;
     const user = await User.findOne({ name });
-
-    if (user && (await bcrypt.compare(password, user.password))) {
+    if (user && user.password === password) {
       const token = jwt.sign({ name }, process.env.TOKEN_KEY, {
         expiresIn: "24h",
       });
 
       res.status(201).json({
-        user: name,
+        user: user,
         auth: token,
         status: "success",
       });

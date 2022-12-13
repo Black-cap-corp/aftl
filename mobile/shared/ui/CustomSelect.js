@@ -4,16 +4,21 @@ import {Select, SelectItem} from '@ui-kitten/components';
 import {useField} from 'formik';
 const renderOption = title => <SelectItem key={title} title={title} />;
 
-const CustomSelect = ({options, name, label, setSelectedContractor, raw}) => {
-  const [value, setValue] = React.useState('');
-  console.log(options);
+const CustomSelect = ({
+  options,
+  name,
+  label,
+  setSelectedContractor,
+  raw,
+  value,
+  setValue,
+}) => {
   const [field, meta, helpers] = useField(name);
   return (
     <Select
       value={value}
       placeholder="Select contractors"
       onSelect={index => {
-        console.log(index);
         helpers.setValue(index);
         setValue(options[index.row]);
         setSelectedContractor(raw[index.row]);

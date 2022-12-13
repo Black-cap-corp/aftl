@@ -1,4 +1,4 @@
-import {StyleSheet} from 'react-native';
+import {StyleSheet, View} from 'react-native';
 import React from 'react';
 import {Icon, Layout, Text} from '@ui-kitten/components';
 import {getUser} from '../../app.storage';
@@ -14,15 +14,15 @@ const Header = () => {
   }, []);
   console.log(user);
   return (
-    <Layout style={styles.header}>
-      <Layout style={{flex: 8, justifyContent: 'center', alignItems: 'center'}}>
-        <Text category="h6">Asian Fab Tec</Text>
-        <Text category="p2">{user?.name}</Text>
-      </Layout>
-      <Layout style={styles.lay}>
+    <View style={styles.header}>
+      <View style={{flex: 8, justifyContent: 'center', alignItems: 'center'}}>
+        <Text category="h5">Asian Fab Tec</Text>
+        <Text category="s1">{user?.name}</Text>
+      </View>
+      <View style={styles.lay}>
         <LoginIcon />
-      </Layout>
-    </Layout>
+      </View>
+    </View>
   );
 };
 

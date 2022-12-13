@@ -4,7 +4,7 @@ const router = express.Router();
 const verifyAuth = require("../middleware/auth");
 const StockModel = require("../models/stock");
 
-router.get("/", verifyAuth, async (req, res) => {
+router.get("/", async (req, res) => {
   const data = await StockModel.find();
   const result = data.map((stock) => {
     return {
@@ -19,7 +19,6 @@ router.get("/", verifyAuth, async (req, res) => {
 
 router.post("/add", verifyAuth, async (req, res) => {
   const { stock } = req.body;
-  console.log(stock);
   const result = await StockModel.create(stock);
   res.status(201).json(result);
 });

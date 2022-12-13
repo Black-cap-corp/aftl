@@ -41,7 +41,6 @@ router.post("/add", verifyAuth, async (req, res) => {
     case operation.operationType === "divisions":
       const projectid = operation.selected.projectId;
       const division = operation.operationEl;
-      console.log(projectid, division);
       const resultDiv = await ProjectSchema.updateOne(
         { _id: mongoose.Types.ObjectId(projectid.trim()) },
         { $push: { divisions: division } }

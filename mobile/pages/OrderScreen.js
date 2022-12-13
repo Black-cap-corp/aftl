@@ -1,13 +1,13 @@
-import {StyleSheet, Text, View} from 'react-native';
+import {StyleSheet, View} from 'react-native';
 import React from 'react';
 import {Layout} from '@ui-kitten/components';
 import OrderForm from '../ui/order/OrderForm';
 
 const OrderScreen = ({navigation}) => {
   return (
-    <Layout style={styles.orderScreen} level="3">
+    <View style={styles.orderScreen}>
       <OrderForm navigation={navigation} />
-    </Layout>
+    </View>
   );
 };
 
@@ -18,5 +18,6 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
     paddingVertical: 20,
     flex: 1,
+    backgroundColor: '#ebecf0',
   },
 });

@@ -91,7 +91,7 @@ const stockSlice = createSlice({
         const { res } = action.payload;
         if (res.status === "success") {
           state = state.filter((x) => x.id !== res.stock.id);
-          return [...state, res.stock];
+          return [res.stock, ...state];
         }
       })
       .addCase(deleteAsyncStock.fulfilled, (state, action) => {
@@ -101,7 +101,6 @@ const stockSlice = createSlice({
         }
       })
       .addCase(addAsyncStock.fulfilled, (state, action) => {
-        console.log(action.payload);
         state.push(action.payload.res);
         return state;
       });

@@ -1,9 +1,10 @@
 import { Formik } from "formik";
 import { Form } from "react-bootstrap";
-import React from "react";
+import React, { useState } from "react";
 import * as yup from "yup";
 import Table from "react-bootstrap/Table";
 import CustomButton from "../../shared/CustomButton";
+import IssueSearch from "../issue/IssueSearch";
 
 const StocksForm = ({
   stocks,
@@ -17,14 +18,31 @@ const StocksForm = ({
     agg = { ...agg, [stock.id]: "" };
     return agg;
   }, {});
+  console.log({ ...initialValues, ...formValues });
+  const [filteredStocks, setFilteredStocks] = useState(stocks);
+  const onSearch = (key) => {
+    if (key === "") {
+      setFilteredStocks(stocks);
+    } else {
+      const fil = stocks.filter((stock) =>
+        stock.name.toLowerCase().includes(key.toLowerCase())
+      );
+      setFilteredStocks(fil);
+    }
+  };
 
   return (
     <div>
       <h2 style={{ textAlign: "center" }}>Stocks </h2>
+      <div>
+        <IssueSearch onChange={onSearch} />
+      </div>
       <Formik
         validationSchema={validationSchema}
         onSubmit={onSubmitHandler}
-        initialValues={formValues ? formValues : initialValues}
+        initialValues={
+          formValues ? { ...initialValues, ...formValues } : initialValues
+        }
       >
         {({ handleSubmit, handleChange, handleBlur, values }) => (
           <form onSubmit={handleSubmit}>
@@ -49,8 +67,8 @@ const StocksForm = ({
                 </tr>
               </thead>
               <tbody>
-                {stocks &&
-                  stocks.map((stock, index) => (
+                {filteredStocks &&
+                  filteredStocks.map((stock, index) => (
                     <tr key={stock.id}>
                       <td>{index + 1}</td>
                       <td>{stock.name}</td>

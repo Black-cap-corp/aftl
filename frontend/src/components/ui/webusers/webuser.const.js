@@ -23,6 +23,10 @@ export const webuserTypeOptions = [
     value: "admin",
     display: "Admin",
   },
+  {
+    value: "approver",
+    display: "Indent Approver",
+  },
 ];
 
 export const webuserEntitlementOptions = [

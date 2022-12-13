@@ -3,7 +3,7 @@ import Login from "../components/ui/Login";
 
 const LoginPage = () => {
   return (
-    <div style={{ paddingTop: "10rem" }}>
+    <div>
       <Login />
     </div>
   );

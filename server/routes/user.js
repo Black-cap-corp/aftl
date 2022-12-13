@@ -2,6 +2,7 @@ const mongoose = require("mongoose");
 const router = require("express").Router();
 const verifyAuth = require("../middleware/auth");
 const UserModel = require("../models/webuser");
+const MobileuserModel = require("../models/mobileuser");
 
 router.get("/", verifyAuth, async (req, res) => {
   const result = await UserModel.find();
@@ -37,6 +38,26 @@ router.post("/delete", verifyAuth, async (req, res) => {
   } else {
     res.status(400).json({ status: "error", message: "error updating" });
   }
+});
+
+router.post("/getIdentities", async (req, res) => {
+  const { ids } = req.body;
+  console.log(ids);
+
+  const webUsers = await UserModel.find(
+    { _id: { $in: ids?.app } },
+    { _id: 1, name: 1 }
+  ).lean();
+  const appUsers = await MobileuserModel.find(
+    {
+      _id: { $in: ids?.mobile },
+    },
+    { _id: 1, name: 1 }
+  ).lean();
+
+  console.log(webUsers, appUsers, "here");
+
+  res.status(200).json([...webUsers, ...appUsers]);
 });
 
 module.exports = router;

@@ -1,6 +1,6 @@
 import {StyleSheet} from 'react-native';
 import React from 'react';
-import {Field, Formik} from 'formik';
+import {Formik} from 'formik';
 import * as yup from 'yup';
 import CustomInput from '../../shared/ui/CustomInput';
 import {Button, Icon} from '@ui-kitten/components';
@@ -8,6 +8,7 @@ import CustomAutocomplete from '../../shared/ui/CustomAutocomplete';
 import CustomSelect from '../../shared/ui/CustomSelect';
 import axios from 'axios';
 import {APP_BASE_URL} from '../../app.const';
+import {Text} from '@ui-kitten/components';
 
 const initialValues = {
   workorder: '',
@@ -32,6 +33,8 @@ const OrderForm = ({navigation}) => {
   const [contractorsRaw, setContractorsRaw] = React.useState([]);
   const [selectedContractor, setSelectedContractor] = React.useState();
   const [selectedWorkOrder, setSelectedWorkOrder] = React.useState();
+  const [noWorkorders, setNoWorkorders] = React.useState(false);
+  const [pageError, setPageError] = React.useState(false);
 
   const debounce = (func, delay) => {
     let timer;
@@ -45,10 +48,15 @@ const OrderForm = ({navigation}) => {
             data.length > 0
               ? data.map(work => {
                   return {
-                    title: work?.workorder,
+                    title: work?.displayName,
                   };
                 })
               : [];
+          if (workordersMap.length < 1) {
+            setNoWorkorders(true);
+          } else {
+            setNoWorkorders(false);
+          }
           setData(data);
           setWorkorders(workordersMap);
         }
@@ -59,23 +67,43 @@ const OrderForm = ({navigation}) => {
   const debouncer = debounce(getWorkorders, 500);
 
   const handleSubmit = (values, {setSubmitting}) => {
-    const workorder = {
-      workorder: selectedWorkOrder,
-      contractor: selectedContractor,
-      vehicle: values.vehicle,
-      location: values.location,
-    };
-    setSubmitting(false);
-    navigation.navigate('OrderStocks', {isComplete: false, workorder});
+    if (!selectedContractor || !selectedWorkOrder) {
+      setPageError(true);
+      setSubmitting(false);
+    } else {
+      const workorder = {
+        workorder: selectedWorkOrder._id,
+        contractor: selectedContractor,
+        vehicle: values.vehicle,
+        location: values.location,
+        name: selectedWorkOrder.displayName,
+      };
+      setSubmitting(false);
+      setPageError(false);
+      navigation.navigate('OrderStocks', {
+        isComplete: false,
+        workorder,
+        stocks: selectedWorkOrder.stocks,
+      });
+    }
   };
   const onSelect = workorder => {
     const contractorsmap = workorder.contractors.map(
       contractor => contractor.contractor,
     );
-    setSelectedWorkOrder(workorder._id);
+    setSelectedWorkOrder(workorder);
     setContractorsRaw(workorder.contractors);
     setContractors(contractorsmap);
   };
+
+  const clearContractors = () => {
+    setSelectedContractor('');
+    setContractorValue('');
+    setContractors([]);
+    setContractorsRaw([]);
+  };
+  const [contractorValue, setContractorValue] = React.useState('');
+
   return (
     <Formik
       initialValues={initialValues}
@@ -91,10 +119,19 @@ const OrderForm = ({navigation}) => {
             onSelectParent={onSelect}
             data={data}
             debouncer={debouncer}
+            clearContractors={clearContractors}
           />
+          {noWorkorders && (
+            <Text style={styles.error} status="danger">
+              No Workorders Found
+            </Text>
+          )}
+
           <CustomSelect
             label="Contractor"
             name="contractor"
+            value={contractorValue}
+            setValue={setContractorValue}
             options={contractors}
             raw={contractorsRaw}
             setSelectedContractor={setSelectedContractor}
@@ -110,6 +147,11 @@ const OrderForm = ({navigation}) => {
             name="location"
             label="Location"
           />
+          {pageError && (
+            <Text style={styles.error} status="danger">
+              Please Fill all Details
+            </Text>
+          )}
           <Button
             onPress={handleSubmit}
             disabled={isSubmitting || !isValid}
@@ -138,4 +180,8 @@ const getWorkorders = async filter => {
 
 export default OrderForm;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  error: {
+    fontSize: 12,
+  },
+});

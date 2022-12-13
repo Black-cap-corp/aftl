@@ -8,6 +8,7 @@ import {
 import OrderScreen from '../pages/OrderScreen';
 import ReturnScreen from '../pages/ReturnScreen';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
+import ViewScreen from '../pages/ViewScreen';
 
 const {Navigator, Screen} = createBottomTabNavigator();
 const CartIcon = props => <Icon {...props} name="shopping-cart-outline" />;
@@ -33,6 +34,7 @@ const BottomNavigator = () => {
       tabBar={props => <BottomBar {...props} />}>
       <Screen name="Orders" component={OrderScreen} />
       <Screen name="Return" component={ReturnScreen} />
+      <Screen name="View" component={ViewScreen} />
     </Navigator>
   );
 };
@@ -40,5 +42,7 @@ const BottomNavigator = () => {
 export default BottomNavigator;
 
 const styles = StyleSheet.create({
-  bottomNavigation: {},
+  bottomNavigation: {
+    backgroundColor: '#FFFFFF',
+  },
 });

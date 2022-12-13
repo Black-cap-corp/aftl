@@ -12,6 +12,9 @@ const firmRouter = require("./routes/firm");
 const workorderRouter = require("./routes/workorder");
 const userRouter = require("./routes/user");
 const appUserRouter = require("./routes/appuser");
+const indentRouter = require("./routes/indent");
+const returnIndentsRouter = require("./routes/returnindent");
+
 require("dotenv").config();
 require("./config/database").connect();
 
@@ -69,5 +72,7 @@ app.use("/firm", firmRouter);
 app.use("/workorder", workorderRouter);
 app.use("/user", userRouter);
 app.use("/appuser", appUserRouter);
+app.use("/indent", indentRouter);
+app.use("/returnIndents", returnIndentsRouter);
 
 module.exports = app;

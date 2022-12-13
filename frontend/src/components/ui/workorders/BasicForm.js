@@ -22,13 +22,12 @@ const BasicForm = ({
   ]);
 
   const [initialValues, setInitialValues] = useState(() => {
-    console.log(formValues);
     const init = {
       project: "",
       division: "",
       subdivision: "",
       workorder: "",
-      status: "open",
+      status: "closed",
     };
     return formValues ? formValues : init;
   });
@@ -175,7 +174,7 @@ const FormObserver = ({ onChange }) => {
 };
 
 const basicFormSchema = yup.object().shape({
-  workorder: yup.string().required("Required"),
+  workorder: yup.string(),
   division: yup.string().required("Required"),
   subdivision: yup.string().required("Required"),
   status: yup.string().required("Required"),

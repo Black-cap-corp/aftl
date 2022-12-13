@@ -3,8 +3,7 @@ const mongoose = require("mongoose");
 const UserModel = mongoose.Schema({
   name: String,
   password: String,
-  type: { type: String, default: "operator" },
-  entitlement: { type: String, default: "read" },
+  entitlement: [String],
 });
 
 module.exports = mongoose.model("users", UserModel);

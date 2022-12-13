@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
-
+const initialState = JSON.parse(sessionStorage.getItem("user"))
 const userSlice = createSlice({
-  initialState: "",
+  initialState: initialState,
   name: "user",
   reducers: {
     setUser: (state, action) => {

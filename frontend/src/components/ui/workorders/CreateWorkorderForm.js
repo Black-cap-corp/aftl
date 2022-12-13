@@ -13,6 +13,7 @@ const convertValuestoFormValue = (formData) => {
     division: formData?.division?.id,
     subdivision: formData?.subdivision?.id,
     status: formData?.status,
+    displayName: formData?.displayName,
   };
 
   return firstFormValue;
@@ -23,8 +24,6 @@ const stocksValueFormvalue = (formData) => {
     agg = { ...agg, [current.stockId]: current.stock };
     return agg;
   }, {});
-
-  console.log(sel_stocks);
 
   return sel_stocks;
 };
@@ -127,6 +126,7 @@ const CreateWorkorderForm = ({
       contractors: firms_data.filter(
         (firm) => selContractors.findIndex((sel) => sel.id === firm.id) > -1
       ),
+      displayName: firstFormValues.displayName,
       status: firstFormValues.status,
       stocks: stocks,
     };
@@ -135,16 +135,14 @@ const CreateWorkorderForm = ({
   };
 
   const onFirstPageSubmithandler = (values) => {
-    if (selContractors.length > 0) {
-      setFirstFormValues(values);
-      nextStep();
-    }
+    setFirstFormValues(values);
+    nextStep();
   };
 
   return (
     <div
       className="container d-flex justify-content-center align-items-center"
-      style={{ height: "80vh", overflowY: "scroll", paddingTop: 20 }}
+      style={{}}
     >
       <div className=" p-3 w-100 mt-5">
         {

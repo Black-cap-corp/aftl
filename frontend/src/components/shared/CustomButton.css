@@ -13,3 +13,8 @@
   background-color: gray;
   color: #fff;
 }
+.disabled{
+  cursor: not-allowed;
+  background-color: #ccc !important;
+
+}

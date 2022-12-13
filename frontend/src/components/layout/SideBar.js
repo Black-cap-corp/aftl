@@ -1,14 +1,35 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import styles from "./Sidebar.module.css";
 import { useLocation } from "react-router-dom";
+import {
+  ADMIN_SIDEBAR_MENU,
+  OPERATOR_SIDEBAR_MENU,
+} from "../../constants/sidebar.constant";
+import { UserContext } from "../../App";
+import { AiOutlineLogin } from "react-icons/ai";
+import ConfirmPopup from "../shared/ConfirmPopup";
+import { useNavigate } from "react-router-dom";
 
 const SideBar = () => {
-  // let [pageSelected, setPageSelected] = useState("");
+  const navigate = useNavigate();
+
   const location = useLocation();
   const pageSelected = location.pathname.split("/");
+  const user = useContext(UserContext);
+  const menuList = user.entitlement.includes("webAdminBoth")
+    ? ADMIN_SIDEBAR_MENU
+    : OPERATOR_SIDEBAR_MENU;
 
-  console.log(pageSelected);
+  const [showConfirm, setShowConfirm] = useState(false);
+  const clickHandler = () => setShowConfirm(true);
+  const handleCloseConfirm = () => setShowConfirm(false);
+  const handleSubmitForLogout = () => {
+    sessionStorage.setItem("auth_token", "");
+    sessionStorage.setItem("user", "");
+    navigate("/login");
+    setShowConfirm(false);
+  };
 
   return (
     <div className={styles.sidebar}>
@@ -16,7 +37,20 @@ const SideBar = () => {
       <hr></hr>
       <nav>
         <ul className={styles.navul}>
-          <li className={pageSelected.includes("stocks") ? styles.active : ""}>
+          {menuList.map((menu) => (
+            <li
+              key={menu.name}
+              className={
+                pageSelected.includes(menu.name) ||
+                pageSelected.includes(menu.secondName)
+                  ? styles.active
+                  : ""
+              }
+            >
+              <Link to={menu.link}>{menu.label}</Link>
+            </li>
+          ))}
+          {/* <li className={pageSelected.includes("stocks") ? styles.active : ""}>
             <Link to="/home/stocks">Stocks</Link>
           </li>
           <li
@@ -40,12 +74,22 @@ const SideBar = () => {
             className={pageSelected.includes("webusers") ? styles.active : ""}
           >
             <Link to="/home/webusers">Web users</Link>
-          </li>
+          </li> */}
         </ul>
       </nav>
-      <div className={styles.footer}>
-        <h4>Test User</h4>
+      <div className={styles.footer} style={{ cursor: "pointer" }}>
+        <h5 onClick={clickHandler}>
+          Logout <AiOutlineLogin />
+        </h5>
       </div>
+
+      <ConfirmPopup
+        body="Are you sure , you want to logout"
+        handleHide={handleCloseConfirm}
+        header="Logout"
+        onConfirm={handleSubmitForLogout}
+        show={showConfirm}
+      />
     </div>
   );
 };

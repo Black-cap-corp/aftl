@@ -54,16 +54,44 @@ export const deleteAsyncUser = createAsyncThunk(
   }
 );
 
+const getEntitlement = (type, entitlement = "read") => {
+  switch (type) {
+    case "admin":
+      if (entitlement == "write") {
+        return "webAdminBoth";
+      } else {
+        return "webAdminRead";
+      }
+    case "operator":
+      return "webOperator";
+    case "approver":
+      return "webApprover";
+    default:
+      return "";
+  }
+};
+
 export const addAsyncUser = createAsyncThunk(
   "user/addAsyncUser",
   async (user) => {
     const jwt = sessionStorage.getItem("auth_token");
-    const res = await axios.post(`${BASE_URL}/user/add`, user, {
-      headers: {
-        authorization: jwt,
-      },
-    });
-    return { res: res.data };
+
+    const userRequest = {
+      name: user.name,
+      password: user.password,
+      entitlement: [getEntitlement(user.type, user.entitlement)],
+    };
+    try {
+      const res = await axios.post(`${BASE_URL}/user/add`, userRequest, {
+        headers: {
+          authorization: jwt,
+        },
+      });
+      return { res: res.data };
+    } catch (error) {
+      console.log("error");
+      return { message: error.message };
+    }
   }
 );
 

@@ -13,8 +13,11 @@ import Stocks from "./components/ui/stocks/Stocks";
 import ProjectContainer from "./components/ui/projects/ProjectContainer";
 import Contractor from "./components/ui/contractors/Contractor";
 import WorkOrder from "./components/ui/workorders/WorkOrder";
-import WebUsers from "./components/ui/webusers/WebUsers";
 import UsersContainer from "./components/ui/webusers/UsersContainer";
+import { IssueIndentsContainer } from "./components/ui/issue/IssueIndentsContainer";
+import ReturnIndentsContainer from "./components/ui/returns/ReturnIndentsContainer";
+import IssueDetailsContainer from "./components/ui/issue/IssueDetailsContainer";
+import ReturnIndentsDetailsContainer from "./components/ui/returns/ReturnIndentsDetailsContainer";
 
 const AppRoutes = () => {
   const user = useContext(UserContext);
@@ -38,7 +41,16 @@ const AppRoutes = () => {
         <Route path="projects" element={<ProjectContainer />} />
         <Route path="contractors" element={<Contractor />} />
         <Route path="workorders" element={<WorkOrder />} />
-        <Route path="webusers" element={<UsersContainer />} />
+        <Route path="users" element={<UsersContainer />} />
+        <Route path="issue" element={<IssueIndentsContainer />} />
+
+        <Route path="issue-details/:id" element={<IssueDetailsContainer />} />
+        <Route
+          path="return-details/:id"
+          element={<ReturnIndentsDetailsContainer />}
+        />
+
+        <Route path="returns" element={<ReturnIndentsContainer />} />
       </Route>
     </Routes>
   );

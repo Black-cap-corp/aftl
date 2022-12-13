@@ -10,7 +10,6 @@ const SharedHOCComponent = React.forwardRef(({ config }, ref) => {
   }, [config.rowData]);
 
   const filterData = (values) => {
-    console.log(config.rowData);
     if (config.rowData) {
       setFiltereddata((state) => {
         return config.rowData?.filter((data) =>
