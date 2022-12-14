@@ -1,0 +1,10 @@
+.content {
+   box-sizing: border-box;
+   height: 100%;
+}
+
+.content > div {
+    min-height: 100%;
+    height: 100%;
+    padding-top: 70px;
+}

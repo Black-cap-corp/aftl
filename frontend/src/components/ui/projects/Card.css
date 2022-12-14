@@ -1,0 +1,128 @@
+.outer-container {
+  position: relative;
+  padding-left: 40px;
+  padding-bottom: 20px;
+}
+
+.custom-card {
+  height: 100px;
+  width: 250px;
+  background-color: #fff;
+  box-shadow: 8px 8px 3px rgba(0, 0, 0, 0.1);
+  padding: 10px 20px;
+  right: 0;
+  top: 0;
+  z-index: 1;
+  cursor: pointer;
+  border-radius: 5px;
+  position: relative;
+  text-align: left;
+}
+.custom-card.color-green {
+  border-left: 3px solid green;
+}
+
+.custom-card.color-red {
+  border-left: 3px solid orange;
+}
+
+.custom-card.color-teel {
+  border-left: 3px solid brown;
+}
+
+.selected {
+  background-color: lightgrey;
+  position: relative;
+}
+.selected::after {
+  content: "";
+  bottom: 44%;
+  right: -50px;
+  position: absolute;
+  width: 50px;
+  height: 1px;
+  background-color: #000;
+  z-index: 0;
+}
+.single-child__selector {
+  background-color: lightgrey;
+  position: relative;
+}
+.single-child__selector::after {
+  content: "";
+  bottom: 44%;
+  left: 100%;
+  position: absolute;
+  width: 100px;
+  height: 1px;
+  background-color: #000;
+  z-index: 0;
+}
+
+.outer-container:not(.single-child):before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 130px;
+  width: 1px;
+  background-color: #000;
+  z-index: 0;
+}
+
+.outer-container:first-of-type:not(.single-child)::before {
+  top: 50% !important;
+  left: 0;
+  height: 60px;
+}
+
+.outer-container:last-of-type:not(.single-child)::before {
+  height: 60px;
+}
+
+.outer-container:not(.single-child)::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  height: 1px;
+  width: 100%;
+  background-color: #000;
+  transform: translateY(-50%);
+  z-index: -1;
+}
+
+.children {
+  position: absolute;
+  left: calc(100% + 50px);
+  top: -3rem;
+  padding-bottom: 50px;
+}
+.custom-card > .body {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.actions-center {
+  position: absolute;
+  right: 20px;
+  bottom: 15px;
+  display: flex;
+  gap: 10px;
+}
+
+.action-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  padding: 6px;
+}
+.action-btn.btn-edit {
+  border: 1px solid green;
+}
+
+.action-btn.btn-del {
+  border: 1px solid lightcoral;
+}

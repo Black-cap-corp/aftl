@@ -1,0 +1,18 @@
+{
+  "components": {
+    "Input": {
+      "meta": {},
+      "appearances": {
+        "default": {
+          "variantGroups": {
+            "status": {
+              "control": {
+                "backgroundColor": "red"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

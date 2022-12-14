@@ -1,0 +1,85 @@
+html,
+body {
+  margin: 0;
+  font-family: "Ubuntu", sans-serif !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  height: 100%;
+  width: 100%;
+  position: relative;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.02) !important;
+}
+
+#root {
+  height: 100%;
+}
+
+.ag-cell {
+  overflow: visible !important;
+}
+
+.ag-row {
+  z-index: 0;
+}
+
+.ag-row.ag-row-focus {
+  z-index: 1;
+}
+.ag-root.ag-layout-auto-height,
+.ag-body-viewport.ag-layout-auto-height,
+.ag-body-viewport-wrapper.ag-layout-auto-height {
+  overflow: visible;
+}
+
+.btn {
+  line-height: 0.5;
+}
+
+.custom-btn {
+  padding: 6px 24px;
+  border: 1px solid gray;
+  border-radius: 6px;
+}
+
+.project-container {
+  position: relative;
+  padding: 0 20px;
+  padding-bottom: 40px;
+}
+
+.project-container::before {
+  content: "";
+  height: 100%;
+  border-right: 1px dotted gray;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+.division-container::after {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 1px;
+  border: 1px dotted gray;
+  left: calc(100% + 20px);
+  top: 0;
+}
+
+.division-container {
+  position: relative;
+}
+
+.modal{
+  display: block !important; /* I added this to see the modal, you don't need this */
+}
+
+/* Important part */
+.modal-dialog{
+  overflow-y: initial !important
+}
+.modal-body{
+  overflow-y: auto;
+}
+
