@@ -15,7 +15,6 @@ router.get("/", verifyAuth, async (req, res) => {
 router.post("/add", verifyAuth, async (req, res) => {
   const user = req.body;
   const result = await UserModel.create(user);
-  console.log(result);
   res.status(201).json({ ...result, id: mongoose.Types.ObjectId(result._id) });
 });
 
