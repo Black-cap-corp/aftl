@@ -63,6 +63,10 @@ app.post("/register", async (req, res) => {
   }
 });
 
+app.get("/", (req, res) => {
+  res.send("Hello World");
+});
+
 app.use("/login", loginRouter);
 app.use("/stocks", stocksRouter);
 app.use("/projects", projectsRouter);
