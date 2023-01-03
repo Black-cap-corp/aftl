@@ -25,11 +25,11 @@ function App() {
   };
 
   const successFunc = (text) => {
-    alert.success(text);
+    // alert.success(text);
   };
 
   const errorFunc = (text) => {
-    alert.success(text);
+    //  alert.error(text);
   };
 
   const successDelay = rateLimiter(successFunc, 1000);

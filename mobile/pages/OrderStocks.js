@@ -1,5 +1,5 @@
-import {StyleSheet, Text, View} from 'react-native';
-import React, {useState} from 'react';
+import {StyleSheet, Text, View, BackHandler} from 'react-native';
+import React, {useState, useEffect} from 'react';
 import {Layout} from '@ui-kitten/components';
 import OrderSearch from '../ui/orderstocks/OrderSearch';
 import OrdersList from '../shared/ui/OrdersList';
@@ -12,6 +12,16 @@ const getStocks = async workorderId => {};
 const OrderStocks = ({route, navigation}) => {
   const [stocks, setStocks] = useState([]);
   const [searchStocks, setSearchStocks] = useState([]);
+
+  const handleBackPress = () => {
+    navigation.goBack();
+  };
+
+  useEffect(() => {
+    BackHandler.addEventListener('hardwareBackPress', handleBackPress);
+    return () =>
+      BackHandler.removeEventListener('hardwareBackPress', handleBackPress);
+  }, []);
 
   React.useEffect(() => {
     axios.get(`${APP_BASE_URL}/stocks`).then(
@@ -59,7 +69,7 @@ const OrderStocks = ({route, navigation}) => {
     const editEditedStocks = stocks.filter(
       stock => Number(stock.stockRequested) > 0,
     );
-    navigation.navigate('OrderPreview', {
+    navigation.push('OrderPreview', {
       isComplete: false,
       workorder: {...workorder, stocksRequested: editEditedStocks},
     });

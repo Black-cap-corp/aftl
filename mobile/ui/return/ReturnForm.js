@@ -3,19 +3,18 @@ import React from 'react';
 import {Formik} from 'formik';
 import CustomAutocomplete from '../../shared/ui/CustomAutocomplete';
 import * as yup from 'yup';
-import {Button, Icon} from '@ui-kitten/components';
+import {Button} from '@ui-kitten/components';
 import axios from 'axios';
 import {APP_BASE_URL} from '../../app.const';
 import CustomInput from '../../shared/ui/CustomInput';
+import AntDesign from 'react-native-vector-icons/AntDesign';
 
 const returnFormSchema = yup.object().shape({
   workorder: yup.string().required('Required'),
   vehicle: yup.string().required('Required'),
 });
 
-const ArrowRightIcon = props => (
-  <Icon name="arrow-ios-forward-outline" {...props} />
-);
+const ArrowRightIcon = props => <AntDesign name="right" {...props} />;
 
 const initialValues = {
   workorder: '',
@@ -64,7 +63,7 @@ const ReturnForm = ({route, navigation}) => {
   const clearContractors = () => {};
 
   const handleSubmit = (values, {setSubmitting}) => {
-    navigation.navigate('IndentsList', {
+    navigation.push('IndentsList', {
       selWorkorder: selectedWorkOrder,
       vehicle: values.vehicle,
     });

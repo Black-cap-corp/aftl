@@ -3,12 +3,13 @@ import React from 'react';
 import {Formik} from 'formik';
 import * as yup from 'yup';
 import CustomInput from '../../shared/ui/CustomInput';
-import {Button, Icon} from '@ui-kitten/components';
+import {Button} from '@ui-kitten/components';
 import CustomAutocomplete from '../../shared/ui/CustomAutocomplete';
 import CustomSelect from '../../shared/ui/CustomSelect';
 import axios from 'axios';
 import {APP_BASE_URL} from '../../app.const';
 import {Text} from '@ui-kitten/components';
+import AntDesign from 'react-native-vector-icons/AntDesign';
 
 const initialValues = {
   workorder: '',
@@ -23,7 +24,7 @@ const orderSchema = yup.object().shape({
   location: yup.string().required('Required'),
 });
 const ArrowRightIcon = props => (
-  <Icon name="arrow-ios-forward-outline" {...props} />
+  <AntDesign name="right" style={{fontSize: 20}} {...props} />
 );
 
 const OrderForm = ({navigation}) => {
@@ -80,7 +81,7 @@ const OrderForm = ({navigation}) => {
       };
       setSubmitting(false);
       setPageError(false);
-      navigation.navigate('OrderStocks', {
+      navigation.push('OrderStocks', {
         isComplete: false,
         workorder,
         stocks: selectedWorkOrder.stocks,

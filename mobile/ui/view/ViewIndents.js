@@ -21,12 +21,12 @@ const ViewIndents = ({route, navigation}) => {
     } else {
       setPageError(false);
       if (type === 1) {
-        navigation.navigate('ViewReturns', {
+        navigation.push('ViewReturns', {
           selIndent: selectedIndent,
           type: type,
         });
       } else {
-        navigation.navigate('ViewSummary', {
+        navigation.push('ViewSummary', {
           selIndent: selectedIndent,
           type,
         });

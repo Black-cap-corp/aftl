@@ -50,7 +50,7 @@ const ViewReturns = ({route, navigation}) => {
       setPageError(true);
     } else {
       setPageError(false);
-      navigation.navigate('ViewSummary', {
+      navigation.push('ViewSummary', {
         selIndent: selectedIndent,
         type,
       });

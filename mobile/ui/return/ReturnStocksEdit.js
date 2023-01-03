@@ -42,7 +42,7 @@ const ReturnStocksEdit = ({route, navigation}) => {
 
   const proceedNextHandler = () => {
     const editedStocks = stocks.filter(stock => stock.stockRequested > 0);
-    navigation.navigate('ReturnStocksPreview', {
+    navigation.push('ReturnStocksPreview', {
       selIndent,
       editedStocks,
       vehicle: route.params.vehicle,

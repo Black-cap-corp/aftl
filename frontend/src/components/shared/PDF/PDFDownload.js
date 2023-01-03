@@ -61,6 +61,8 @@ const PDFDownloadDocument = ({
     }
   }, [workorder]);
 
+  console.log(type);
+
   return (
     <Document>
       <Page style={{ padding: "24px", position: "relative" }}>
@@ -90,7 +92,7 @@ const PDFDownloadDocument = ({
             <Text style={{ fontSize: 14 }}>{workorder?.indentNo}</Text>
           </View>
         )}
-        {type == INDENT_ENUM.RETURN && (
+        {type == INDENT_ENUM.ISSUE && (
           <View style={{ textAlign: "center" }}>
             <Text style={{ fontSize: 14, fontWeight: "extrabold" }}>
               {selIndent?.indentNo}

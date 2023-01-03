@@ -9,6 +9,7 @@ import {
   Text,
 } from '@ui-kitten/components';
 import AntDesign from 'react-native-vector-icons/AntDesign';
+import Feather from 'react-native-vector-icons/Feather';
 
 const OrdersList = ({
   stocks,
@@ -41,14 +42,14 @@ const OrdersList = ({
       case 'add':
         const updatedStocksAdd = stocks.map(stock => {
           if (stock.id === stockId && stock.stockRequested < stock.limit) {
-            return {...stock, stockRequested: stock.stockRequested + 1};
+            return {...stock, stockRequested: Number(stock.stockRequested) + 1};
           } else {
             return stock;
           }
         });
         const updatedRawStocksAdd = rawStocks.map(stock => {
           if (stock.id === stockId && stock.stockRequested < stock.limit) {
-            return {...stock, stockRequested: stock.stockRequested + 1};
+            return {...stock, stockRequested: Number(stock.stockRequested) + 1};
           } else {
             return stock;
           }
@@ -60,14 +61,14 @@ const OrdersList = ({
       case 'minus':
         const updatedStocksMinus = stocks.map(stock => {
           if (stock.id === stockId && stock.stockRequested > 0) {
-            return {...stock, stockRequested: stock.stockRequested - 1};
+            return {...stock, stockRequested: Number(stock.stockRequested) - 1};
           } else {
             return stock;
           }
         });
         const updatedRawStocksMinus = rawStocks.map(stock => {
           if (stock.id === stockId && stock.stockRequested < stock.limit) {
-            return {...stock, stockRequested: stock.stockRequested + 1};
+            return {...stock, stockRequested: Number(stock.stockRequested) + 1};
           } else {
             return stock;
           }
@@ -118,7 +119,7 @@ const desc = item => (
   </View>
 );
 
-const renderItemIcon = props => <Icon {...props} name="layers-outline" />;
+const renderItemIcon = props => <Feather {...props} name="layers" />;
 
 const RightWidget = ({item, onQuantityRequested, isEditable}) => {
   const [value, setValue] = useState(String(item.stockRequested));

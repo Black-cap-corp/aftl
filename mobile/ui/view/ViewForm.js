@@ -2,18 +2,17 @@ import {StyleSheet, Text, View} from 'react-native';
 import React from 'react';
 import {Formik} from 'formik';
 import * as yup from 'yup';
-import {Button, Icon, RadioGroup, Radio} from '@ui-kitten/components';
+import {Button, RadioGroup, Radio} from '@ui-kitten/components';
 import axios from 'axios';
 import {APP_BASE_URL} from '../../app.const';
 import CustomAutocomplete from '../../shared/ui/CustomAutocomplete';
+import AntDesign from 'react-native-vector-icons/AntDesign';
 
 const returnFormSchema = yup.object().shape({
   workorder: yup.string().required('Required'),
 });
 
-const ArrowRightIcon = props => (
-  <Icon name="arrow-ios-forward-outline" {...props} />
-);
+const ArrowRightIcon = props => <AntDesign name="right" {...props} />;
 
 const initialValues = {
   workorder: '',
@@ -64,7 +63,7 @@ const ViewForm = ({route, navigation}) => {
   const clearContractors = () => {};
 
   const handleSubmit = (values, {setSubmitting}) => {
-    navigation.navigate('ViewIndents', {
+    navigation.push('ViewIndents', {
       selWorkorder: selectedWorkOrder,
       type: selectedIndex,
     });

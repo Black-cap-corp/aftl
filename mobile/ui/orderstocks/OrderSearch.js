@@ -1,8 +1,10 @@
 import {StyleSheet} from 'react-native';
 import React from 'react';
 import {Input, Icon} from '@ui-kitten/components';
+import AntDesign from 'react-native-vector-icons/AntDesign';
+
 export const IconSimpleUsageShowcase = () => (
-  <Icon style={styles.icon} fill="#8F9BB3" name="search" />
+  <AntDesign style={styles.icon} fill="#8F9BB3" name="search1" />
 );
 const OrderSearch = ({onSearch, caption}) => {
   const [value, setValue] = React.useState('');

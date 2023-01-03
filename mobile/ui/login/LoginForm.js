@@ -1,12 +1,15 @@
 import {StyleSheet, View} from 'react-native';
 import React, {useState} from 'react';
-import {Icon, Button, Layout, Text} from '@ui-kitten/components';
+import {Button, Layout, Text} from '@ui-kitten/components';
 import CustomInput from '../../shared/ui/CustomInput';
-import {Form, Formik} from 'formik';
+import {Formik} from 'formik';
 import * as yup from 'yup';
 import {AuthContext} from '../../shared/context/logincontext';
+import SimpleLineIcons from 'react-native-vector-icons/SimpleLineIcons';
 
-const LoginIcon = props => <Icon name="log-in-outline" {...props} />;
+const LoginIcon = props => (
+  <SimpleLineIcons name="login" style={{fontSize: 20}} {...props} />
+);
 
 const loginSchema = yup.object().shape({
   mobile: yup
@@ -17,7 +20,7 @@ const loginSchema = yup.object().shape({
   password: yup.string().required('Required'),
 });
 
-const LoginForm = () => {
+const LoginForm = ({navigation}) => {
   const [error, setError] = useState({showError: false, error: ''});
   const contextValues = React.useContext(AuthContext);
 
@@ -27,6 +30,7 @@ const LoginForm = () => {
       contextValues.dispatch,
       setError,
       setSubmitting,
+      navigation,
     );
   };
 
@@ -52,7 +56,7 @@ const LoginForm = () => {
 
           {error.showError && (
             <Text style={{marginBottom: 10}} appearance="hint" status="danger">
-              {error.error}
+              User Authentication failed
             </Text>
           )}
 

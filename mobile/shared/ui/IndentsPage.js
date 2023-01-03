@@ -21,7 +21,7 @@ const IndentsPage = ({route, navigation}) => {
       setPageError(true);
     } else {
       setPageError(false);
-      navigation.navigate('ReturnStocks', {
+      navigation.push('ReturnStocks', {
         selectedIndent,
         vehicle: route.params.vehicle,
       });

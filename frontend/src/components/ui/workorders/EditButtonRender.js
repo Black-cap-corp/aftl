@@ -7,19 +7,22 @@ import { updateAsyncWorkorder } from "../../../redux/workorderSlice";
 import { useDispatch } from "react-redux";
 import ConfirmPopup from "../../shared/ConfirmPopup";
 import { deleteAsyncWorkorder } from "../../../redux/workorderSlice";
+import DowloadReportForm from "./DowloadReportForm";
 
 const EditButtonRender = (props) => {
   const [show, setShow] = useState(false);
   const [showConfirm, setShowConfirm] = useState(false);
+  const [showReportCenter, setShowReportCenter] = useState(false);
   const handleClose = () => setShow(false);
   const editclickHandler = () => setShow(true);
   const dispatch = useDispatch();
 
   const deleteClickHandler = () => setShowConfirm(true);
   const handleCloseConfirm = () => setShowConfirm(false);
+  const reportDownloadHandler = () => setShowReportCenter(true);
+  const handleReportclose = () => setShowReportCenter(false);
 
   const onEdit = (workorder) => {
-    console.log(props.data.id);
     dispatch(updateAsyncWorkorder({ ...workorder, id: props.data.id }));
     setShow(false);
   };
@@ -39,6 +42,9 @@ const EditButtonRender = (props) => {
         <Dropdown.Menu>
           <Dropdown.Item onClick={editclickHandler}>Edit</Dropdown.Item>
           <Dropdown.Item onClick={deleteClickHandler}>Delete</Dropdown.Item>
+          <Dropdown.Item onClick={reportDownloadHandler}>
+            Download Report
+          </Dropdown.Item>
         </Dropdown.Menu>
       </Dropdown>
 
@@ -54,6 +60,19 @@ const EditButtonRender = (props) => {
         header="Edit Work order"
         show={show}
         size="lg"
+      />
+
+      <ModalPopup
+        body={
+          <DowloadReportForm
+            workorder={props.data}
+            setClose={handleReportclose}
+          />
+        }
+        handleHide={handleReportclose}
+        header="Download Report"
+        show={showReportCenter}
+        size="md"
       />
 
       <ConfirmPopup

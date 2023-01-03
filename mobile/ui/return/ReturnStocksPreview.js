@@ -45,7 +45,7 @@ const ReturnStocksPreview = ({route, navigation}) => {
         }),
       };
 
-      navigation.navigate('ReturnBooking', {returnIndent});
+      navigation.push('ReturnBooking', {returnIndent});
     });
   };
 

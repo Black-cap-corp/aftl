@@ -11,8 +11,17 @@ export const getUser = async () => {
 export const storeUser = async user => {
   try {
     const userValue = JSON.stringify(user);
+
     await AsyncStorage.setItem('@user', userValue);
   } catch (e) {
-    // saving error
+    console.log(e);
+  }
+};
+
+export const removeUser = async () => {
+  try {
+    await AsyncStorage.removeItem('@user');
+  } catch (e) {
+    console.log(e);
   }
 };
