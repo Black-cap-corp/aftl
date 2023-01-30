@@ -7,6 +7,7 @@ const projectShema = mongoose.Schema({
 const firmSchema = mongoose.Schema({
   firm: String,
   contractor: String,
+  id: String,
 });
 
 const stockSchema = new mongoose.Schema({

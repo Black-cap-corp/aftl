@@ -1,0 +1,2228 @@
+[
+  {
+    "code": "",
+    "unit": "No's",
+    "name": "2.5 Sqmm Copper Lugs",
+    "id": 277,
+    "stockId": "0.00037330086049625066"
+  },
+  {
+    "unit": "No's",
+    "id": 293,
+    "code": "",
+    "name": "Compact substation 250 KVA",
+    "stockId": "0.016151036250399597"
+  },
+  {
+    "unit": "No's",
+    "name": "CT Coil 800/5",
+    "id": 284,
+    "code": "0528",
+    "stockId": "0.04091973142840066"
+  },
+  {
+    "code": "0907",
+    "unit": "No's",
+    "name": "40mm Push Fit",
+    "id": 270,
+    "stockId": "0.04577325598769599"
+  },
+  {
+    "id": 316,
+    "name": "Aluminium Lead Wire 50Sq mm",
+    "code": "985",
+    "unit": "Mtr's",
+    "stockId": "0.0625770989852188"
+  },
+  {
+    "code": "888",
+    "id": 310,
+    "unit": "No's",
+    "name": "Copper Lugs 400 Sqmm",
+    "stockId": "0.0637263841550848"
+  },
+  {
+    "id": 301,
+    "name": "M S Angle",
+    "unit": "Kg's",
+    "code": "1085",
+    "stockId": "0.10183907185841701"
+  },
+  {
+    "code": "0918",
+    "unit": "No's",
+    "id": 272,
+    "name": "40 mm End Plug",
+    "stockId": "0.11895287778718822"
+  },
+  {
+    "code": "0102",
+    "id": 287,
+    "name": "2x10 Sq mm LT UG Cable",
+    "unit": "Mtr's",
+    "stockId": "0.1358610702982892"
+  },
+  {
+    "id": 313,
+    "code": "896",
+    "name": "Aluminium Lead Wire 120Sq mm",
+    "unit": "Mtr's",
+    "stockId": "0.18174868229356078"
+  },
+  {
+    "name": "M S Channal",
+    "code": "123",
+    "unit": "Kg's",
+    "id": 303,
+    "stockId": "0.20509439800375362"
+  },
+  {
+    "code": "",
+    "unit": "No's",
+    "name": "31.5KA MCVCB Feeder Panel",
+    "id": 276,
+    "stockId": "0.2070212071551083"
+  },
+  {
+    "code": "686",
+    "id": 308,
+    "name": "C-Channel (Small)",
+    "unit": "No's",
+    "stockId": "0.22868744291235643"
+  },
+  {
+    "id": 288,
+    "name": "Pre-Insulated Copper lugs 95 Sqmm",
+    "unit": "No's",
+    "code": "925",
+    "stockId": "0.22957113995815348"
+  },
+  {
+    "name": "25 Sqmm LT Joint Kit",
+    "unit": "No's",
+    "code": "",
+    "id": 280,
+    "stockId": "0.2339039779023786"
+  },
+  {
+    "name": "25 KVA Transformer",
+    "id": 323,
+    "unit": "No's",
+    "code": "899",
+    "stockId": "0.24952299995233607"
+  },
+  {
+    "unit": "No's",
+    "code": "440",
+    "name": "400 Sqmm Ferrule",
+    "id": 328,
+    "stockId": "0.2810523747370959"
+  },
+  {
+    "unit": "No's",
+    "code": "889",
+    "id": 321,
+    "name": "Spun Pole Coping Box",
+    "stockId": "0.2813938798266078"
+  },
+  {
+    "name": "Transition Joint Kit-400 Sqmm",
+    "id": 319,
+    "unit": "No's",
+    "code": "869",
+    "stockId": "0.2829725830302463"
+  },
+  {
+    "code": "",
+    "unit": "No's",
+    "id": 291,
+    "name": "SMC Feeder Piller Box 12 Way",
+    "stockId": "0.29036293422154436"
+  },
+  {
+    "code": "0919",
+    "name": "50 mm End Plug",
+    "id": 273,
+    "unit": "No's",
+    "stockId": "0.2980304552219242"
+  },
+  {
+    "id": 309,
+    "name": "Bolt & Nuts 16X50",
+    "code": "888",
+    "unit": "Kg's/No's",
+    "stockId": "0.2982358031759966"
+  },
+  {
+    "id": 299,
+    "code": "1089",
+    "name": "6 Sq mm Wire",
+    "unit": "Mtr's",
+    "stockId": "0.32198697142411015"
+  },
+  {
+    "id": 324,
+    "unit": "Kg's",
+    "name": "Bar Banding Wire",
+    "code": "997",
+    "stockId": "0.32910292935564"
+  },
+  {
+    "name": "50mm Push Fit",
+    "id": 271,
+    "unit": "No's",
+    "code": "0908",
+    "stockId": "0.33536931136018766"
+  },
+  {
+    "id": 296,
+    "unit": "No's",
+    "code": "152",
+    "name": "DU250C 250A MCCB 3P",
+    "stockId": "0.3421692505590519"
+  },
+  {
+    "name": "Aluminium Lead Wire 25Sq mm",
+    "code": "925",
+    "id": 315,
+    "unit": "No's",
+    "stockId": "0.3703987794235408"
+  },
+  {
+    "code": "0228",
+    "unit": "No's",
+    "name": "Compact Substation - 500KVA",
+    "id": 279,
+    "stockId": "0.39486222444027375"
+  },
+  {
+    "name": "Buy Direction Meter",
+    "unit": "No's",
+    "code": "625",
+    "id": 306,
+    "stockId": "0.4115913191797411"
+  },
+  {
+    "code": "",
+    "name": "Feeder Piller Bed Set",
+    "unit": "Set's",
+    "id": 292,
+    "stockId": "0.41646273160310243"
+  },
+  {
+    "name": "Battery",
+    "id": 326,
+    "code": "994",
+    "unit": "No's",
+    "stockId": "0.4187005460999722"
+  },
+  {
+    "unit": "No's",
+    "name": "MCCB DV 250KVA 4 Pole",
+    "id": 289,
+    "code": "1183",
+    "stockId": "0.4227798687032813"
+  },
+  {
+    "name": "Aluminium Lead Wire 240Sq mm",
+    "id": 314,
+    "unit": "No's",
+    "code": "910",
+    "stockId": "0.4303230095164494"
+  },
+  {
+    "code": "558",
+    "unit": "No's",
+    "id": 322,
+    "name": "63 KVA Transformer",
+    "stockId": "0.476388679113223"
+  },
+  {
+    "name": "Clit / Fish Angle",
+    "unit": "No's",
+    "code": "",
+    "id": 274,
+    "stockId": "0.5138420571192412"
+  },
+  {
+    "name": "16 Sqmm LT Joint Kit",
+    "unit": "No's",
+    "code": "285",
+    "id": 290,
+    "stockId": "0.5401508554752417"
+  },
+  {
+    "unit": "No's",
+    "id": 312,
+    "code": "886",
+    "name": "63A Porcetain Fuse Base",
+    "stockId": "0.5518161738381688"
+  },
+  {
+    "id": 300,
+    "name": "M S Wire",
+    "code": "1045",
+    "unit": "Kg's",
+    "stockId": "0.5897195150972561"
+  },
+  {
+    "id": 317,
+    "code": "984",
+    "unit": "Mtr's",
+    "name": "Aluminium Lead Wire 95Sq mm",
+    "stockId": "0.6365413519419041"
+  },
+  {
+    "name": "70 Sqmm LT Joint Kit",
+    "code": "",
+    "unit": "No's",
+    "id": 283,
+    "stockId": "0.6440527040546915"
+  },
+  {
+    "name": "trasition",
+    "unit": "No's",
+    "id": 318,
+    "code": "",
+    "stockId": "0.7176667827736178"
+  },
+  {
+    "name": "Das Communication RMU Matrials",
+    "code": "1132",
+    "unit": "Set's",
+    "id": 302,
+    "stockId": "0.719321826499167"
+  },
+  {
+    "unit": "No's",
+    "id": 278,
+    "code": "",
+    "name": "Metering Box For 500 KVA",
+    "stockId": "0.7257249549916447"
+  },
+  {
+    "unit": "No's",
+    "id": 275,
+    "code": "",
+    "name": "90 KN Disc Insulator Ceramic",
+    "stockId": "0.7420406599577021"
+  },
+  {
+    "code": "0525",
+    "id": 285,
+    "name": "Meter Box with CT Coil 150/5",
+    "unit": "No's",
+    "stockId": "0.7666301915178111"
+  },
+  {
+    "id": 304,
+    "code": "887",
+    "unit": "No's",
+    "name": "250A Fuse Base",
+    "stockId": "0.7816901697611129"
+  },
+  {
+    "code": "685",
+    "id": 307,
+    "name": "C-Channel (Big)",
+    "unit": "No's",
+    "stockId": "0.7956466144792946"
+  },
+  {
+    "code": "884",
+    "name": "LT Protecation Kit",
+    "unit": "No's",
+    "id": 325,
+    "stockId": "0.8106357440608254"
+  },
+  {
+    "code": "996",
+    "unit": "No's",
+    "name": "Aerial Fuse board 4 Way",
+    "id": 327,
+    "stockId": "0.8253368531352152"
+  },
+  {
+    "id": 282,
+    "unit": "No's",
+    "name": "50 Sqmm LT Joint Kit",
+    "code": "",
+    "stockId": "0.8667643138051013"
+  },
+  {
+    "unit": "No's",
+    "name": "Aluminium Lugs 150 Sqmm",
+    "id": 298,
+    "code": "926",
+    "stockId": "0.9074477883058367"
+  },
+  {
+    "unit": "No's",
+    "id": 297,
+    "code": "168",
+    "name": "100A Porcelain Fuse Base",
+    "stockId": "0.9472310609908041"
+  },
+  {
+    "name": "FRP Coping Box",
+    "unit": "No's",
+    "code": "886",
+    "id": 320,
+    "stockId": "0.9780609481112894"
+  },
+  {
+    "id": 305,
+    "code": "882",
+    "name": "400A 4 Pole Break Switch",
+    "unit": "No's",
+    "stockId": "0.9793659429712964"
+  },
+  {
+    "unit": "No's",
+    "name": "3 Way - RMU 2OD+1VL-  Normal",
+    "id": 1,
+    "code": "0184",
+    "stockId": "01Zzc0U56nQQC8uS4iQh"
+  },
+  {
+    "id": 2,
+    "unit": "Set's",
+    "name": "RMU Boot Set",
+    "code": "0468",
+    "stockId": "11wmbOCLKYDhR4SIAPn3"
+  },
+  {
+    "unit": "No's",
+    "id": 3,
+    "name": "5 Hole Fish Plate",
+    "code": "0814",
+    "stockId": "12zQqGMSpPirFHWSc9SJ"
+  },
+  {
+    "unit": "No's",
+    "name": "Spun Pole 11 Mtrs",
+    "id": 4,
+    "code": "0178",
+    "stockId": "16imtkhtQjMM08gz5p7u"
+  },
+  {
+    "id": 5,
+    "name": "Double GOS structure kit",
+    "code": "",
+    "unit": "Set's",
+    "stockId": "18neN03SiNuJi06Y4Rr8"
+  },
+  {
+    "code": "0425",
+    "id": 6,
+    "name": "Copper Lugs 16 sqmm",
+    "unit": "No's",
+    "stockId": "1SIqtq2plE7Tt0kW4Fo5"
+  },
+  {
+    "unit": "Mtr's",
+    "name": "PVC Pipe 63 mm Dia",
+    "id": 7,
+    "code": "0928",
+    "stockId": "1aVRl0LdJtmPkyUyz7g2"
+  },
+  {
+    "id": 8,
+    "unit": "Mtr's",
+    "code": "0546",
+    "name": "Sleeves 3 X 95 Sqmm",
+    "stockId": "2JRZ3osmoAnU7YTk2ptj"
+  },
+  {
+    "name": "Salt",
+    "unit": "Bag's",
+    "id": 9,
+    "code": "0543",
+    "stockId": "2SorHUND4j2wFNMDZBPi"
+  },
+  {
+    "code": "0564",
+    "unit": "No's",
+    "id": 10,
+    "name": "LT Feeder Piller Box 8 Way",
+    "stockId": "2zkt13TtkhpRpYDiu3G7"
+  },
+  {
+    "id": 11,
+    "name": "11 KV Pin Insulator Polymer",
+    "unit": "No's",
+    "code": "0306",
+    "stockId": "3V0iC0yMQd0FDga4IIvi"
+  },
+  {
+    "name": "Rabbit Conductor",
+    "id": 12,
+    "code": "0190",
+    "unit": "Mtr's",
+    "stockId": "3hAWQW0nTD1CsOdipTss"
+  },
+  {
+    "unit": "Kg's/No's",
+    "id": 13,
+    "code": "",
+    "name": "Bolt &Nuts -16X200",
+    "stockId": "3iAzCfXWMjdGJnMAfpQU"
+  },
+  {
+    "name": "Ferrules 16 sqmm",
+    "id": 14,
+    "unit": "No's",
+    "code": "0436",
+    "stockId": "3rDr3kdm7c8AiLzzdx45"
+  },
+  {
+    "id": 15,
+    "name": "Gi Pipe 166.5 mm Dia",
+    "unit": "Mtr's",
+    "code": "0902",
+    "stockId": "4BEud7EI1nJfQQ98VH4l"
+  },
+  {
+    "name": "11KV HG Fuse Unit",
+    "unit": "Set's",
+    "code": "0304",
+    "id": 16,
+    "stockId": "4RvsQ8GuuDrnFMNVDOPx"
+  },
+  {
+    "unit": "No's",
+    "id": 17,
+    "code": "0291",
+    "name": "3.5x95 Sqmm Striaght Through Joint Kit",
+    "stockId": "4YtcYpgjCTaW73EReTyk"
+  },
+  {
+    "name": "Lead Wire 240 Sq mm",
+    "unit": "Mtr's",
+    "code": "0371",
+    "id": 18,
+    "stockId": "5EO0H40ac410h9XrZxvb"
+  },
+  {
+    "code": "0311-0312",
+    "name": "1.1KV Pin Insulator With GI Pin",
+    "id": 19,
+    "unit": "No's",
+    "stockId": "5FQrkrWsI8YzAmWHYCBc"
+  },
+  {
+    "unit": "Kg's/No's",
+    "name": "Bolt &Nuts -16X100",
+    "id": 20,
+    "code": "",
+    "stockId": "5XZ6WpVcfPujZ412odcm"
+  },
+  {
+    "code": "0963",
+    "name": "Three GOS Structure kit",
+    "unit": "Set's",
+    "id": 21,
+    "stockId": "5i7AH7rxwkdhZuoDKxaA"
+  },
+  {
+    "id": 22,
+    "code": "0462",
+    "unit": "No's",
+    "name": "Hume Pipe 150 mm Collar",
+    "stockId": "5oK6L6T3aEbIKIoZ9FoM"
+  },
+  {
+    "name": "Suspension Clamp LT",
+    "id": 23,
+    "code": "0485",
+    "unit": "No's",
+    "stockId": "5pehbCbUaTRIRNQ2kXWb"
+  },
+  {
+    "code": "",
+    "unit": "No's",
+    "name": "RMU Bedding  Channel for 2OD+3VL RMU",
+    "id": 24,
+    "stockId": "5uSLDxmNt119l3kbvwt6"
+  },
+  {
+    "id": 25,
+    "unit": "No's",
+    "code": "0913",
+    "name": "EndCap for UG Cable 3x400sqmm",
+    "stockId": "6388tSOcLT0HC0r5zz9b"
+  },
+  {
+    "unit": "No's",
+    "name": "HT Metering Cubical",
+    "id": 26,
+    "code": "0457",
+    "stockId": "67KNEuu5zQ8CX7nY3VXO"
+  },
+  {
+    "unit": "No's",
+    "id": 27,
+    "name": "3.5x240 sqmm LT Outdoor Pothead",
+    "code": "0274",
+    "stockId": "6CMyOlERvzNyZRjN773h"
+  },
+  {
+    "id": 28,
+    "code": "0459",
+    "unit": "No's",
+    "name": "HTST Support /Top Support",
+    "stockId": "6NoGGjVvCbpuInK1r80S"
+  },
+  {
+    "id": 29,
+    "name": "3.5x240 sqmm LT Indoor Pothead",
+    "unit": "No's",
+    "code": "1171",
+    "stockId": "6QI3G0LjozsJwAxtGI4n"
+  },
+  {
+    "unit": "Set's",
+    "code": "0852",
+    "name": "Dolo Cut out/ HRC Fuse",
+    "id": 30,
+    "stockId": "6YG0S5Kjzmslr9Yjh2Wf"
+  },
+  {
+    "code": "0188",
+    "id": 31,
+    "unit": "No's",
+    "name": "RMU OD (+DC+)",
+    "stockId": "6qrun4fiJi5dnf2XRmcp"
+  },
+  {
+    "id": 32,
+    "unit": "Mtr's",
+    "code": "",
+    "name": "GI Pipe 150 mm Dia Half Cut",
+    "stockId": "6quaSMUaoLil1HPrYMyA"
+  },
+  {
+    "name": "Sand",
+    "code": "1296",
+    "unit": "Bag's",
+    "id": 33,
+    "stockId": "6tbcAChROz76lAaNjjF5"
+  },
+  {
+    "unit": "Mtr's",
+    "name": "Lead Wire 16 Sq mm",
+    "code": "0369",
+    "id": 34,
+    "stockId": "7XIvbfYBEpjPiFeXnPsz"
+  },
+  {
+    "name": "500 kVA Transformer",
+    "code": "0163",
+    "id": 35,
+    "unit": "No's",
+    "stockId": "7whYhMxUPGDkgMg6pfJ7"
+  },
+  {
+    "code": "0811",
+    "id": 36,
+    "name": "2 Hole Fish Plate",
+    "unit": "No's",
+    "stockId": "88WPz81Uo5K4iWHAJC25"
+  },
+  {
+    "unit": "Mtr's",
+    "code": "1163",
+    "id": 37,
+    "name": "PVC Pipe 150 mm Dia",
+    "stockId": "8Gr4ZQDgfPGsJyttcsB2"
+  },
+  {
+    "code": "",
+    "id": 38,
+    "name": "End Caps 120",
+    "unit": "No's",
+    "stockId": "8IFrOTsz1XAMpmeI5jOU"
+  },
+  {
+    "code": "0402",
+    "unit": "No's",
+    "id": 39,
+    "name": "Horizontal X Arm (RCC)",
+    "stockId": "8sObgP6e6vbaN6S9lSno"
+  },
+  {
+    "code": "0813",
+    "id": 40,
+    "name": "4 Hole Fish Plate",
+    "unit": "No's",
+    "stockId": "9WTuBNXPYcQkU93sTr9Q"
+  },
+  {
+    "unit": "No's",
+    "id": 41,
+    "code": "0314",
+    "name": "8 KV Strain Insulator",
+    "stockId": "9baG75C4USceUnuK7UfF"
+  },
+  {
+    "id": 42,
+    "unit": "No's",
+    "name": "Ferrules 120 Sqmm",
+    "code": "0434",
+    "stockId": "9c2ePEXpPOYjQpkCbMVn"
+  },
+  {
+    "name": "Discharge Rod",
+    "unit": "Set's",
+    "id": 43,
+    "code": "0533",
+    "stockId": "A0A6WpR0bQJOdWq9yt9d"
+  },
+  {
+    "name": "Cant Lever",
+    "code": "0553",
+    "unit": "No's",
+    "id": 44,
+    "stockId": "AS3Y2M2fFZQEK8D2dm2s"
+  },
+  {
+    "code": "0531",
+    "id": 45,
+    "unit": "No's",
+    "name": "Dead End Clamp HT",
+    "stockId": "AnExM3BkS2EwtnNr9NKh"
+  },
+  {
+    "unit": "No's",
+    "code": "0432",
+    "id": 46,
+    "name": "Copper Lugs 95 Sqmm",
+    "stockId": "ArDRiO1EYSNfOkW1OGXO"
+  },
+  {
+    "id": 47,
+    "name": "Repair Kit For 3 X 240 Sqmm",
+    "code": "0577",
+    "unit": "No's",
+    "stockId": "AswBT23AbAC3ss2rhOOz"
+  },
+  {
+    "id": 48,
+    "name": "Copper Lugs 120 Sqmm",
+    "code": "0423",
+    "unit": "No's",
+    "stockId": "AwOfQygzJ6abHT8sKzCn"
+  },
+  {
+    "name": "L Angle",
+    "id": 49,
+    "code": "",
+    "unit": "No's",
+    "stockId": "AzL4rNMPvkNsN4a1q0Hh"
+  },
+  {
+    "name": "3x120+95 Sqmm HT AB Cable",
+    "code": "0151",
+    "id": 50,
+    "unit": "Mtr's",
+    "stockId": "B6dOv5ixg7qLZQi5A66V"
+  },
+  {
+    "id": 51,
+    "code": "",
+    "unit": "Kg's/No's",
+    "name": "Bolt &Nuts - For Structure",
+    "stockId": "B9ILvxMCuCUx6rvVXCpn"
+  },
+  {
+    "id": 52,
+    "name": "Feeder Piller Box Stands",
+    "unit": "No's",
+    "code": "0539",
+    "stockId": "BAmtFbWXL09agMqZZGf7"
+  },
+  {
+    "id": 53,
+    "unit": "Mtr's",
+    "code": "0904",
+    "name": "50 mm Duct Pipe",
+    "stockId": "CUMFqiaHPwceSH3Ln0rr"
+  },
+  {
+    "name": "Double Pole TC Structure",
+    "unit": "Set's",
+    "code": "0346",
+    "id": 54,
+    "stockId": "CVHYkUSpIDJQlDOnJG8F"
+  },
+  {
+    "name": "Sleeves 3 X 400 Sqmm",
+    "unit": "Mtr's",
+    "code": "0545",
+    "id": 55,
+    "stockId": "CozRWurBWteslpobbJU5"
+  },
+  {
+    "name": "Precast Concrete Foundation For RMU",
+    "unit": "No's",
+    "id": 56,
+    "code": "0757",
+    "stockId": "CtxZh92DSM3Xtcuh19Kd"
+  },
+  {
+    "id": 57,
+    "name": "Safety Helmet",
+    "code": "0542",
+    "unit": "No's",
+    "stockId": "CvM4X49BOm2wRCNLkqfn"
+  },
+  {
+    "code": "",
+    "unit": "No's",
+    "name": "Brown Tape/Packing Tape",
+    "id": 58,
+    "stockId": "DdyW7IFjXf8gRoVJD2is"
+  },
+  {
+    "code": "0587",
+    "id": 59,
+    "unit": "Bag's",
+    "name": "Charcoal",
+    "stockId": "DtMh8txe4k6I59qIxy8f"
+  },
+  {
+    "id": 60,
+    "unit": "No's",
+    "code": "0555",
+    "name": "Caution Board",
+    "stockId": "E89x6ETT1MPtHzPbo0O4"
+  },
+  {
+    "unit": "Kg's/No's",
+    "name": "Bolt &Nuts -16X75",
+    "code": "",
+    "id": 61,
+    "stockId": "EE4j7T6CrKC19G7k8gTf"
+  },
+  {
+    "code": "0595",
+    "unit": "No's",
+    "name": "RMU Plate",
+    "id": 62,
+    "stockId": "ENXTvOAB480nf6ogk9kx"
+  },
+  {
+    "code": "0451",
+    "unit": "No's",
+    "id": 63,
+    "name": "GOS Pipe 6 Feet",
+    "stockId": "ETmJNU5dwMBpBq6DOKsK"
+  },
+  {
+    "name": "Piercing Connector Small",
+    "unit": "No's",
+    "code": "0496",
+    "id": 64,
+    "stockId": "EWlMxcoFZ5MW9y2H2vrk"
+  },
+  {
+    "name": "HG Fuse Unit Angle",
+    "code": "0403",
+    "unit": "No's",
+    "id": 65,
+    "stockId": "FPvbPo7KrouB1Yr644nP"
+  },
+  {
+    "id": 66,
+    "code": "0327",
+    "name": "Guy Wire",
+    "unit": "Kg's",
+    "stockId": "FY44xp9SX0y6j7iOjNLe"
+  },
+  {
+    "code": "0927",
+    "name": "HDPE Pipe 110 mm Dia",
+    "unit": "Mtr's",
+    "id": 67,
+    "stockId": "Fd3x3J8e12QXSRYcRoUK"
+  },
+  {
+    "unit": "No's",
+    "id": 68,
+    "name": "BESCOM Route Indication Stone",
+    "code": "0470",
+    "stockId": "FkybOoIHCVo9TQSEVS44"
+  },
+  {
+    "id": 69,
+    "unit": "Kg's/No's",
+    "name": "Bolt &Nuts -16X125",
+    "code": "",
+    "stockId": "G5RX7GRiHCUZWuJUyfmg"
+  },
+  {
+    "name": "100 kVA Transformer",
+    "unit": "No's",
+    "id": 70,
+    "code": "0165",
+    "stockId": "GV8RM2pJr2lkF0NzmxtU"
+  },
+  {
+    "name": "Lead Wire 120 Sq mm",
+    "unit": "Mtr's",
+    "code": "0367",
+    "id": 71,
+    "stockId": "GXdbfVDk78okunyvZxAX"
+  },
+  {
+    "code": "",
+    "unit": "No's",
+    "name": "Horizontal X Arm (PSCC)",
+    "id": 72,
+    "stockId": "GeQGLUsjndrdzZeYRiie"
+  },
+  {
+    "unit": "No's",
+    "name": "3x240 Sqmm Indoor Pothead",
+    "code": "0260",
+    "id": 73,
+    "stockId": "Gqbf0N8L2zIUQ0wTW0LZ"
+  },
+  {
+    "name": "RMU VL  (+V+)",
+    "id": 74,
+    "code": "0189",
+    "unit": "No's",
+    "stockId": "H58ebn2aplleDdqn4Koc"
+  },
+  {
+    "name": "40mm Duct Pipe",
+    "unit": "Mtr's",
+    "code": "0903",
+    "id": 75,
+    "stockId": "H6SUkRUri2aZITx1MOj7"
+  },
+  {
+    "unit": "Mtr's",
+    "code": "0374",
+    "id": 76,
+    "name": "Lead Wire 95 Sq mm",
+    "stockId": "HGtbsbdRyq0jlKeTowZN"
+  },
+  {
+    "id": 77,
+    "unit": "No's",
+    "code": "1301",
+    "name": "3 Mtr Brace",
+    "stockId": "HWBjhMby07oEvHgtfvMS"
+  },
+  {
+    "id": 78,
+    "code": "0944",
+    "name": "PVC Pipe 25 mm Dia",
+    "unit": "Mtr's",
+    "stockId": "HbdmVnmGWAUpumDRScIz"
+  },
+  {
+    "name": "Bolt &Nuts -12X75",
+    "id": 79,
+    "unit": "Kg's/No's",
+    "code": "",
+    "stockId": "HlX1XKZk4Ft9zSj3RX3Y"
+  },
+  {
+    "unit": "No's",
+    "id": 80,
+    "name": "Precast Concrete Foundation For TC",
+    "code": "0339",
+    "stockId": "I0lThp1QqIZI3DcixdEN"
+  },
+  {
+    "code": "",
+    "name": "Station Breaker/ MCVCB",
+    "id": 81,
+    "unit": "No's",
+    "stockId": "IFlHXoEOxgAnqmpQhCoz"
+  },
+  {
+    "name": "Single  GOS structure kit",
+    "code": "",
+    "id": 82,
+    "unit": "Set's",
+    "stockId": "JUq0AMQvICOKkhdq9jK8"
+  },
+  {
+    "code": "0922",
+    "unit": "Mtr's",
+    "name": "PVC Pipe 75 mm Dia",
+    "id": 83,
+    "stockId": "JiPfNBuFwyEWP5IniH6I"
+  },
+  {
+    "code": "0515",
+    "id": 84,
+    "name": "Mechanical Connector Polymer",
+    "unit": "No's",
+    "stockId": "Jp0GJfpfDtkhH2MmiwkL"
+  },
+  {
+    "id": 85,
+    "code": "0275",
+    "name": "3.5x240 Sqmm Striaght Through Joint Kit",
+    "unit": "No's",
+    "stockId": "K3aQIkqlXBlBZPrxUaFk"
+  },
+  {
+    "code": "0482",
+    "unit": "No's",
+    "id": 86,
+    "name": "Street Light Metering Box",
+    "stockId": "KU9YKdsjVyyODN4xkZwO"
+  },
+  {
+    "unit": "Kg's/No's",
+    "name": "Bolt &Nuts -16X175",
+    "code": "",
+    "id": 87,
+    "stockId": "Km4kyLvZsFegEMYfTQUT"
+  },
+  {
+    "unit": "Mtr's",
+    "name": "PVC Pipe 90 mm Dia",
+    "id": 88,
+    "code": "0491",
+    "stockId": "KmHCUBhMgLgQ0uIRiDY3"
+  },
+  {
+    "id": 89,
+    "unit": "No's",
+    "name": "1x95 sq mm ABC Outdoor Pothead",
+    "code": "0254",
+    "stockId": "Kodq23kC4wXwmXV2N5M1"
+  },
+  {
+    "code": "0908",
+    "name": "50mm Duct Cupler",
+    "id": 90,
+    "unit": "No's",
+    "stockId": "LGXGjo2gowKxlfuCqkcT"
+  },
+  {
+    "code": "0269",
+    "unit": "No's",
+    "name": "3x95 Sqmm Indoor Pothead",
+    "id": 91,
+    "stockId": "LMB2Oto80I8iQM42yZKf"
+  },
+  {
+    "unit": "Set's",
+    "name": "Lighting Arrestor Polymer",
+    "id": 92,
+    "code": "0309",
+    "stockId": "LRNKrrO9hNPNHJFHtnRE"
+  },
+  {
+    "unit": "No's",
+    "id": 93,
+    "code": "0354",
+    "name": "Spun Pole Horizontal X Arm",
+    "stockId": "LnGgqg9nyKAIylSWkjM6"
+  },
+  {
+    "name": "Dead End Clamp LT",
+    "unit": "No's",
+    "id": 94,
+    "code": "0532",
+    "stockId": "LtYAFyOc4GhY6hpThl5f"
+  },
+  {
+    "unit": "No's",
+    "id": 95,
+    "code": "0481",
+    "name": "Street Light Box",
+    "stockId": "MAPBQe1RSL90nRD5hxXc"
+  },
+  {
+    "code": "0551",
+    "id": 96,
+    "unit": "No's",
+    "name": "Cabel Covering Tiles",
+    "stockId": "MBBMXquuMJMFZKHViYRB"
+  },
+  {
+    "code": "0469",
+    "id": 97,
+    "name": "Rollers",
+    "unit": "No's",
+    "stockId": "MCdgBBMvSLy5xYmixrIw"
+  },
+  {
+    "id": 98,
+    "unit": "Mtr's",
+    "code": "0939",
+    "name": "HDPE Pipe 160 mm Dia",
+    "stockId": "MXDLduFM3P5RM7Pmduur"
+  },
+  {
+    "id": 99,
+    "code": "0325",
+    "name": "Grounding Pipe 40 mm Dia",
+    "unit": "No's",
+    "stockId": "Mualw7NmXKkRxQeef5dt"
+  },
+  {
+    "id": 100,
+    "code": "0472",
+    "unit": "No's",
+    "name": "Spun Pole Bottom Angle",
+    "stockId": "N3amdH5YT7J1TYSygeVY"
+  },
+  {
+    "code": "0536",
+    "unit": "Mtr's",
+    "id": 101,
+    "name": "Earthing Strips",
+    "stockId": "NYSzhI3ec16I5a8x0I1X"
+  },
+  {
+    "id": 102,
+    "unit": "No's",
+    "name": "DP Top Angle",
+    "code": "0535",
+    "stockId": "NoockzY0MOiAu0u1V9oI"
+  },
+  {
+    "id": 103,
+    "unit": "No's",
+    "name": "Cable Tiles",
+    "code": "",
+    "stockId": "OLXE4l96UUqP5IMP9jSI"
+  },
+  {
+    "unit": "No's",
+    "id": 104,
+    "code": "0270",
+    "name": "3x95 Sqmm Outdoor Pothead",
+    "stockId": "OgH3Dfy2xJbNfuASb3Fo"
+  },
+  {
+    "name": "Strain Clamp",
+    "code": "0480",
+    "id": 105,
+    "unit": "No's",
+    "stockId": "OzuSRdWz8YgohOuYVAyl"
+  },
+  {
+    "name": "Compact Substation - 750kVA",
+    "unit": "No's",
+    "id": 106,
+    "code": "0205",
+    "stockId": "P7cptsL0KVB1WylOFfAh"
+  },
+  {
+    "id": 107,
+    "unit": "No's",
+    "code": "0520",
+    "name": "Safety Jacket",
+    "stockId": "PMPwrRHJT9BtHCiVSTsm"
+  },
+  {
+    "name": "Piercing Connector Big",
+    "id": 108,
+    "code": "0495",
+    "unit": "No's",
+    "stockId": "QfYcs7AcSmLWk8KkrefN"
+  },
+  {
+    "unit": "No's",
+    "id": 109,
+    "name": "9 Mtr PSCC Pole",
+    "code": "0175",
+    "stockId": "RSCLik1z2f10L0MSCN3g"
+  },
+  {
+    "name": "Eye Hook",
+    "code": "0538",
+    "unit": "No's",
+    "id": 110,
+    "stockId": "RfdsbOaVyHZVXVZy6phM"
+  },
+  {
+    "id": 111,
+    "unit": "No's",
+    "code": "",
+    "name": "RCC Clamp",
+    "stockId": "RrmzOb3CfKOmziVVpGrt"
+  },
+  {
+    "id": 112,
+    "code": "0407",
+    "name": "4 Pin Brace",
+    "unit": "No's",
+    "stockId": "SBpaIbiaVm3OXVJ8uGp1"
+  },
+  {
+    "id": 113,
+    "unit": "Mtr's",
+    "code": "0104",
+    "name": "3x240 Sqmm HT UG Cable",
+    "stockId": "SPRoCdjaGly6mirEzOhP"
+  },
+  {
+    "name": "Vertical X Arm",
+    "unit": "No's",
+    "id": 114,
+    "code": "0409",
+    "stockId": "SQf5XtLmd08K3fw2B0Xp"
+  },
+  {
+    "name": "CT Coils RMU",
+    "id": 115,
+    "unit": "No's",
+    "code": "0528",
+    "stockId": "Ss5pQLB4lz44bAX7IIoH"
+  },
+  {
+    "unit": "No's",
+    "code": "0338",
+    "name": "ETV Meter/DTC Meter/Energy Meter",
+    "id": 116,
+    "stockId": "TEq6ETe53mz6a0Hq5HKr"
+  },
+  {
+    "name": "PG Clamp",
+    "code": "0492",
+    "id": 117,
+    "unit": "No's",
+    "stockId": "TPGeYZndfIRTuiCro7zZ"
+  },
+  {
+    "id": 118,
+    "code": "0915",
+    "name": "EndCap for AB Cable's",
+    "unit": "No's",
+    "stockId": "TXjjvmZHxdJlIIKpHyz7"
+  },
+  {
+    "code": "0952",
+    "id": 119,
+    "unit": "No's",
+    "name": "H Frame Bottom Angle",
+    "stockId": "TaEALJYcMY41Lktrj9mS"
+  },
+  {
+    "name": "RMU Coupling Matireal",
+    "id": 120,
+    "code": "",
+    "unit": "Set's",
+    "stockId": "TfNnAokkcpdDej638xhM"
+  },
+  {
+    "unit": "No's",
+    "id": 121,
+    "code": "0198",
+    "name": "Announciator Panel",
+    "stockId": "TgKhTkTC8NASJYdrAVaJ"
+  },
+  {
+    "name": "Ferrules 240 Sqmm",
+    "unit": "No's",
+    "id": 122,
+    "code": "0438",
+    "stockId": "Thv8499C8ELn125vT5oG"
+  },
+  {
+    "unit": "No's",
+    "name": "PSCC Pole Clamp",
+    "id": 123,
+    "code": "0900",
+    "stockId": "TumIg2hOoTYQ1hZNuzUb"
+  },
+  {
+    "code": "0347",
+    "unit": "Set's",
+    "name": "DP Structure {Line DP}",
+    "id": 124,
+    "stockId": "UZPQnfP3McUivrPJvAp9"
+  },
+  {
+    "name": "9 Mtr RCC Pole",
+    "id": 125,
+    "code": "0176",
+    "unit": "No's",
+    "stockId": "Ul6ISztJlbxi7cM039Jo"
+  },
+  {
+    "name": "2 Mtr Brace",
+    "id": 126,
+    "unit": "No's",
+    "code": "",
+    "stockId": "VLRKUUI7qcrh9VNd0Ojs"
+  },
+  {
+    "unit": "No's",
+    "code": "0484",
+    "id": 127,
+    "name": "Suspension Clamp HT",
+    "stockId": "VT5DCGINChg3g5WrMeA1"
+  },
+  {
+    "unit": "Mtr's",
+    "name": "3.5x240 Sqmm LT UG Cable",
+    "id": 128,
+    "code": "0109",
+    "stockId": "VXRu01P4SDjZNICV82c6"
+  },
+  {
+    "id": 129,
+    "name": "25 Sq mm Ferrules",
+    "unit": "No's",
+    "code": "0439",
+    "stockId": "W31oPev5Z2RHb26HE2Dp"
+  },
+  {
+    "code": "",
+    "id": 130,
+    "unit": "No's",
+    "name": "Lighting Arrester Angle",
+    "stockId": "WF2SW01P2VPN19CDoucj"
+  },
+  {
+    "unit": "No's",
+    "name": "GOS Pipe 20 Feet",
+    "id": 131,
+    "code": "0450",
+    "stockId": "WV8EHQw04Vp2iGM8Ixjz"
+  },
+  {
+    "id": 132,
+    "unit": "No's",
+    "code": "0906",
+    "name": "50 mm End Cap",
+    "stockId": "WaQAMZVPHDTBZUyqsD5k"
+  },
+  {
+    "id": 133,
+    "unit": "Kg's/No's",
+    "code": "",
+    "name": "Bolt &Nuts -8X40  (Guy Wire Earth)",
+    "stockId": "X0OlW57oVF1AsdQwFtjn"
+  },
+  {
+    "code": "0372",
+    "id": 134,
+    "unit": "Mtr's",
+    "name": "Lead Wire 25 Sq mm",
+    "stockId": "X9HK1vVidbw3cUtjq2LW"
+  },
+  {
+    "name": "Cambrick Tape",
+    "code": "0660",
+    "unit": "No's",
+    "id": 135,
+    "stockId": "Y9hiQnXmm7VGW1xowJGB"
+  },
+  {
+    "id": 136,
+    "unit": "Kg's/No's",
+    "name": "Bolt &Nuts -16X40",
+    "code": "",
+    "stockId": "YUQZUoUidGjVzXnvT4jp"
+  },
+  {
+    "name": "Spiral Earth Electrode",
+    "unit": "No's",
+    "code": "0547",
+    "id": 137,
+    "stockId": "Yq42jjIEYUA0Z9ELj5W7"
+  },
+  {
+    "id": 138,
+    "unit": "Set's",
+    "name": "Spun Pole TC Set",
+    "code": "",
+    "stockId": "YwCg5wP7zcdf4sfIqCFY"
+  },
+  {
+    "unit": "No's",
+    "id": 139,
+    "name": "Spun Pole 4 Pin X Arm",
+    "code": "0350",
+    "stockId": "ZOmptJpDsCntt1rN3pkm"
+  },
+  {
+    "name": "3x400 Sqmm Outdoor Pothead",
+    "unit": "No's",
+    "id": 140,
+    "code": "0265",
+    "stockId": "ZRIQyM5iVo0YwICNBAja"
+  },
+  {
+    "unit": "No's",
+    "id": 141,
+    "code": "0408",
+    "name": "4 Pin X Arm",
+    "stockId": "ZYwCkd9YPD2CJdSxZka0"
+  },
+  {
+    "unit": "Mtr's",
+    "name": "4 C x 2.5 Control Cable",
+    "code": "0118",
+    "id": 142,
+    "stockId": "ZZzkSrNq8VoYDTqGg2UQ"
+  },
+  {
+    "code": "",
+    "unit": "Kg's/No's",
+    "name": "Bolt &Nuts -10X75 (Earthing)",
+    "id": 143,
+    "stockId": "ZwP1qXXHx36JH8dk2yzv"
+  },
+  {
+    "code": "0453",
+    "unit": "No's",
+    "name": "H Frame Only",
+    "id": 144,
+    "stockId": "aRYPtVkkrIquqibPkkvz"
+  },
+  {
+    "unit": "No's",
+    "name": "5 Way - RMU 2OD+3VL- Normal",
+    "id": 145,
+    "code": "0186",
+    "stockId": "aZ3MdHKTP1rVcc9uyuLL"
+  },
+  {
+    "id": 146,
+    "name": "3.5x95 Sqmm LT UG Cable",
+    "unit": "Mtr's",
+    "code": "0114",
+    "stockId": "ae9CvYxoPyC5pMlG4CJO"
+  },
+  {
+    "name": "LT Bushing Connector",
+    "id": 147,
+    "unit": "No's",
+    "code": "0562",
+    "stockId": "asESK2hLsUC4OOdp7L0y"
+  },
+  {
+    "id": 148,
+    "name": "Turn Bukle",
+    "unit": "No's",
+    "code": "0328",
+    "stockId": "b0ipNqJGfhHpF0TT68Wl"
+  },
+  {
+    "id": 149,
+    "unit": "No's",
+    "code": "0206",
+    "name": "Compact Substation - 990kVA",
+    "stockId": "b62kAVZWtBrEgQaidZjb"
+  },
+  {
+    "id": 150,
+    "name": "3 Way - DAS RMU 2OD+1VL",
+    "code": "0181",
+    "unit": "No's",
+    "stockId": "bMDHtrgivsZ0axSRaZkg"
+  },
+  {
+    "id": 151,
+    "unit": "Mtr's",
+    "name": "Lead Wire 185 Sq mm",
+    "code": "0370",
+    "stockId": "bhX2wYVSOCwhfuudnmil"
+  },
+  {
+    "id": 152,
+    "name": "95 Cable End Cap",
+    "code": "0914",
+    "unit": "No's",
+    "stockId": "buF27eT4rmRX7Uf9unlW"
+  },
+  {
+    "code": "0565",
+    "id": 153,
+    "unit": "No's",
+    "name": "LT Spacer",
+    "stockId": "bx8aDE2X55Ndd4or7bVs"
+  },
+  {
+    "code": "0307",
+    "unit": "No's",
+    "name": "45 KN Disc Insulator Polymer",
+    "id": 154,
+    "stockId": "c2LZ7RmuXY2lPYVdcrO9"
+  },
+  {
+    "code": "0324",
+    "id": 155,
+    "name": "GI Wire",
+    "unit": "Kg's",
+    "stockId": "cGrTVNtCw4OgzTHLeSvQ"
+  },
+  {
+    "code": "0116",
+    "unit": "Mtr's",
+    "id": 156,
+    "name": "4 X 10 Sq mm LT UG Cable",
+    "stockId": "cptYR7gxwTZzQPH21uG7"
+  },
+  {
+    "unit": "No's",
+    "name": "Pole Clamp's",
+    "code": "0486",
+    "id": 157,
+    "stockId": "d1rmquaDbTWjrV8t9vXO"
+  },
+  {
+    "name": "Bolt &Nuts -10X40 (Pothead)",
+    "code": "",
+    "id": 158,
+    "unit": "Kg's/No's",
+    "stockId": "daCW0ywx92b3vu5EzfZW"
+  },
+  {
+    "id": 159,
+    "name": "50 Sq mm Ferrules",
+    "code": "0435",
+    "unit": "No's",
+    "stockId": "dowzsgkNKQDsFxSgFxRf"
+  },
+  {
+    "unit": "No's",
+    "id": 160,
+    "name": "1x120 sq mm ABC Outdoor Pothead",
+    "code": "0251",
+    "stockId": "eGIJA2OQdYM5t9HPDoO5"
+  },
+  {
+    "name": "Ferrules 95 Sqmm",
+    "code": "0443",
+    "id": 161,
+    "unit": "No's",
+    "stockId": "eLdqP0BcmmW1jV9OLxeN"
+  },
+  {
+    "unit": "Set's",
+    "code": "",
+    "name": "HRC Blade",
+    "id": 162,
+    "stockId": "eXw1p5MZERxz1AK9fQrC"
+  },
+  {
+    "unit": "Mtr's",
+    "id": 163,
+    "code": "0517",
+    "name": "Alkathen Tube",
+    "stockId": "fUZXNYzf7d8O04HISx17"
+  },
+  {
+    "code": "0509",
+    "unit": "No's",
+    "name": "T Connector",
+    "id": 164,
+    "stockId": "fkFiHgdfAYe4JFFitO7y"
+  },
+  {
+    "id": 165,
+    "code": "0261",
+    "unit": "No's",
+    "name": "3x240 Sqmm Outdoor Pothead",
+    "stockId": "fqx7YX45silrIklQI8RX"
+  },
+  {
+    "id": 166,
+    "code": "",
+    "unit": "Kg's/No's",
+    "name": "Bolt &Nuts -16X150",
+    "stockId": "fwR1ToGP2D7Ir93jqxhB"
+  },
+  {
+    "id": 167,
+    "unit": "No's",
+    "name": "Distrubution Box (3Phase)",
+    "code": "0321",
+    "stockId": "g6FsxkoUjFTG8UUdSoyY"
+  },
+  {
+    "code": "0119",
+    "id": 168,
+    "unit": "Mtr's",
+    "name": "4 X 25 Sq mm LT UG Cable",
+    "stockId": "gM2bkft0pHZor1WZETWF"
+  },
+  {
+    "name": "2 Pin X Arm",
+    "code": "0404",
+    "id": 169,
+    "unit": "No's",
+    "stockId": "gM5sLm1czXh1BflaTDGu"
+  },
+  {
+    "id": 170,
+    "unit": "No's",
+    "code": "0552",
+    "name": "Cable Clamp",
+    "stockId": "gcZvCyK3DQQkILk9T8Ko"
+  },
+  {
+    "id": 171,
+    "unit": "Mtr's",
+    "name": "GI Pipe 150 mm Dia",
+    "code": "0926",
+    "stockId": "hRICgvrhzI4nl5CsT3w7"
+  },
+  {
+    "unit": "No's",
+    "name": "3 Pin X Arm",
+    "id": 172,
+    "code": "0406",
+    "stockId": "hVHpCGdrQwRZDGisrzsf"
+  },
+  {
+    "name": "Eye Bolt",
+    "id": 173,
+    "code": "0322",
+    "unit": "Kg's/No's",
+    "stockId": "hmZVAT7iUoydhu7Eb8Fr"
+  },
+  {
+    "name": "PSCC Pole Clamp For AB Cable",
+    "unit": "Set's",
+    "id": 174,
+    "code": "1180",
+    "stockId": "hv8Y8xGNXFPZ6UOqY6JM"
+  },
+  {
+    "code": "0901",
+    "id": 175,
+    "unit": "Mtr's",
+    "name": "Gi Pipe 115mm Dia",
+    "stockId": "i7Ukr9rmgtzIiyUjJGDu"
+  },
+  {
+    "code": "0463",
+    "name": "Hume Pipe 150 mm Dia",
+    "id": 176,
+    "unit": "No's",
+    "stockId": "iKd7KPAWXPSkP6tU9Ejf"
+  },
+  {
+    "id": 177,
+    "name": "PG Clamp Coyote to Coyote",
+    "code": "0493",
+    "unit": "No's",
+    "stockId": "iSPCmJx8EmVORcpWKCJM"
+  },
+  {
+    "code": "",
+    "name": "Length Brace",
+    "unit": "No's",
+    "id": 178,
+    "stockId": "irQse1xGefuD7fZaDWL1"
+  },
+  {
+    "unit": "No's",
+    "name": "Repair Kit For 3 X 400 Sqmm",
+    "id": 179,
+    "code": "0578",
+    "stockId": "j4XW9VOWBoSYGaTM1jhT"
+  },
+  {
+    "unit": "No's",
+    "id": 180,
+    "name": "25 Sq mm Copper Lugs",
+    "code": "0428",
+    "stockId": "jt8eStMq6SaqYiwiGx82"
+  },
+  {
+    "name": "3X95+16+70 Sqmm LT AB Cable",
+    "code": "0152",
+    "unit": "Mtr's",
+    "id": 181,
+    "stockId": "juoMMZX0OnhWe9aecbAx"
+  },
+  {
+    "name": "2 Pin Brace",
+    "id": 182,
+    "code": "",
+    "unit": "No's",
+    "stockId": "jz3ZVdvps9prlvGj0ikI"
+  },
+  {
+    "code": "0563",
+    "name": "LT Feeder Piller Box 12 Way",
+    "id": 183,
+    "unit": "No's",
+    "stockId": "k3in6533v7y1KlvEsOQb"
+  },
+  {
+    "unit": "No's",
+    "id": 184,
+    "name": "EndCap for UG Cable 3x95sqmm",
+    "code": "",
+    "stockId": "k8EcUTC381ZIYcdFjhUI"
+  },
+  {
+    "name": "Insulation Tape",
+    "id": 185,
+    "code": "0519",
+    "unit": "No's",
+    "stockId": "kDv5WRA05Owa7lBeBqlB"
+  },
+  {
+    "name": "Caution Tape",
+    "id": 186,
+    "code": "0556",
+    "unit": "No's",
+    "stockId": "kJr1Gn5SkljEys63iNFO"
+  },
+  {
+    "name": "Coyote Conductor",
+    "code": "0191",
+    "unit": "Mtr's",
+    "id": 187,
+    "stockId": "kLFne2YEJfXP8acQ8GSv"
+  },
+  {
+    "unit": "No's",
+    "name": "Copper Lugs 240 Sqmm",
+    "id": 188,
+    "code": "0427",
+    "stockId": "kbrAFHUPRjyyIyiqc2Yk"
+  },
+  {
+    "code": "0949",
+    "name": "Bichamen (Tar)",
+    "unit": "Kg's",
+    "id": 189,
+    "stockId": "kd4lSsYa2kXlBsN5Mpq2"
+  },
+  {
+    "code": "0544",
+    "unit": "Mtr's",
+    "id": 190,
+    "name": "Sleeves 3 X 240 Sqmm",
+    "stockId": "kyyfpM3DT1UUB66nvo1k"
+  },
+  {
+    "id": 191,
+    "name": "Repair Kit For 3 X 95 Sqmm",
+    "code": "0579",
+    "unit": "No's",
+    "stockId": "l4CKMG4rwJaVaBUWW07H"
+  },
+  {
+    "code": "",
+    "name": "Bolt &Nuts -12X40",
+    "id": 192,
+    "unit": "Kg's/No's",
+    "stockId": "lIRXUs0HycekihMFhHfi"
+  },
+  {
+    "code": "0541",
+    "unit": "No's",
+    "name": "Safety Cone",
+    "id": 193,
+    "stockId": "lOqTWgfCs0eo1mDfXOYC"
+  },
+  {
+    "name": "RCC  Clamp",
+    "id": 194,
+    "code": "0489",
+    "unit": "No's",
+    "stockId": "lpU5Rmg1RU8brHUo7Uec"
+  },
+  {
+    "name": "FRP Gratings",
+    "id": 195,
+    "unit": "No's",
+    "code": "0323",
+    "stockId": "lw3DvEqdhrHl5wPT83oh"
+  },
+  {
+    "code": "",
+    "unit": "No's",
+    "id": 196,
+    "name": "H Frame For Spun Pole",
+    "stockId": "lzizjIa8aKgFVYL0p34f"
+  },
+  {
+    "id": 197,
+    "unit": "No's",
+    "code": "",
+    "name": "Pcc/Guy Clamp",
+    "stockId": "m9f718MUJjV6SBuIKx6a"
+  },
+  {
+    "code": "0920",
+    "unit": "Mtr's",
+    "id": 198,
+    "name": "PVC Pipe 110 mm Dia",
+    "stockId": "mKBhy4PwKKC29QUiewwc"
+  },
+  {
+    "id": 199,
+    "code": "0266",
+    "unit": "No's",
+    "name": "3x400 Sqmm Straight Through Joint Kit",
+    "stockId": "mQCbiVRcZJ7l95dKf1Uy"
+  },
+  {
+    "code": "0405",
+    "unit": "No's",
+    "id": 200,
+    "name": "3 Pin Brace",
+    "stockId": "mWnbowfF2mH0ahr77xSu"
+  },
+  {
+    "name": "400 Cable End Cap",
+    "unit": "No's",
+    "code": "",
+    "id": 201,
+    "stockId": "mmBNZ0d8I5mwL4Y2Cmd2"
+  },
+  {
+    "unit": "No's",
+    "name": "50 Sq mm Copper Lugs",
+    "id": 202,
+    "code": "0430",
+    "stockId": "n2ILDD8qSHeHjVS2xhGv"
+  },
+  {
+    "name": "GI Flat",
+    "id": 203,
+    "unit": "Mtr's",
+    "code": "0516",
+    "stockId": "n2XtbJszSEeVqvoWHbwb"
+  },
+  {
+    "name": "OFC Duct Chamber with Cap",
+    "unit": "Set's",
+    "id": 204,
+    "code": "1246",
+    "stockId": "n954IRK2HrtVCxeGvEwv"
+  },
+  {
+    "unit": "Mtr's",
+    "id": 205,
+    "name": "4 X 50 Sq mm LT UG Cable",
+    "code": "0120",
+    "stockId": "nQJIPSQtH05PqaIoO2Is"
+  },
+  {
+    "unit": "No's",
+    "code": "0569",
+    "name": "Megger",
+    "id": 206,
+    "stockId": "o2835Qqv8XBVO4RcpjEz"
+  },
+  {
+    "id": 207,
+    "name": "3x400 Sqmm HT UG Cable",
+    "code": "0105",
+    "unit": "Mtr's",
+    "stockId": "o4qdRZYbYmJ4nLYB3MAb"
+  },
+  {
+    "id": 208,
+    "code": "0320",
+    "name": "Distrubution Box (Single Phase)",
+    "unit": "No's",
+    "stockId": "oIX448r6D46u0DC1Q6GX"
+  },
+  {
+    "unit": "Kg's",
+    "id": 209,
+    "name": "Rubber Compound",
+    "code": "0596",
+    "stockId": "oIrNJq4KSpmtCULpqo9e"
+  },
+  {
+    "code": "0568",
+    "id": 210,
+    "name": "Mechanical Connector Mounting Frame",
+    "unit": "No's",
+    "stockId": "oe1qwChlm6XXjdRMxdqz"
+  },
+  {
+    "code": "0281",
+    "name": "Transition Joint Kit - 95Sqmm",
+    "unit": "No's",
+    "id": 211,
+    "stockId": "olK9Dc1sHUrEty1cX0CZ"
+  },
+  {
+    "name": "Spun Pole Step Angle",
+    "code": "0475",
+    "unit": "No's",
+    "id": 212,
+    "stockId": "opmoh7iLG4wvYIcDxh4y"
+  },
+  {
+    "unit": "No's",
+    "id": 213,
+    "name": "Spun Pole Clamp",
+    "code": "0474",
+    "stockId": "oxwBKLY6tVvwMf26jQ84"
+  },
+  {
+    "name": "GOS Cup Set",
+    "unit": "No's",
+    "id": 214,
+    "code": "0448",
+    "stockId": "p2BmYmKQIUu8TQu1Iyco"
+  },
+  {
+    "id": 215,
+    "code": "0343",
+    "unit": "No's",
+    "name": "Side 4 Pin X Arm /Special 4 Pin X Arm",
+    "stockId": "pPq4nLWX2k8ASA1lcEhv"
+  },
+  {
+    "code": "0318",
+    "name": "LT Distribution Box 250 KVA",
+    "id": 216,
+    "unit": "No's",
+    "stockId": "pR310MQLHDLq3ZGnNCjS"
+  },
+  {
+    "unit": "No's",
+    "code": "",
+    "name": "RMU Bedding  Channel for OD Rmu",
+    "id": 217,
+    "stockId": "pUmJ1M5Y1Z5cTidjeT19"
+  },
+  {
+    "code": "0598",
+    "id": 218,
+    "unit": "No's",
+    "name": "RTU Panel",
+    "stockId": "phxyDKBpWeRexocm3KAb"
+  },
+  {
+    "code": "0106",
+    "name": "3x95 Sqmm HT UG Cable",
+    "id": 219,
+    "unit": "Mtr's",
+    "stockId": "pnUtzTavfc1DLI92pPdB"
+  },
+  {
+    "code": "0117",
+    "id": 220,
+    "name": "4 X 16 Sq mm LT UG Cable",
+    "unit": "Mtr's",
+    "stockId": "qMiBGTG8ZiRHxgHsoIWK"
+  },
+  {
+    "unit": "Mtr's",
+    "code": "",
+    "id": 221,
+    "name": "19 C x2.5  Control Cable",
+    "stockId": "qYhSN4ytdHYKidoq81cN"
+  },
+  {
+    "name": "Danger Board",
+    "code": "0530",
+    "id": 222,
+    "unit": "No's",
+    "stockId": "qu27DQcFxMjCX4wXo7aR"
+  },
+  {
+    "name": "6 Way - RMU 2OD+4VL- Normal",
+    "code": "0296",
+    "id": 223,
+    "unit": "No's",
+    "stockId": "qzwH3FUwKjmRZJLHkv64"
+  },
+  {
+    "name": "Bolt &Nuts -16X225 (Raising Clamp)",
+    "id": 224,
+    "unit": "Kg's/No's",
+    "code": "",
+    "stockId": "r8hGgqW85pnkphW3KBw0"
+  },
+  {
+    "name": "PVC Pipe 180 mm Dia",
+    "id": 225,
+    "unit": "Mtr's",
+    "code": "1177",
+    "stockId": "rCOAF2ytu6fAiZAaxMtC"
+  },
+  {
+    "unit": "Set's",
+    "name": "H Frame Set",
+    "id": 226,
+    "code": "0348",
+    "stockId": "s9HcHxEXukvBHipy3YhO"
+  },
+  {
+    "code": "0921",
+    "id": 227,
+    "unit": "Mtr's",
+    "name": "PVC Pipe 40 mm Dia",
+    "stockId": "sFyZ5kVyHowvqdqwiSld"
+  },
+  {
+    "id": 228,
+    "code": "0326",
+    "unit": "No's",
+    "name": "Guy Rod",
+    "stockId": "sSQOYBoH7Wgoc8dz4yyf"
+  },
+  {
+    "name": "15 KV Strain Insulator",
+    "code": "0316",
+    "unit": "No's",
+    "id": 229,
+    "stockId": "sWEwU3X3XJj6RoLYcpPZ"
+  },
+  {
+    "id": 230,
+    "name": "90 KN Disc Insulator Polymer with Srain",
+    "unit": "No's",
+    "code": "315",
+    "stockId": "svzt3zcXaGnEN9LknJwX"
+  },
+  {
+    "name": "Bhela Patti",
+    "id": 231,
+    "unit": "No's",
+    "code": "0657",
+    "stockId": "swInPP3YGm9qPgh4RHWH"
+  },
+  {
+    "id": 232,
+    "code": "0659",
+    "name": "Cable Tie",
+    "unit": "No's",
+    "stockId": "tJE4ZeZfC2pIv2kCoHxX"
+  },
+  {
+    "id": 233,
+    "code": "0401",
+    "name": "Brace 1 Mtrs",
+    "unit": "No's",
+    "stockId": "tf9bu8lX5K1keV8lqaCe"
+  },
+  {
+    "code": "",
+    "id": 234,
+    "unit": "No's",
+    "name": "RMU Bedding Channel For 2OD+1VL RMU",
+    "stockId": "tnoCVo1SLjcif50yQi4x"
+  },
+  {
+    "name": "3X95+70 Sqmm HT AB Cable",
+    "code": "0153",
+    "unit": "Mtr's",
+    "id": 235,
+    "stockId": "u9mgd8VrJz6j3ClHYG5Z"
+  },
+  {
+    "unit": "Mtr's",
+    "name": "PVC Pipe 32 mm Dia",
+    "code": "0909",
+    "id": 236,
+    "stockId": "uUOeTlwdKqcZurzioG4p"
+  },
+  {
+    "code": "0185",
+    "name": "4 Way - RMU 2OD+2VL- Normal",
+    "id": 237,
+    "unit": "No's",
+    "stockId": "uXGo1121LfXWWjLlXRDM"
+  },
+  {
+    "code": "0812",
+    "id": 238,
+    "name": "3 Hole Fish Plate",
+    "unit": "No's",
+    "stockId": "uhBHBeAAhwlpAUAq5Eua"
+  },
+  {
+    "unit": "Set's",
+    "code": "0301",
+    "id": 239,
+    "name": "11 KV 200 Amps GOS",
+    "stockId": "umGfK9Y4AKX5BVtCDvQd"
+  },
+  {
+    "code": "",
+    "name": "5 Way - DAS RMU 2OD+3VL",
+    "unit": "No's",
+    "id": 240,
+    "stockId": "v9YJkaKTRynkMjNbXsO8"
+  },
+  {
+    "code": "0262",
+    "id": 241,
+    "name": "3x240 Sqmm Straight Through Joint Kit",
+    "unit": "No's",
+    "stockId": "vQki7v2bGKckp0WjdrMS"
+  },
+  {
+    "code": "",
+    "unit": "No's",
+    "name": "C Channels",
+    "id": 242,
+    "stockId": "vSPWn0DnnTsQqKK2Ozri"
+  },
+  {
+    "id": 243,
+    "code": "0271",
+    "unit": "No's",
+    "name": "3x95 Sqmm Straight Through Joint Kit",
+    "stockId": "vs1qSmhBPNUTYigvKyLE"
+  },
+  {
+    "id": 244,
+    "unit": "Set's",
+    "name": "11 KV 400 Amps GOS",
+    "code": "0303",
+    "stockId": "wETIHFAg3jWgeFT6iOcI"
+  },
+  {
+    "code": "0162",
+    "unit": "No's",
+    "id": 245,
+    "name": "250 kVA Transformer",
+    "stockId": "wkZDwxhLCvNaMb4r5SGv"
+  },
+  {
+    "unit": "Bag's",
+    "code": "1241",
+    "id": 246,
+    "name": "Cement",
+    "stockId": "xBOD1A9kFuUYwmWbpPqz"
+  },
+  {
+    "name": "RMU Bedding Channel For 2OD+2VL RMU",
+    "unit": "No's",
+    "id": 247,
+    "code": "",
+    "stockId": "xGSmoCO9grAWEu9sE8Ee"
+  },
+  {
+    "name": "Pole Clamp ABC",
+    "id": 248,
+    "unit": "Set's",
+    "code": "",
+    "stockId": "xGgFS6s4QieAR17HcFT6"
+  },
+  {
+    "unit": "No's",
+    "name": "11 Kv Horizantal X Arm",
+    "code": "",
+    "id": 249,
+    "stockId": "xMj1AtvyYCgdBPVkmHpF"
+  },
+  {
+    "code": "0833",
+    "unit": "No's",
+    "name": "Fuse Wire",
+    "id": 250,
+    "stockId": "xTE3hrbiX3W37n5gZAfp"
+  },
+  {
+    "name": "Bus Bar With Sleeve",
+    "unit": "No's",
+    "code": "",
+    "id": 251,
+    "stockId": "xhnVJCePbXHQknV5FNxn"
+  },
+  {
+    "unit": "No's",
+    "id": 252,
+    "name": "3x400 Sqmm Indoor Pothead",
+    "code": "0264",
+    "stockId": "y78PCU8YRrBP5YRUADeE"
+  },
+  {
+    "unit": "Bag's",
+    "code": "",
+    "id": 253,
+    "name": "Jelly",
+    "stockId": "yXUhwBcZMvDsU2CUN9wE"
+  },
+  {
+    "name": "PVC Pipe Bend -40mm",
+    "id": 254,
+    "code": "",
+    "unit": "No's",
+    "stockId": "yoSrKOCWrsMSwRTJlzPt"
+  },
+  {
+    "unit": "No's",
+    "name": "40mm Duct Cupler",
+    "id": 255,
+    "code": "",
+    "stockId": "yxtBXqH94PD3QRBaDl6U"
+  },
+  {
+    "name": "4 way - DAS RMU 2OD+2VL",
+    "id": 256,
+    "unit": "No's",
+    "code": "0182",
+    "stockId": "yywbUolmGvGln12w4yLY"
+  },
+  {
+    "name": "Safety Belt",
+    "id": 257,
+    "unit": "No's",
+    "code": "0540",
+    "stockId": "z5GSLQrTRkQ0QID83PI0"
+  },
+  {
+    "unit": "No's",
+    "code": "0333",
+    "name": "Metering Box For 250 KVA",
+    "id": 258,
+    "stockId": "z7dFpMrTcOXXQwPaXj3Q"
+  },
+  {
+    "id": 259,
+    "unit": "No's",
+    "name": "Ferrules 185 Sqmm",
+    "code": "0437",
+    "stockId": "zGQnvmj03ZmiI2eXlRfY"
+  },
+  {
+    "code": "0359",
+    "unit": "Set's",
+    "id": 260,
+    "name": "Transformer Mounting Structure",
+    "stockId": "zHbQlwlLp9fbOSvKsXcA"
+  },
+  {
+    "name": "GI Pipe 100 mm Dia",
+    "unit": "Mtr's",
+    "id": 261,
+    "code": "0925",
+    "stockId": "zM1dbQen3lrR6LqHKwxS"
+  },
+  {
+    "unit": "Set's",
+    "name": "Three GOS Structure kit Single Side",
+    "id": 262,
+    "code": "",
+    "stockId": "zVpDNK1PKOVYysyfiF4w"
+  },
+  {
+    "unit": "No's",
+    "code": "",
+    "id": 263,
+    "name": "40 mm End Cap",
+    "stockId": "zbPePYA4UEkiPTHppWlW"
+  },
+  {
+    "code": "0426",
+    "name": "Copper Lugs 185 Sqmm",
+    "id": 264,
+    "unit": "No's",
+    "stockId": "zxfCYbePAWYBeiRHQhEL"
+  }
+]

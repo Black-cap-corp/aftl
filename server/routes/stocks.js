@@ -3,6 +3,7 @@ const { default: mongoose } = require("mongoose");
 const router = express.Router();
 const verifyAuth = require("../middleware/auth");
 const StockModel = require("../models/stock");
+const stocks = require("./existingstocks");
 
 router.get("/", async (req, res) => {
   const data = await StockModel.find();
@@ -41,6 +42,23 @@ router.post("/delete", verifyAuth, async (req, res) => {
   } else {
     res.status(400).json({ status: "error", message: "error updating" });
   }
+});
+
+router.post("/updateExistingStocks", async (req, respo) => {
+  const newStocksArray = [];
+  stocks.forEach((stock) => {
+    const el = {
+      name: stock.name,
+      code: !isNaN(Number(stock.code)) ? Number(stock.code) : 0,
+      unit: stock.unit,
+    };
+    newStocksArray.push(el);
+  });
+
+  StockModel.insertMany(newStocksArray).then((res) => {
+    console.log(res);
+    respo.status(200).send("Ok");
+  });
 });
 
 module.exports = router;

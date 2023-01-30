@@ -41,6 +41,21 @@ router.post("/update", verifyAuthToken, async (req, res) => {
   }
 });
 
+router.post("/getContractor", verifyAuthToken, async (req, res) => {
+  const { id } = req.body;
+  console.log(id);
+  const result = await firmModel.findOne({
+    _id: mongoose.Types.ObjectId(id),
+  });
+
+  res.status(201).json({
+    id: mongoose.Types.ObjectId(result._id),
+    firm: result.firm,
+    contractor: result.contractor,
+    code: result.code,
+  });
+});
+
 router.post("/delete", verifyAuthToken, async (req, res) => {
   const element = req.body;
   const result = await firmModel.deleteOne({

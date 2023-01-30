@@ -11,10 +11,13 @@ const PDFDownloadDocument = ({
   workorder,
   type = INDENT_ENUM.ISSUE,
   user,
+  identity,
+  contractor,
 }) => {
   const transcationTimeStamp = selIndent?.history?.find(
     (his) => his.statusCode == 1
   )?.when;
+  console.log(selIndent);
 
   const [displayStocks, setDisplayStocks] = useState([]);
   useEffect(() => {
@@ -121,6 +124,19 @@ const PDFDownloadDocument = ({
               leftValue={selIndent?.location}
               rightLabel="Vehicle"
               rightValue={selIndent?.vehicle}
+            />
+            <PDFRow
+              leftLabel="Contractor"
+              leftValue={contractor.contractor}
+              rightLabel="Firm"
+              rightValue={contractor.firm}
+            />
+
+            <PDFRow
+              leftLabel="Site Engineer"
+              leftValue={identity.name}
+              rightLabel=""
+              rightValue=""
             />
           </>
         )}

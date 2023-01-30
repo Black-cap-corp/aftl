@@ -34,6 +34,8 @@ const IssueDetailsContainer = () => {
   const [operationType, setOperationType] = useState("");
   const [btnVariant, setBtnVariant] = useState("");
   const [primaryBtnText, setPrimaryBtnText] = useState("");
+  const [contractor, setContractor] = useState("");
+  const [ids, setIds] = useState([]);
 
   const handleCloseConfirm = () => setShowConfirm(false);
 
@@ -63,10 +65,10 @@ const IssueDetailsContainer = () => {
         },
         { app: [], mobile: [] }
       );
-
       getIdentities(ids).then(
         (res) => {
           const identities = res.data;
+          setIds(identities);
           const formattedHistory = selIndent.history.map((his) => {
             return {
               who: identities?.find((ide) => ide?._id == his.who)?.name,
@@ -79,6 +81,10 @@ const IssueDetailsContainer = () => {
         },
         (error) => console.log("error")
       );
+
+      getContractor(selIndent.contractor).then((res) => {
+        setContractor(res.data);
+      });
     }
   }, [selIndent]);
 
@@ -193,6 +199,8 @@ const IssueDetailsContainer = () => {
           user={user}
           selIndent={selIndent || {}}
           workorder={workorder}
+          contractor={contractor}
+          identities={ids}
           submitHandlerForApprover={submitHandlerForApprover}
         />
       </div>
@@ -240,6 +248,19 @@ const getIdentities = (ids) => {
   return axios.post(
     `${BASE_URL}/user/getIdentities`,
     { ids },
+    {
+      headers: {
+        authorization: jwt,
+      },
+    }
+  );
+};
+
+const getContractor = (id) => {
+  const jwt = sessionStorage.getItem("auth_token");
+  return axios.post(
+    `${BASE_URL}/firm/getContractor`,
+    { id },
     {
       headers: {
         authorization: jwt,

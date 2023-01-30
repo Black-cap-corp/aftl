@@ -92,6 +92,7 @@ const BasicForm = ({
   };
   const onChangeContractors = (selected) => {
     // Handle selections...
+    console.log(selected);
     setSelContractors(selected);
   };
 

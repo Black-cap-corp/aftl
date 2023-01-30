@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { INDENT_ENUM, OPERATOR_ENUM } from "./issue.const";
 import { PDFDownloadLink } from "@react-pdf/renderer";
 import PDFDownloadDocument from "../../shared/PDF/PDFDownload";
@@ -12,7 +12,16 @@ const IssueFooter = ({
   submitHandlerForApprover,
   workorder,
   type = INDENT_ENUM.ISSUE,
+  contractor,
+  identities = [],
 }) => {
+  const [identity, setIdentity] = useState({});
+  useEffect(() => {
+    const ide = identities?.find((id) => id._id == selIndent?.requestor);
+    if (ide) {
+      setIdentity(ide);
+    }
+  }, [identities]);
   return (
     <div
       style={{
@@ -99,7 +108,9 @@ const IssueFooter = ({
                 selIndent={selIndent}
                 workorder={workorder}
                 user={user.name}
+                contractor={contractor}
                 type={INDENT_ENUM.ISSUE}
+                identity={identity}
               />
             }
             fileName={`${selIndent.indentNo}.pdf`}

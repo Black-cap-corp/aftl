@@ -97,6 +97,13 @@ const CreateWorkorderForm = ({
         stocks.push(stock);
       }
     }
+
+    console.log(
+      firms_data.filter((firm) => {
+        console.log(firm.id);
+        return selContractors.findIndex((sel) => sel.id === firm.id) > -1;
+      })
+    );
     const workorder = {
       workorder: firstFormValues.workorder,
       project: {

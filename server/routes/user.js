@@ -47,12 +47,10 @@ router.post("/getIdentities", async (req, res) => {
     { _id: { $in: ids?.app } },
     { _id: 1, name: 1 }
   ).lean();
-  const appUsers = await MobileuserModel.find(
-    {
-      _id: { $in: ids?.mobile },
-    },
-    { _id: 1, name: 1 }
-  ).lean();
+  const appUsers = await MobileuserModel.find({
+    _id: { $in: ids?.mobile },
+  }).lean();
+  console.log(appUsers);
 
   console.log(webUsers, appUsers, "here");
 

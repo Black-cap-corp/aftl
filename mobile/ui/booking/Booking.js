@@ -15,7 +15,7 @@ const Booking = ({route, navigation}) => {
       const user = JSON.parse(value);
       const request = {
         workorder: workorder.workorder,
-        contractor: workorder.contractor._id,
+        contractor: workorder.contractor.id,
         location: workorder.location,
         vehicle: workorder.vehicle,
         requestor: user._id,
