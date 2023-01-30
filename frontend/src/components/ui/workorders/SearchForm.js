@@ -16,7 +16,8 @@ const SearchForm = ({ data, showModel }) => {
     { value: "", display: "Select a division" },
   ]);
   const [subdivisions, setSubdivisions] = useState([
-    { value: "", display: "Select a subdivision" },
+    { value: "", display: "Select Sub division" },
+    { value: "all", display: "All Subdivisions" },
   ]);
 
   useEffect(() => {
@@ -27,6 +28,7 @@ const SearchForm = ({ data, showModel }) => {
   }, [data]);
 
   const handleChange = (values) => {
+    console.log(values);
     if (values.project) {
       const divisions_data =
         data?.find((project) => project.id === values["project"])?.divisions ||
@@ -54,11 +56,17 @@ const SearchForm = ({ data, showModel }) => {
       });
 
       setSubdivisions([
-        { value: "", display: "Select a subdivision" },
+        { value: "", display: "Select Sub division" },
+        { value: "all", display: "All Subdivisions" },
         ...selectSubdivisions,
       ]);
     } else {
-      setSubdivisions([[{ value: "", display: "Select a subdivision" }]]);
+      setSubdivisions([
+        [
+          { value: "", display: "Select Sub division" },
+          { value: "all", display: "All Subdivisions" },
+        ],
+      ]);
     }
   };
 

@@ -13,11 +13,11 @@ const PDFDownloadDocument = ({
   user,
   identity,
   contractor,
+  parentWorkorder,
 }) => {
   const transcationTimeStamp = selIndent?.history?.find(
     (his) => his.statusCode == 1
   )?.when;
-  console.log(selIndent);
 
   const [displayStocks, setDisplayStocks] = useState([]);
   useEffect(() => {
@@ -62,9 +62,7 @@ const PDFDownloadDocument = ({
 
       setDisplayStocks(editedStocks);
     }
-  }, [workorder]);
-
-  console.log(type);
+  }, [workorder, parentWorkorder, selIndent]);
 
   return (
     <Document>
@@ -92,7 +90,7 @@ const PDFDownloadDocument = ({
 
         {type == INDENT_ENUM.RETURN && (
           <View style={{ textAlign: "center" }}>
-            <Text style={{ fontSize: 14 }}>{workorder?.indentNo}</Text>
+            <Text style={{ fontSize: 14 }}>{selIndent?.indentNo}</Text>
           </View>
         )}
         {type == INDENT_ENUM.ISSUE && (
@@ -103,43 +101,57 @@ const PDFDownloadDocument = ({
           </View>
         )}
 
-        {type == INDENT_ENUM.ISSUE && (
-          <>
-            <PDFRow
-              leftLabel="Division"
-              leftValue={workorder?.division?.name}
-              rightLabel="Date"
-              rightValue={new Date(transcationTimeStamp).toDateString()}
-            />
+        <>
+          <PDFRow
+            leftLabel="Division"
+            leftValue={
+              type == INDENT_ENUM.RETURN
+                ? parentWorkorder?.division?.name
+                : workorder?.division?.name
+            }
+            rightLabel="Date"
+            rightValue={new Date(transcationTimeStamp).toDateString()}
+          />
 
-            <PDFRow
-              leftLabel="Sub division"
-              leftValue={workorder?.subdivision?.name}
-              rightLabel="Workorder"
-              rightValue={workorder?.displayName}
-            />
+          <PDFRow
+            leftLabel="Sub division"
+            leftValue={
+              type == INDENT_ENUM.RETURN
+                ? parentWorkorder?.subdivision?.name
+                : workorder?.subdivision?.name
+            }
+            rightLabel="Workorder"
+            rightValue={
+              type == INDENT_ENUM.RETURN
+                ? parentWorkorder.displayName
+                : workorder?.displayName
+            }
+          />
 
-            <PDFRow
-              leftLabel="Location"
-              leftValue={selIndent?.location}
-              rightLabel="Vehicle"
-              rightValue={selIndent?.vehicle}
-            />
-            <PDFRow
-              leftLabel="Contractor"
-              leftValue={contractor.contractor}
-              rightLabel="Firm"
-              rightValue={contractor.firm}
-            />
+          <PDFRow
+            leftLabel="Location"
+            leftValue={
+              type == INDENT_ENUM.RETURN
+                ? workorder.location
+                : selIndent?.location
+            }
+            rightLabel="Vehicle"
+            rightValue={selIndent?.vehicle}
+          />
+          <PDFRow
+            leftLabel="Contractor"
+            leftValue={contractor?.contractor}
+            rightLabel="Firm"
+            rightValue={contractor?.firm}
+          />
 
-            <PDFRow
-              leftLabel="Site Engineer"
-              leftValue={identity.name}
-              rightLabel=""
-              rightValue=""
-            />
-          </>
-        )}
+          <PDFRow
+            leftLabel="Site Engineer"
+            leftValue={identity?.name}
+            rightLabel=""
+            rightValue=""
+          />
+        </>
 
         {type == INDENT_ENUM.ISSUE && (
           <PDFTableRow

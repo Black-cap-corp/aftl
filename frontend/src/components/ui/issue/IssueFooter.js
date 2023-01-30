@@ -14,6 +14,7 @@ const IssueFooter = ({
   type = INDENT_ENUM.ISSUE,
   contractor,
   identities = [],
+  parentWorkorder,
 }) => {
   const [identity, setIdentity] = useState({});
   useEffect(() => {
@@ -111,6 +112,7 @@ const IssueFooter = ({
                 contractor={contractor}
                 type={INDENT_ENUM.ISSUE}
                 identity={identity}
+                parentWorkorder={null}
               />
             }
             fileName={`${selIndent.indentNo}.pdf`}
@@ -137,6 +139,9 @@ const IssueFooter = ({
                 workorder={workorder}
                 user={user.name}
                 type={INDENT_ENUM.RETURN}
+                contractor={contractor}
+                identity={identity}
+                parentWorkorder={parentWorkorder}
               />
             }
             fileName={`${selIndent.indentNo}.pdf`}

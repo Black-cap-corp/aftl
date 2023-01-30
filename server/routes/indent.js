@@ -33,7 +33,6 @@ router.post("/add", async (req, res) => {
       };
 
       const neededFor = new Date();
-      neededFor.setDate(neededFor.getDate() + 1);
 
       const request = {
         ...indent,

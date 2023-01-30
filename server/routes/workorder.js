@@ -220,11 +220,22 @@ const exportData = (indents, returnIndents, stocks, workorder) => {
 
 router.post("/", verifyAuth, async (req, res) => {
   const { filter } = req.body;
-  const result = await workOrderModel.find({
-    "division.id": filter.division,
-    "project.id": filter.project,
-    "subdivision.id": filter.subdivision,
-  });
+  let result = [];
+  if (filter.subdivision == "all") {
+    result = await workOrderModel.find({
+      "division.id": filter.division,
+      "project.id": filter.project,
+    });
+  } else {
+    result = await workOrderModel.find({
+      "division.id": filter.division,
+      "project.id": filter.project,
+      "subdivision.id": filter.subdivision,
+    });
+  }
+
+  console.log(result);
+
   const result_data = result.map((work) => {
     return { ...work._doc, id: mongoose.Types.ObjectId(work._id) };
   });

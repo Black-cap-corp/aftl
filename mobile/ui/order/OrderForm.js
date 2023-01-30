@@ -168,9 +168,14 @@ const OrderForm = ({navigation}) => {
 
 const getWorkorders = async filter => {
   try {
+    const headers = {
+      'Content-Type': 'application/json',
+    };
+    console.log(`${APP_BASE_URL}/workorder/getWorkorderByQuery`);
     const result = await axios.post(
       `${APP_BASE_URL}/workorder/getWorkorderByQuery`,
       {filter: filter},
+      {headers},
     );
     return result.data;
   } catch (e) {

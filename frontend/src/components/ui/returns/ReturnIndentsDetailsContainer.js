@@ -28,12 +28,30 @@ const ReturnIndentsDetailsContainer = () => {
   const handleClose = () => setShow(false);
   const [stocks, setStocks] = useState([]);
   const [editable, setEditable] = useState(false);
+  const [workorderDetails, setWorkorderDetails] = useState("");
 
   const [operationType, setOperationType] = useState("");
+  const [contractor, setContractor] = useState("");
+  const [ids, setIds] = useState([]);
 
   useEffect(() => {
     dispatch(setSelectedReturnIndent(params.id));
   }, []);
+
+  useEffect(() => {
+    if (parentIndent) {
+      getWorkorderDetails(parentIndent.workorder).then((res) => {
+        setWorkorderDetails(res.data);
+      });
+      getContractor(parentIndent.contractor).then((res) => {
+        setContractor(res.data);
+      });
+    }
+  }, [parentIndent]);
+
+  useEffect(() => {
+    console.log(workorderDetails);
+  }, [workorderDetails]);
 
   useEffect(() => {
     if (selIndent) {
@@ -61,6 +79,8 @@ const ReturnIndentsDetailsContainer = () => {
       getIdentities(ids).then(
         (res) => {
           const identities = res.data;
+          setIds(identities);
+
           const formattedHistory = selIndent.history.map((his) => {
             return {
               who: identities?.find((ide) => ide?._id == his.who)?.name,
@@ -151,6 +171,9 @@ const ReturnIndentsDetailsContainer = () => {
           workorder={parentIndent || {}}
           submitHandlerForApprover={{}}
           type={INDENT_ENUM.RETURN}
+          contractor={contractor}
+          identities={ids}
+          parentWorkorder={workorderDetails}
         />
       </div>
       <ModalPopup
@@ -183,11 +206,37 @@ const getIndentDetails = (id) => {
     }
   );
 };
+
+const getWorkorderDetails = (id) => {
+  const jwt = sessionStorage.getItem("auth_token");
+  return axios.post(
+    `${BASE_URL}/workorder/getWorkorderDetails`,
+    { id },
+    {
+      headers: {
+        authorization: jwt,
+      },
+    }
+  );
+};
 const getIdentities = (ids) => {
   const jwt = sessionStorage.getItem("auth_token");
   return axios.post(
     `${BASE_URL}/user/getIdentities`,
     { ids },
+    {
+      headers: {
+        authorization: jwt,
+      },
+    }
+  );
+};
+
+const getContractor = (id) => {
+  const jwt = sessionStorage.getItem("auth_token");
+  return axios.post(
+    `${BASE_URL}/firm/getContractor`,
+    { id },
     {
       headers: {
         authorization: jwt,
