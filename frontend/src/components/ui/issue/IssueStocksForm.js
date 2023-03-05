@@ -65,16 +65,15 @@ const IssueStocksForm = ({
                           <Form.Control
                             type="number"
                             name={stock.id}
-                            max={String(stock.requestedQuantity)}
                             onChange={handleChange}
                             value={values[stock.id]}
                             style={{ width: "10rem" }}
                           ></Form.Control>
-                          {values[stock.id] > stock.requestedQuantity && (
+                          {/* {values[stock.id] > stock.requestedQuantity && (
                             <p style={{ color: "red", fontSize: 12 }}>
                               Max quantity can't exceed requested quantity
                             </p>
-                          )}
+                          )} */}
                         </td>
                       )}
                     </tr>
@@ -109,10 +108,7 @@ function getValidationSchema(stocks) {
   return stocks.reduce((agg, stock) => {
     agg = {
       ...agg,
-      [`${stock.id}`]: yup
-        .number()
-        .max(stock.requestedQuantity, "Max reached")
-        .typeError("Enter Number"),
+      [`${stock.id}`]: yup.number(),
     };
     return agg;
   }, {});

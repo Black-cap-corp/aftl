@@ -16,6 +16,7 @@ const IssueFooter = ({
   identities = [],
   parentWorkorder,
 }) => {
+  console.log(user);
   const [identity, setIdentity] = useState({});
   useEffect(() => {
     const ide = identities?.find((id) => id._id == selIndent?.requestor);
@@ -85,7 +86,27 @@ const IssueFooter = ({
         )}
 
       {user?.entitlement.includes("webOperator") &&
+        user._id == "63faed1228744eb30e2e6fe1" &&
+        selIndent.approved && (
+          <CustomButton
+            label="Update Indent"
+            onClick={openModalHandler}
+            style={{ marginRight: 12 }}
+          />
+        )}
+
+      {user?.entitlement.includes("webOperator") &&
         selIndent.statusCode == 1 &&
+        type == INDENT_ENUM.RETURN && (
+          <CustomButton
+            label="Update Return"
+            onClick={openModalHandler}
+            style={{ marginRight: 12 }}
+          />
+        )}
+
+      {user?.entitlement.includes("webOperator") &&
+        user._id == "63faed1228744eb30e2e6fe1" &&
         type == INDENT_ENUM.RETURN && (
           <CustomButton
             label="Update Return"

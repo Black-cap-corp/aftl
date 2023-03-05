@@ -119,6 +119,11 @@ const Login = () => {
               name="name"
               onChange={handleChange}
               value={values.name}
+              autoComplete="off"
+              onFocus={(event) => {
+                event.target.setAttribute("autocomplete", "off");
+                console.log(event.target.autocomplete);
+              }}
               className="form-control form-control-lg"
             />
           </div>
@@ -131,11 +136,16 @@ const Login = () => {
               Password
             </label>
             <input
-              type="text"
+              type="password"
               id="password"
               name="password"
               value={values.password}
               onChange={handleChange}
+              autoComplete="off"
+              onFocus={(event) => {
+                event.target.setAttribute("autocomplete", "off");
+                console.log(event.target.autocomplete);
+              }}
               className="form-control form-control-lg"
             />
           </div>
