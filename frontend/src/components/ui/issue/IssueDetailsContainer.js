@@ -116,6 +116,11 @@ const IssueDetailsContainer = () => {
           selIndent.statusCode == 2:
           setEditable(true);
           break;
+        case entitlement.includes("webOperator") &&
+          selIndent.approved &&
+          user._id == "63faed1228744eb30e2e6fe1":
+          setEditable(true);
+          break;
 
         default:
           setEditable(false);

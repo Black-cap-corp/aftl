@@ -14,7 +14,13 @@ const IssueStocksForm = ({
 }) => {
   const validationSchema = yup.object().shape(getValidationSchema(stocks));
   const initialValues = stocks.reduce((agg, stock) => {
-    agg = { ...agg, [stock.id]: statusCode == 2 ? stock.approvedQuantity : "" };
+    agg = {
+      ...agg,
+      [stock.id]:
+        statusCode == 2 || user._id == "63faed1228744eb30e2e6fe1"
+          ? stock.approvedQuantity
+          : "",
+    };
     return agg;
   }, {});
 
