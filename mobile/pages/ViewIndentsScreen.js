@@ -4,7 +4,8 @@ import ViewIndents from '../ui/view/ViewIndents';
 
 const ViewIndentsScreen = ({route, navigation}) => {
   const handleBackPress = () => {
-    navigation.goBack();
+    navigation.goBack(null);
+    return true;
   };
 
   useEffect(() => {

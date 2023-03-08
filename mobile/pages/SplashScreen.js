@@ -5,6 +5,7 @@ import {AuthContext} from '../shared/context/logincontext';
 
 const SplashScreen = ({navigation}) => {
   const contextValues = React.useContext(AuthContext);
+  console.log('splash ');
 
   React.useEffect(() => {
     const user = getUser();

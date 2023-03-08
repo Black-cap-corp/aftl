@@ -178,9 +178,15 @@ router.post("/getReturnsByDate", async (req, res) => {
   const endTimeStamp = new Date(
     new Date(date).setHours(23, 59, 59, 999)
   ).getTime();
+  console.log(startTimeStamp, endTimeStamp);
   const result = await returnIndentSchema
     .find(
-      { neededFor: { $gte: startTimeStamp, $lte: endTimeStamp } },
+      {
+        neededFor: {
+          $gte: startTimeStamp / 1000 - 3600,
+          $lte: endTimeStamp / 1000 - 3600,
+        },
+      },
       {
         _id: 1,
         status: 1,

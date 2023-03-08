@@ -14,7 +14,8 @@ const OrderStocks = ({route, navigation}) => {
   const [searchStocks, setSearchStocks] = useState([]);
 
   const handleBackPress = () => {
-    navigation.goBack();
+    navigation.goBack(null);
+    return true;
   };
 
   useEffect(() => {

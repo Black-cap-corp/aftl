@@ -213,11 +213,11 @@ const PDFDownloadDocument = ({
 
               rs: {
                 width: "10%",
-                name: "Requested Quantity",
+                name: "Returned Quantity",
               },
               is: {
                 width: "10%",
-                name: "Issued Quantity",
+                name: "Accepted Quantity",
               },
             }}
           />

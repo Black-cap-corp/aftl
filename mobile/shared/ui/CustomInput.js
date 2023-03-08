@@ -12,7 +12,6 @@ const CustomInput = ({label, placeholder, caption, ...props}) => {
         label={label}
         placeholder={placeholder}
         style={styles.form_control}
-        autoComplete={false}
         caption={caption}
         value={field.value}
         onBlur={() => helpers.setTouched(!meta.touched)}

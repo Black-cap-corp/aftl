@@ -5,7 +5,8 @@ import IndentsPage from '../shared/ui/IndentsPage';
 
 const IndentsListScreen = ({route, navigation}) => {
   const handleBackPress = () => {
-    navigation.goBack();
+    navigation.goBack(null);
+    return true;
   };
 
   useEffect(() => {

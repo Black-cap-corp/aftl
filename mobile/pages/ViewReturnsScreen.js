@@ -4,7 +4,8 @@ import ViewReturns from '../ui/view/ViewReturns';
 
 const ViewReturnsScreen = ({route, navigation}) => {
   const handleBackPress = () => {
-    navigation.goBack();
+    navigation.goBack(null);
+    return true;
   };
 
   useEffect(() => {

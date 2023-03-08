@@ -4,7 +4,8 @@ import ReturnStocksPreview from '../ui/return/ReturnStocksPreview';
 
 const ReturnStocksPreviewScreen = ({route, navigation}) => {
   const handleBackPress = () => {
-    navigation.goBack();
+    navigation.goBack(null);
+    return true;
   };
 
   useEffect(() => {
