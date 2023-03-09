@@ -8,7 +8,8 @@ const PDFRow = ({ leftLabel, leftValue, rightLabel, rightValue }) => {
         display: "flex",
         flexDirection: "row",
         justifyContent: "space-between",
-        fontSize: 14,
+        fontSize: 10,
+        borderBottom: "1px solid #ccc",
       }}
     >
       <View style={{ display: "flex", flexDirection: "row" }}>

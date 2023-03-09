@@ -5,6 +5,7 @@ import { BASE_URL } from "../../../constants/AppConstant";
 import { Document, Page, View, Text } from "@react-pdf/renderer";
 import PDFRow from "./PDFRow";
 import PDFTableRow from "./PDFTableRow";
+import * as moment from "moment";
 
 const PDFDownloadDocument = ({
   selIndent,
@@ -83,18 +84,18 @@ const PDFDownloadDocument = ({
           <Text style={{ fontSize: 20 }}>Asian Fab Tec Limited</Text>
         </View>
         {type == INDENT_ENUM.ISSUE && (
-          <View style={{ textAlign: "center" }}>
+          <View style={{ textAlign: "center", marginBottom: 12 }}>
             <Text style={{ fontSize: 14 }}>{workorder?.project?.name}</Text>
           </View>
         )}
 
         {type == INDENT_ENUM.RETURN && (
-          <View style={{ textAlign: "center" }}>
+          <View style={{ textAlign: "center", marginBottom: 12 }}>
             <Text style={{ fontSize: 14 }}>{selIndent?.indentNo}</Text>
           </View>
         )}
         {type == INDENT_ENUM.ISSUE && (
-          <View style={{ textAlign: "center" }}>
+          <View style={{ textAlign: "center", marginBottom: 12 }}>
             <Text style={{ fontSize: 14, fontWeight: "extrabold" }}>
               {selIndent?.indentNo}
             </Text>
@@ -110,7 +111,9 @@ const PDFDownloadDocument = ({
                 : workorder?.division?.name
             }
             rightLabel="Date"
-            rightValue={new Date(transcationTimeStamp).toDateString()}
+            rightValue={moment(new Date(transcationTimeStamp)).format(
+              "DD-MM-YYYY hh:mm:A"
+            )}
           />
 
           <PDFRow
@@ -132,7 +135,7 @@ const PDFDownloadDocument = ({
             leftLabel="Location"
             leftValue={
               type == INDENT_ENUM.RETURN
-                ? workorder.location
+                ? workorder?.location
                 : selIndent?.location
             }
             rightLabel="Vehicle"
@@ -158,7 +161,7 @@ const PDFDownloadDocument = ({
             isHeader={true}
             data={{
               no: {
-                width: "10%",
+                width: "5%",
                 name: "Sl No",
               },
               name: {
@@ -166,19 +169,19 @@ const PDFDownloadDocument = ({
                 name: "Name",
               },
               code: {
-                width: "15%",
+                width: "10%",
                 name: "Code",
               },
               unit: {
-                width: "15%",
+                width: "10%",
                 name: "Unit",
               },
               rs: {
-                width: "15%",
+                width: "22%",
                 name: "Requested Quantity",
               },
               is: {
-                width: "15%",
+                width: "22%",
                 name: "Issued Quantity",
               },
             }}
@@ -191,33 +194,33 @@ const PDFDownloadDocument = ({
             type={type}
             data={{
               no: {
-                width: "10%",
+                width: "5%",
                 name: "Sl No",
               },
               name: {
                 width: "30%",
-                name: "Name",
+                name: "Materials",
               },
               code: {
-                width: "15%",
+                width: "10%",
                 name: "Code",
               },
               unit: {
-                width: "15%",
+                width: "10%",
                 name: "Unit",
               },
               pis: {
-                width: "10%",
-                name: "Issue Quantity",
+                width: "20%",
+                name: "Issue Qty",
               },
 
               rs: {
-                width: "10%",
-                name: "Returned Quantity",
+                width: "20%",
+                name: "Returned Qty",
               },
               is: {
-                width: "10%",
-                name: "Accepted Quantity",
+                width: "15%",
+                name: "Accepted Qty",
               },
             }}
           />
@@ -229,9 +232,10 @@ const PDFDownloadDocument = ({
               key={stockItem.id}
               isHeader={false}
               type={type}
+              alternateRow={index % 2 == 0 ? false : true}
               data={{
                 no: {
-                  width: "10%",
+                  width: "5%",
                   name: index + 1,
                 },
                 name: {
@@ -239,23 +243,23 @@ const PDFDownloadDocument = ({
                   name: stockItem.name,
                 },
                 code: {
-                  width: "15%",
+                  width: "10%",
                   name: stockItem.code,
                 },
                 unit: {
-                  width: "15%",
+                  width: "10%",
                   name: stockItem.unit,
                 },
                 rs: {
-                  width: "10%",
+                  width: "30%",
                   name: stockItem.requestedQuantity,
                 },
                 is: {
-                  width: "10%",
+                  width: "15%",
                   name: stockItem.approvedQuantity,
                 },
                 pis: {
-                  width: "10%",
+                  width: "15%",
                   name: stockItem.issueQuantity,
                 },
               }}

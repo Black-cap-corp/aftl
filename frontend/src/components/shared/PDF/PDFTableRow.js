@@ -2,7 +2,12 @@ import React from "react";
 import { View, Text, StyleSheet } from "@react-pdf/renderer";
 import { INDENT_ENUM } from "../../ui/issue/issue.const";
 
-const PDFTableRow = ({ data, isHeader = false, type = INDENT_ENUM.ISSUE }) => {
+const PDFTableRow = ({
+  data,
+  isHeader = false,
+  type = INDENT_ENUM.ISSUE,
+  alternateRow = false,
+}) => {
   const rowStyle = isHeader ? styles.th : styles.tr;
   return (
     <View
@@ -10,10 +15,14 @@ const PDFTableRow = ({ data, isHeader = false, type = INDENT_ENUM.ISSUE }) => {
         display: "flex",
         flexDirection: "row",
         marginTop: isHeader ? 24 : 0,
-        borderTop: isHeader ? "1px solid #000" : "none",
-        borderRight: isHeader ? "1px solid #000" : "1px solid #ccc",
-        borderLeft: isHeader ? "1px solid #000" : "1px solid #ccc",
-        borderBottom: isHeader ? "1px solid #000" : "1px solid #ccc",
+        backgroundColor: isHeader
+          ? "#72A0C1"
+          : alternateRow
+          ? "#F0F8FF"
+          : "#fff",
+        color: isHeader ? "#fff" : "000",
+        borderTopLeftRadius: isHeader ? 12 : 0,
+        borderTopRightRadius: isHeader ? 12 : 0,
         fontSize: 12,
       }}
     >
@@ -31,13 +40,13 @@ const PDFTableRow = ({ data, isHeader = false, type = INDENT_ENUM.ISSUE }) => {
         <Text>{data?.unit?.name}</Text>
       </View>
       {type == INDENT_ENUM.RETURN && (
-        <View style={{ width: "10%", ...rowStyle }}>
+        <View style={{ width: "15%", ...rowStyle }}>
           <Text>{data?.pis?.name}</Text>
         </View>
       )}
       <View
         style={{
-          width: type == INDENT_ENUM.ISSUE ? "15%" : "10%",
+          width: type == INDENT_ENUM.ISSUE ? "22%" : "15%",
           ...rowStyle,
         }}
       >
@@ -46,7 +55,7 @@ const PDFTableRow = ({ data, isHeader = false, type = INDENT_ENUM.ISSUE }) => {
 
       <View
         style={{
-          width: type == INDENT_ENUM.ISSUE ? "15%" : "10%",
+          width: type == INDENT_ENUM.ISSUE ? "22%" : "15%",
           ...rowStyle,
           border: "none",
         }}
@@ -70,7 +79,7 @@ const styles = StyleSheet.create({
   th: {
     display: "flex",
     justifyContent: "center",
-    borderRight: "1px solid #000",
+    borderRight: "1px solid #ccc",
     height: "100%",
     padding: 6,
   },

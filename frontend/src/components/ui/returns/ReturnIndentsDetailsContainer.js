@@ -14,6 +14,8 @@ import {
 } from "../../../redux/returnsSlice";
 import { INDENT_ENUM } from "../issue/issue.const";
 import ReturnTopHeader from "./ReturnTopHeader";
+import { PDFRenderer, PDFViewer } from "@react-pdf/renderer";
+import PDFDownloadDocument from "../../shared/PDF/PDFDownload";
 
 const ReturnIndentsDetailsContainer = () => {
   const params = useParams();
@@ -161,6 +163,16 @@ const ReturnIndentsDetailsContainer = () => {
       </div>
       <div style={{ height: "60%", overflowY: "scroll" }}>
         <IssueVerticalTimeline history={history} />
+        {/* <PDFViewer style={{ height: "50vh" }}>
+          <PDFDownloadDocument
+            selIndent={selIndent}
+            workorder={parentIndent}
+            user={user.name}
+            contractor={contractor}
+            type={INDENT_ENUM.RETURN}
+            parentWorkorder={workorderDetails}
+          />
+        </PDFViewer> */}
       </div>
       <div style={{ height: "15%" }}>
         <IssueFooter
