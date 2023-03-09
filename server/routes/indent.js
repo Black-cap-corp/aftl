@@ -36,7 +36,7 @@ router.post("/add", async (req, res) => {
 
       const request = {
         ...indent,
-        indentNo: `${indent.name}#Issue#${seqId}`,
+        indentNo: `${indent.name}#MI#${seqId}`,
         history: [his],
         status: "New Indent requested",
         statusCode: 1,
