@@ -3,6 +3,8 @@ import React, {useState} from 'react';
 import {List, Divider, Text} from '@ui-kitten/components';
 
 import Ionicons from 'react-native-vector-icons/Ionicons';
+import moment from 'moment';
+import {INDENT_ENUM} from '../../ui/view/issue.const';
 
 const IndentsList = ({
   indents,
@@ -10,6 +12,7 @@ const IndentsList = ({
   selectedIndent,
   setSelectedIndent,
   selParentIndent = {},
+  type = INDENT_ENUM.ISSUE,
 }) => {
   return (
     <List
@@ -19,10 +22,11 @@ const IndentsList = ({
       renderItem={props =>
         renderListItem(
           props,
-          selWorkorder.workorder,
+          selWorkorder.displayName,
           selectedIndent,
           setSelectedIndent,
           selParentIndent,
+          type,
         )
       }
     />
@@ -35,9 +39,11 @@ const renderListItem = (
   selectedIndent,
   setSelectedIndent,
   selParentIndent,
+  type,
 ) => {
   const item = props.item;
-  const neededFor = new Date(item.NeededFor).toDateString();
+  const neededFor = new Date(item.neededFor);
+  console.log(selParentIndent);
   return (
     <TouchableOpacity
       onPress={() => {
@@ -66,7 +72,7 @@ const renderListItem = (
               {name ? 'Wordorder' : 'Indent'}
             </Text>
             <Text category="label" style={{textAlign: 'center'}}>
-              {name || selParentIndent.indentNo}
+              {type == INDENT_ENUM.ISSUE ? name : selParentIndent.indentNo}
             </Text>
           </View>
 
@@ -75,7 +81,7 @@ const renderListItem = (
               Requested For
             </Text>
             <Text category="label" style={{textAlign: 'center'}}>
-              {neededFor}
+              {moment(new Date(neededFor)).format('DD-MM-YYYY hh:mm:A')}
             </Text>
           </View>
         </View>

@@ -6,10 +6,11 @@ import {APP_BASE_URL} from '../../app.const';
 import IndentsList from '../../shared/ui/IndentsList';
 import OrderSearch from '../orderstocks/OrderSearch';
 import OrderFooter from '../orderstocks/OrderFooter';
+import {INDENT_ENUM} from './issue.const';
 
 const ViewIndents = ({route, navigation}) => {
   const {selWorkorder, type} = route.params;
-  console.log(selWorkorder);
+  console.log('here', selWorkorder);
   const [indents, setIndents] = useState([]);
   const [filteredIndents, setFilteredIndents] = useState([]);
   const [selectedIndent, setSelectedIndent] = useState(null);
@@ -95,6 +96,7 @@ const ViewIndents = ({route, navigation}) => {
         selectedIndent={selectedIndent}
         setSelectedIndent={setSelectedIndent}
         indents={filteredIndents}
+        type={INDENT_ENUM.ISSUE}
       />
       <OrderFooter btnText="Proceed" onClick={proceedNextHandler} />
     </View>

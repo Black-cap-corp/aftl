@@ -5,11 +5,17 @@ import OrderSearch from '../orderstocks/OrderSearch';
 import ViewSummaryList from './ViewSummaryList';
 import axios from 'axios';
 import {APP_BASE_URL} from '../../app.const';
+import moment from 'moment';
 
 const ViewSummary = ({route, navigation}) => {
   const {selIndent, type} = route.params;
-  console.log(type);
-  const [items, setItems] = useState(getItems(selIndent, type));
+  const transcationTimeStamp = selIndent?.history?.find(
+    his => his.statusCode == 1,
+  )?.when;
+
+  const [items, setItems] = useState(
+    getItems(selIndent, type, transcationTimeStamp),
+  );
   const [stocks, setStocks] = useState([]);
   const [filteredStocks, setFilteredStocks] = useState([]);
 
@@ -57,7 +63,10 @@ const ViewSummary = ({route, navigation}) => {
   );
 };
 
-const getItems = (selIndent, type) => {
+const getItems = (selIndent, type, transcationTimeStamp) => {
+  const date = moment(new Date(transcationTimeStamp)).format(
+    'DD-MM-YYYY hh:mm:A',
+  );
   switch (type) {
     case 0:
       return [
@@ -65,6 +74,10 @@ const getItems = (selIndent, type) => {
         {label: 'Vehicle Number', value: selIndent.vehicle},
         {label: 'status', value: selIndent.status},
         {label: 'Approved', value: String(selIndent.approved)},
+        {
+          label: 'Date',
+          value: date,
+        },
       ];
     case 1:
       return [
@@ -72,12 +85,15 @@ const getItems = (selIndent, type) => {
         {label: 'Vehicle Number', value: selIndent.vehicle},
         {label: 'status', value: selIndent.status},
         {label: 'Approved', value: String(selIndent.approved)},
+        {
+          label: 'Date',
+          value: date,
+        },
       ];
   }
 };
 
 const getStockItems = (rawStocks, stocks, type) => {
-  console.log('here');
   const filteredStocks = rawStocks.reduce((filteredStocks, currentStock) => {
     const displayStock = stocks?.find(
       stock => stock.stockId == currentStock.id,

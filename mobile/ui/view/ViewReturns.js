@@ -6,6 +6,7 @@ import {APP_BASE_URL} from '../../app.const';
 import IndentsList from '../../shared/ui/IndentsList';
 import OrderSearch from '../orderstocks/OrderSearch';
 import OrderFooter from '../orderstocks/OrderFooter';
+import {INDENT_ENUM} from './issue.const';
 
 const ViewReturns = ({route, navigation}) => {
   const {selIndent, type} = route.params;
@@ -86,6 +87,7 @@ const ViewReturns = ({route, navigation}) => {
         setSelectedIndent={setSelectedIndent}
         indents={filteredIndents || []}
         selParentIndent={selIndent}
+        type={INDENT_ENUM.RETURN}
       />
       <OrderFooter btnText="Proceed" onClick={proceedNextHandler} />
     </View>
