@@ -105,4 +105,10 @@ const ViewIndents = ({route, navigation}) => {
 
 export default ViewIndents;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  page: {
+    flex: 1,
+    flexDirection: 'column',
+    padding: 10,
+  },
+});

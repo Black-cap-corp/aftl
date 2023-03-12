@@ -96,4 +96,10 @@ const ViewReturns = ({route, navigation}) => {
 
 export default ViewReturns;
 
-const styles = StyleSheet.create({});
+const styles = StyleSheet.create({
+  page: {
+    flex: 1,
+    flexDirection: 'column',
+    padding: 10,
+  },
+});
