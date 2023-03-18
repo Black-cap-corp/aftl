@@ -44,6 +44,11 @@ const App = () => {
       // Do something before request is sent
       //  config.headers['Content-Type'] = 'multipart/form-data';
       console.log(config.headers);
+      const headers = config.headers;
+      headers['Cache-Control'] = 'no-cache';
+      headers['Pragma'] = 'no-cache';
+      headers['Expires'] = '0';
+
       return config;
     },
     function (error) {

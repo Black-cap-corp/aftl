@@ -117,10 +117,11 @@ router.post("/operator-update", async (req, res) => {
           )?.quantity;
           return {
             ...stock,
-            stock: stock.stock + plusVal || 0,
+            stock: stock.stock + plusVal < 0 ? 0 : stock.stock + plusVal || 0,
           };
         }),
       };
+      console.log("here got it", JSON.stringify(workOrderRequest, null, 4));
 
       workorderSchema
         .findOneAndUpdate(

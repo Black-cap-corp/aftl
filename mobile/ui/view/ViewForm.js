@@ -26,6 +26,19 @@ const ViewForm = ({route, navigation}) => {
   const [selectedWorkOrder, setSelectedWorkOrder] = React.useState();
   const [selectedIndex, setSelectedIndex] = React.useState(0);
 
+  const workorderRef = React.useRef();
+
+  React.useEffect(() => {
+    const unsubscribe = navigation.addListener('focus', () => {
+      workorderRef.current.resetValue();
+      //Put your Data loading function here instead of my loadData();
+      setSelectedWorkOrder();
+      setWorkorders([]);
+      setData([]);
+    });
+    return unsubscribe;
+  }, [navigation]);
+
   const debounce = (func, delay) => {
     let timer;
     return function (args) {
@@ -80,6 +93,7 @@ const ViewForm = ({route, navigation}) => {
           <CustomAutocomplete
             label="Workorder"
             name="workorder"
+            ref={workorderRef}
             workorders={workorders}
             onSelectParent={onSelect}
             data={data}

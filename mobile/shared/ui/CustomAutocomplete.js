@@ -1,5 +1,5 @@
 import {StyleSheet, Text, View} from 'react-native';
-import React from 'react';
+import React, {useImperativeHandle} from 'react';
 import {Autocomplete, AutocompleteItem, Layout} from '@ui-kitten/components';
 import {useField} from 'formik';
 
@@ -18,43 +18,52 @@ const renderOption = (item, index) => (
   <AutocompleteItem key={index} title={item.title} />
 );
 
-const CustomAutocomplete = ({
-  workorders,
-  name,
-  label,
-  onSelectParent,
-  data,
-  debouncer,
-  clearContractors,
-}) => {
-  const [field, meta, helpers] = useField(name);
+const CustomAutocomplete = React.forwardRef(
+  (
+    {
+      workorders,
+      name,
+      label,
+      onSelectParent,
+      data,
+      debouncer,
+      clearContractors,
+    },
+    ref,
+  ) => {
+    const [field, meta, helpers] = useField(name);
 
-  const onSelect = index => {
-    helpers.setValue(data[index].displayName);
-    onSelectParent(data[index]);
-  };
+    useImperativeHandle(ref, () => ({
+      resetValue: () => helpers.setValue(''),
+    }));
 
-  const onChangeText = query => {
-    debouncer(query);
-    helpers.setValue(query);
-    clearContractors();
-  };
+    const onSelect = index => {
+      helpers.setValue(data[index].displayName);
+      onSelectParent(data[index]);
+    };
 
-  return (
-    <Layout style={{marginBottom: 20, backgroundColor: 'transparent'}}>
-      <Autocomplete
-        placeholder="Search for workorders"
-        label={label}
-        onSelect={onSelect}
-        name={name}
-        value={field.value}
-        onBlur={() => helpers.setTouched(!meta.touched)}
-        onChangeText={onChangeText}>
-        {workorders.map(renderOption)}
-      </Autocomplete>
-    </Layout>
-  );
-};
+    const onChangeText = query => {
+      debouncer(query);
+      helpers.setValue(query);
+      clearContractors();
+    };
+
+    return (
+      <Layout style={{marginBottom: 20, backgroundColor: 'transparent'}}>
+        <Autocomplete
+          placeholder="Search for workorders"
+          label={label}
+          onSelect={onSelect}
+          name={name}
+          value={field.value}
+          onBlur={() => helpers.setTouched(!meta.touched)}
+          onChangeText={onChangeText}>
+          {workorders.map(renderOption)}
+        </Autocomplete>
+      </Layout>
+    );
+  },
+);
 
 export default CustomAutocomplete;
 

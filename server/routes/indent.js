@@ -142,13 +142,11 @@ router.post("/operator-update", async (req, res) => {
           )?.quantity;
           return {
             ...stock,
-            stock: stock.stock - minusVal || 0,
+            stock: stock.stock - minusVal < 0 ? 0 : stock.stock - minusVal || 0,
           };
         }),
       };
-
-      console.log(workOrderRequest);
-
+      console.log("indent update", JSON.stringify(workOrderRequest, null, 4));
       workorderSchema
         .findOneAndUpdate(
           { _id: mongoose.Types.ObjectId(workorderId) },

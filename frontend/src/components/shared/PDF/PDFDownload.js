@@ -74,9 +74,17 @@ const PDFDownloadDocument = ({
             transform: "rotate(-45) translate(-50%,-50%)",
             top: "50%",
             left: "50%",
+            zIndex: 10000,
           }}
         >
-          <Text style={{ color: "rgba(0, 0, 0, .1)", fontSize: "72px" }}>
+          <Text
+            style={{
+              color: "rgba(0, 0, 0, .1)",
+              fontSize: "72px",
+              color: "red",
+              zIndex: 10000,
+            }}
+          >
             {type == INDENT_ENUM.ISSUE ? "ISSUE" : "RETURN"}
           </Text>
         </View>

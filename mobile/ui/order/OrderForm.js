@@ -1,5 +1,5 @@
 import {StyleSheet} from 'react-native';
-import React from 'react';
+import React, {useEffect, useRef} from 'react';
 import {Formik} from 'formik';
 import * as yup from 'yup';
 import CustomInput from '../../shared/ui/CustomInput';
@@ -37,6 +37,19 @@ const OrderForm = ({navigation}) => {
   const [noWorkorders, setNoWorkorders] = React.useState(false);
   const [pageError, setPageError] = React.useState(false);
 
+  const workorderRef = useRef();
+
+  useEffect(() => {
+    const unsubscribe = navigation.addListener('focus', () => {
+      workorderRef.current.resetValue();
+      //Put your Data loading function here instead of my loadData();
+      setSelectedWorkOrder();
+      setWorkorders([]);
+      setData([]);
+      clearContractors();
+    });
+    return unsubscribe;
+  }, [navigation]);
   const debounce = (func, delay) => {
     let timer;
     return function (args) {
@@ -67,7 +80,8 @@ const OrderForm = ({navigation}) => {
 
   const debouncer = debounce(getWorkorders, 500);
 
-  const handleSubmit = (values, {setSubmitting}) => {
+  const handleSubmit = (values, {setSubmitting, resetForm}) => {
+    console.log(values);
     if (!selectedContractor || !selectedWorkOrder) {
       setPageError(true);
       setSubmitting(false);
@@ -119,6 +133,7 @@ const OrderForm = ({navigation}) => {
             workorders={workorders}
             onSelectParent={onSelect}
             data={data}
+            ref={workorderRef}
             debouncer={debouncer}
             clearContractors={clearContractors}
           />

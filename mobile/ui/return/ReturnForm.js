@@ -26,6 +26,19 @@ const ReturnForm = ({route, navigation}) => {
   const [noWorkorders, setNoWorkorders] = React.useState(false);
   const [selectedWorkOrder, setSelectedWorkOrder] = React.useState();
 
+  const workorderRef = React.useRef();
+
+  React.useEffect(() => {
+    const unsubscribe = navigation.addListener('focus', () => {
+      workorderRef.current.resetValue();
+      //Put your Data loading function here instead of my loadData();
+      setSelectedWorkOrder();
+      setWorkorders([]);
+      setData([]);
+    });
+    return unsubscribe;
+  }, [navigation]);
+
   const debounce = (func, delay) => {
     let timer;
     return function (args) {
@@ -83,6 +96,7 @@ const ReturnForm = ({route, navigation}) => {
             workorders={workorders}
             onSelectParent={onSelect}
             data={data}
+            ref={workorderRef}
             debouncer={debouncer}
             clearContractors={clearContractors}
           />
