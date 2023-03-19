@@ -63,7 +63,6 @@ router.post("/getReturnsByIndent", async (req, res) => {
     indentId: indent,
     requestor: requestor,
   });
-  console.log(JSON.stringify(result, null, 4));
   res.status(200).json(result);
 });
 
@@ -121,7 +120,6 @@ router.post("/operator-update", async (req, res) => {
           };
         }),
       };
-      console.log("here got it", JSON.stringify(workOrderRequest, null, 4));
 
       workorderSchema
         .findOneAndUpdate(
@@ -179,13 +177,12 @@ router.post("/getReturnsByDate", async (req, res) => {
   const endTimeStamp = new Date(
     new Date(date).setHours(23, 59, 59, 999)
   ).getTime();
-  console.log(startTimeStamp, endTimeStamp);
   const result = await returnIndentSchema
     .find(
       {
-        neededFor: {
-          $gte: startTimeStamp / 1000 - 3600,
-          $lte: endTimeStamp / 1000 - 3600,
+        NeededFor: {
+          $gte: startTimeStamp,
+          $lte: endTimeStamp,
         },
       },
       {
