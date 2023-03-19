@@ -31,8 +31,15 @@ const ReturnStocksEdit = ({route, navigation}) => {
           },
           [],
         );
-        setStocks(filterStocks);
-        setSearchStocks(filterStocks);
+
+        const sortFilterStocks = filterStocks.sort((a, b) => {
+          if (a.name > b.name) return 1;
+          else if (a.name < b.name) return -1;
+          else return 0;
+        });
+
+        setStocks(sortFilterStocks);
+        setSearchStocks(sortFilterStocks);
       },
       error => {
         console.log(error);

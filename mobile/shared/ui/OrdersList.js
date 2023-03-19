@@ -67,8 +67,8 @@ const OrdersList = ({
           }
         });
         const updatedRawStocksMinus = rawStocks.map(stock => {
-          if (stock.id === stockId && stock.stockRequested < stock.limit) {
-            return {...stock, stockRequested: Number(stock.stockRequested) + 1};
+          if (stock.id === stockId && stock.stockRequested > 0) {
+            return {...stock, stockRequested: Number(stock.stockRequested) - 1};
           } else {
             return stock;
           }
