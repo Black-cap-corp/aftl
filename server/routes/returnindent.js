@@ -111,13 +111,21 @@ router.post("/operator-update", async (req, res) => {
       const workOrderRequest = {
         ...workorderResp,
         stocks: workorderResp.stocks?.map((stock) => {
-          const plusVal = stocks.find(
+          const stockFound = stocks.find(
             (_stock) => _stock.stockId == stock.stockId
-          )?.quantity;
-          return {
-            ...stock,
-            stock: stock.stock + plusVal < 0 ? 0 : stock.stock + plusVal || 0,
-          };
+          );
+
+          if (stockFound) {
+            return {
+              ...stock,
+              stock:
+                stock.stock + stockFound?.quantity < 0
+                  ? 0
+                  : stock.stock + stockFound?.quantity,
+            };
+          } else {
+            return stock;
+          }
         }),
       };
 

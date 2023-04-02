@@ -41,7 +41,6 @@ router.post("/delete", verifyAuth, async (req, res) => {
 
 router.post("/getIdentities", async (req, res) => {
   const { ids } = req.body;
-  console.log(ids);
 
   const webUsers = await UserModel.find(
     { _id: { $in: ids?.app } },
@@ -50,9 +49,6 @@ router.post("/getIdentities", async (req, res) => {
   const appUsers = await MobileuserModel.find({
     _id: { $in: ids?.mobile },
   }).lean();
-  console.log(appUsers);
-
-  console.log(webUsers, appUsers, "here");
 
   res.status(200).json([...webUsers, ...appUsers]);
 });

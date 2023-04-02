@@ -234,8 +234,6 @@ router.post("/", verifyAuth, async (req, res) => {
     });
   }
 
-  console.log(result);
-
   const result_data = result.map((work) => {
     return { ...work._doc, id: mongoose.Types.ObjectId(work._id) };
   });
@@ -275,9 +273,7 @@ router.post("/add", verifyAuth, async (req, res) => {
             displayName: `AFTL/${division.code}/${seqId}`,
           };
           workOrderModel.create(workorder).then((result) => {
-            console.log(result);
             const id = result._id.toString();
-            console.log(id);
             res.status(201).json({ ...result, id: String(id) });
           });
         }
@@ -287,7 +283,6 @@ router.post("/add", verifyAuth, async (req, res) => {
 
 router.post("/update", verifyAuth, async (req, res) => {
   const workorder = req.body;
-  console.log(workorder);
   const result = await workOrderModel.updateOne(
     { _id: mongoose.Types.ObjectId(workorder.id) },
     { $set: workorder }

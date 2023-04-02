@@ -43,7 +43,6 @@ router.post("/update", verifyAuthToken, async (req, res) => {
 
 router.post("/getContractor", verifyAuthToken, async (req, res) => {
   const { id } = req.body;
-  console.log(id);
   const result = await firmModel.findOne({
     _id: mongoose.Types.ObjectId(id),
   });

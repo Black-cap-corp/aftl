@@ -136,17 +136,23 @@ router.post("/operator-update", async (req, res) => {
       const workOrderRequest = {
         ...workorderResp,
         stocks: workorderResp.stocks?.map((stock) => {
-          console.log(stocks);
-          const minusVal = stocks.find(
+          const stockFound = stocks.find(
             (_stock) => _stock.stockId == stock.stockId
-          )?.quantity;
-          return {
-            ...stock,
-            stock: stock.stock - minusVal < 0 ? 0 : stock.stock - minusVal || 0,
-          };
+          );
+
+          if (stockFound) {
+            return {
+              ...stock,
+              stock:
+                stock.stock - stockFound?.quantity < 0
+                  ? 0
+                  : stock.stock - stockFound?.quantity,
+            };
+          } else {
+            return stock;
+          }
         }),
       };
-      console.log("indent update", JSON.stringify(workOrderRequest, null, 4));
       workorderSchema
         .findOneAndUpdate(
           { _id: mongoose.Types.ObjectId(workorderId) },

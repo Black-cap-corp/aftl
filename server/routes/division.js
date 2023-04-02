@@ -6,9 +6,7 @@ const DivisionModel = require("../models/division");
 
 router.post("/", verifyAuth, async (req, res) => {
   const { parentId } = req.body;
-  console.log(parentId);
   const result = await DivisionModel.find({ parentId: parentId });
-  console.log(result);
   const data = result?.map((div) => {
     return {
       id: mongoose.Types.ObjectId(div._id),

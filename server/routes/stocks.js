@@ -56,7 +56,6 @@ router.post("/updateExistingStocks", async (req, respo) => {
   });
 
   StockModel.insertMany(newStocksArray).then((res) => {
-    console.log(res);
     respo.status(200).send("Ok");
   });
 });
