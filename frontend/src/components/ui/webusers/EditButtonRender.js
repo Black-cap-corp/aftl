@@ -53,7 +53,7 @@ const EditButtonRender = (props) => {
           />
         }
         handleHide={handleClose}
-        header="Test Header"
+        header="Edit User"
         show={show}
       />
     </div>

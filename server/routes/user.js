@@ -20,7 +20,7 @@ router.post("/add", verifyAuth, async (req, res) => {
 
 router.post("/update", verifyAuth, async (req, res) => {
   const user = req.body;
-  const result = await UserModel.updateOne({ _id: user.id }, { $set: user });
+  const result = await UserModel.updateOne({ _id: user._id }, { $set: user });
 
   if (result.acknowledged) {
     res.status(201).json({ status: "success", message: "updated success" });

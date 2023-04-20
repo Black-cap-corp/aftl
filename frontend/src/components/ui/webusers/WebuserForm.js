@@ -20,7 +20,7 @@ const WebuserForm = ({ handleSubmit, isEdit = false, formData }) => {
     <Formik
       initialValues={initialValues}
       onSubmit={handleSubmit}
-      validationSchema={webuserSchema}
+      validationSchema={!isEdit? webuserSchema: null}
     >
       {({ values }) => (
         <Form>

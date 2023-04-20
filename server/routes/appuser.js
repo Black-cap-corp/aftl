@@ -21,8 +21,12 @@ router.post("/add", verifyAuth, async (req, res) => {
 
 router.post("/update", verifyAuth, async (req, res) => {
   const user = req.body;
-  const result = await AppUser.updateOne({ _id: user.id }, { $set: user });
-
+  const result = await AppUser.replaceOne({ _id:  mongoose.Types.ObjectId(user._id) }, { 
+   name: user.name,
+   password: user.password,
+   mobile: user.mobile
+  });
+    console.log(user, result);
   if (result.acknowledged) {
     res.status(201).json({ status: "success", message: "updated success" });
   } else {
