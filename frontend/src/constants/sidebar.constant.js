@@ -40,3 +40,11 @@ export const OPERATOR_SIDEBAR_MENU = [
     secondName: "return-details",
   },
 ];
+
+export const WEB_READY_ONLY = [
+  {
+    label: "Work orders",
+    link: "/home/workorders",
+    name: "workorders",
+  }
+]

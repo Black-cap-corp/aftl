@@ -34,7 +34,10 @@ const Login = () => {
       dispatch(setUser(user));
       if (user.entitlement.includes("webAdminBoth")) {
         navigate("/home/stocks");
-      } else {
+      } else if (user.entitlement.includes("webAdminRead")){
+  navigate("/home/workorders");
+
+} else {
         navigate("/home/issue");
       }
     }

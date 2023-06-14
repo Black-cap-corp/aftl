@@ -7,7 +7,6 @@ import { Provider } from "react-redux";
 import { store } from "./redux/store";
 import { transitions, positions, Provider as AlertProvider } from "react-alert";
 import AlertTemplate from "react-alert-template-basic";
-import axios from "axios";
 
 const options = {
   // you can also just use 'bottom center'

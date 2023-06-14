@@ -5,6 +5,7 @@ import { useLocation } from "react-router-dom";
 import {
   ADMIN_SIDEBAR_MENU,
   OPERATOR_SIDEBAR_MENU,
+  WEB_READY_ONLY
 } from "../../constants/sidebar.constant";
 import { UserContext } from "../../App";
 import { AiOutlineLogin } from "react-icons/ai";
@@ -17,9 +18,10 @@ const SideBar = () => {
   const location = useLocation();
   const pageSelected = location.pathname.split("/");
   const user = useContext(UserContext);
+  console.log(user);
   const menuList = user.entitlement.includes("webAdminBoth")
     ? ADMIN_SIDEBAR_MENU
-    : OPERATOR_SIDEBAR_MENU;
+    : user.entitlement.includes("webAdminRead")? WEB_READY_ONLY : OPERATOR_SIDEBAR_MENU;
 
   const [showConfirm, setShowConfirm] = useState(false);
   const clickHandler = () => setShowConfirm(true);

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import SearchForm from "./SearchForm";
 import { getAsyncProject } from "../../../redux/projectSlice";
@@ -7,6 +7,8 @@ import CreateWorkorderForm from "./CreateWorkorderForm";
 import { addAsyncWorkorder } from "../../../redux/workorderSlice";
 import { colDefs } from "./workorder.const";
 import Grid from "../../shared/SharedHOCComponent/Grid";
+import { UserContext } from "../../../App";
+
 
 const WorkOrder = () => {
   const [show, setShow] = useState(false);
@@ -16,7 +18,7 @@ const WorkOrder = () => {
 
   const dispatch = useDispatch();
   const workorders = useSelector((state) => state.workorders);
-  console.log(workorders);
+  const user = useContext(UserContext);
   const projects = useSelector((state) => state.projects.allProjects);
   const onWorkorderCreation = (workorder) => {
     dispatch(addAsyncWorkorder(workorder));
@@ -34,7 +36,7 @@ const WorkOrder = () => {
       <h2>Work orders</h2>
       <SearchForm data={projects} showModel={showModel} />
 
-      <Grid columnDefs={colDefs} rowData={workorders} showDownload={true} />
+      <Grid columnDefs={colDefs} rowData={workorders} showDownload={user.entitlement.includes("webAdminRead")?false: true} />
 
       <ModalPopup
         body={<CreateWorkorderForm onSubmit={onWorkorderCreation} />}

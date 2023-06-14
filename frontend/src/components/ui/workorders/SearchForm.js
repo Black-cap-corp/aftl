@@ -1,10 +1,12 @@
 import { Form, Formik, useFormikContext } from "formik";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useContext, useState } from "react";
 import CustomSelect from "../../shared/CustomSelect";
 import CustomButton from "../../shared/CustomButton";
 import * as yup from "yup";
 import { useDispatch } from "react-redux";
 import { getAsyncWorkorder } from "../../../redux/workorderSlice";
+import { UserContext } from "../../../App";
+
 
 const SearchForm = ({ data, showModel }) => {
   const dispatch = useDispatch();
@@ -19,6 +21,9 @@ const SearchForm = ({ data, showModel }) => {
     { value: "", display: "Select Sub division" },
     { value: "all", display: "All Subdivisions" },
   ]);
+
+  const user = useContext(UserContext);
+
 
   useEffect(() => {
     const projects_data = data?.map((project) => {
@@ -105,14 +110,15 @@ const SearchForm = ({ data, showModel }) => {
           />
 
           <CustomButton type="submit" label="Search" />
-          <CustomButton
+        {user.entitlement.includes("webAdminRead") ||
+         <CustomButton
             label="Add Workorder"
             customClass="primary"
             onClick={(e) => {
               e.preventDefault();
               showModel(true);
             }}
-          />
+          />}  
         </Form>
       </Formik>
     </div>

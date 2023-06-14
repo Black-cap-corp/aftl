@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState , useContext} from "react";
 import Dropdown from "react-bootstrap/Dropdown";
 import { ThreeDotsVertical } from "react-bootstrap-icons";
 import ModalPopup from "../../shared/ModalPopup";
@@ -8,6 +8,8 @@ import { useDispatch } from "react-redux";
 import ConfirmPopup from "../../shared/ConfirmPopup";
 import { deleteAsyncWorkorder } from "../../../redux/workorderSlice";
 import DowloadReportForm from "./DowloadReportForm";
+import { UserContext } from "../../../App";
+
 
 const EditButtonRender = (props) => {
   const [show, setShow] = useState(false);
@@ -16,6 +18,8 @@ const EditButtonRender = (props) => {
   const handleClose = () => setShow(false);
   const editclickHandler = () => setShow(true);
   const dispatch = useDispatch();
+  const user = useContext(UserContext);
+
 
   const deleteClickHandler = () => setShowConfirm(true);
   const handleCloseConfirm = () => setShowConfirm(false);
@@ -40,8 +44,9 @@ const EditButtonRender = (props) => {
         ></Dropdown.Toggle>
 
         <Dropdown.Menu>
-          <Dropdown.Item onClick={editclickHandler}>Edit</Dropdown.Item>
-          <Dropdown.Item onClick={deleteClickHandler}>Delete</Dropdown.Item>
+          { user.entitlement.includes("webAdminRead") ||  <Dropdown.Item onClick={editclickHandler}>Edit</Dropdown.Item>}
+          { user.entitlement.includes("webAdminRead") ||  <Dropdown.Item onClick={deleteClickHandler}>Delete</Dropdown.Item>}
+
           <Dropdown.Item onClick={reportDownloadHandler}>
             Download Report
           </Dropdown.Item>
