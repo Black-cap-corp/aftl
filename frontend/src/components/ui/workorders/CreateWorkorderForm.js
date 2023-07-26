@@ -98,12 +98,6 @@ const CreateWorkorderForm = ({
       }
     }
 
-    console.log(
-      firms_data.filter((firm) => {
-        console.log(firm.id);
-        return selContractors.findIndex((sel) => sel.id === firm.id) > -1;
-      })
-    );
     const workorder = {
       workorder: firstFormValues.workorder,
       project: {
@@ -121,14 +115,13 @@ const CreateWorkorderForm = ({
       },
       subdivision: {
         id: firstFormValues.subdivision,
-        name: projects
-          .find((project) => project.id === firstFormValues.project)
+        name: projects.find((project) => project.id === firstFormValues.project)
           .divisions.find(
             (division) => division.id === firstFormValues.division
           )
           .subdivisions.find(
             (subdiv) => subdiv.id === firstFormValues.subdivision
-          ).name,
+          )?.name,
       },
       contractors: firms_data.filter(
         (firm) => selContractors.findIndex((sel) => sel.id === firm.id) > -1
