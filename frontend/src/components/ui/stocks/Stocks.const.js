@@ -35,7 +35,22 @@ export const colDefs = [
     with: 100,
     maxWidth: 100,
   },
-  { field: "name", headerName: "Stock Name" },
-  { field: "code", headerName: "Material Code" },
-  { field: "unit", headerName: "Unit" },
+  { 
+    field: "name", 
+    headerName: "Stock Name" ,
+    filter: 'agTextColumnFilter'
+
+  },
+  { 
+    field: "code", 
+    headerName: "Material Code" ,
+    filter: 'agTextColumnFilter'
+
+  },
+  { 
+    field: "unit",
+     headerName: "Unit",
+     filter: 'agTextColumnFilter'
+
+     },
 ];

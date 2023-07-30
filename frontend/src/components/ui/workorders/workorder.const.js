@@ -71,23 +71,48 @@ export const colDefs = [
       }
     },
   },
-  { field: "workorder", headerName: "Workorder" },
-  { field: "displayName", headerName: "Display Name" },
+  { field: "workorder", 
+  headerName: "Workorder" , 
+  filter: 'agTextColumnFilter'
+},
+  { 
+    field: "displayName", 
+    headerName: "Display Name" ,
+    filter: 'agTextColumnFilter'
+  },
   {
     field: "status",
     headerName: "Status",
     cellRenderer: StatusRender,
+    filter: 'agTextColumnFilter'
+
   },
   {
     field: "project",
     headerName: "Project",
     cellRenderer: getName,
+    filter: 'agTextColumnFilter'
+
   },
-  { field: "division", headerName: "Division", cellRenderer: getName },
-  { field: "subdivision", headerName: "Subdivision", cellRenderer: getName },
+  { 
+    field: "division",
+     headerName: "Division", 
+     cellRenderer: getName ,
+     filter: 'agTextColumnFilter'
+
+    },
+  { 
+    field: "subdivision", 
+    headerName: "Subdivision", 
+    cellRenderer: getName ,
+    filter: 'agTextColumnFilter'
+
+  },
   {
     field: "contractors",
     headerName: "Contractors",
     cellRenderer: getContractors,
+    filter: 'agTextColumnFilter'
+
   },
 ];

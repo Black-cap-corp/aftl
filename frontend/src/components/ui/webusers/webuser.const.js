@@ -8,10 +8,26 @@ export const colDefs = [
     maxWidth: 100,
     cellRenderer: EditButtonRender,
   },
-  { field: "name", headerName: "User Name" },
-  { field: "password", headerName: "Password" },
-  { field: "type", headerName: "User Type" },
-  { field: "entitlement", headerName: "User Entitlement" },
+  {
+    field: "name",
+    headerName: "User Name",
+    filter: "agTextColumnFilter",
+  },
+  {
+    field: "password",
+    headerName: "Password",
+    filter: "agTextColumnFilter",
+  },
+  {
+    field: "type",
+    headerName: "User Type",
+    filter: "agTextColumnFilter",
+  },
+  {
+    field: "entitlement",
+    headerName: "User Entitlement",
+    filter: "agTextColumnFilter",
+  },
 ];
 
 export const webuserTypeOptions = [

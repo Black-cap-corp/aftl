@@ -8,7 +8,22 @@ export const colDefs = [
     maxWidth: 100,
     cellRenderer: EditButtonRender,
   },
-  { field: "name", headerName: "User Name" },
-  { field: "password", headerName: "Password" },
-  { field: "mobile", headerName: "Mobile" },
+  { 
+    field: "name", 
+    headerName: "User Name",
+    filter: 'agTextColumnFilter'
+
+   },
+  { 
+    field: "password", 
+    headerName: "Password" ,
+    filter: 'agTextColumnFilter'
+
+  },
+  { 
+    field: "mobile", 
+    headerName: "Mobile" ,
+    filter: 'agTextColumnFilter'
+
+  },
 ];

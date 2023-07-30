@@ -8,10 +8,19 @@ const projectShema = require("../models/project");
 const IndentSchema = require("../models/indent");
 const ReturnsSchema = require("../models/returnindent");
 const ExcelJS = require("exceljs");
+const firmSchema = require("../models/firm");
 
-const exportData = (indents, returnIndents, stocks, workorder) => {
+const exportData = async (indents, returnIndents, stocks, workorder) => {
   const indentsId = indents.map((indent) => indent._id);
-
+  const result = await firmSchema.find();
+  const contractors = result?.map((firm) => {
+    return {
+      id: mongoose.Types.ObjectId(firm._id),
+      firm: firm.firm,
+      contractor: firm.contractor,
+      code: firm.code,
+    };
+  });
   const workbook = new ExcelJS.Workbook();
   const worksheet = workbook.addWorksheet(`${workorder?.workorder}`, {
     properties: { tabColor: { argb: "FFC000" } },
@@ -140,9 +149,73 @@ const exportData = (indents, returnIndents, stocks, workorder) => {
     }, {}),
   };
 
+  let dateRow = { name: "Date" };
+
+  dateRow = {
+    ...dateRow,
+    ...indents.reduce((completeRow, ind) => {
+      const colKey = ind._id?.toString();
+      return {
+        ...completeRow,
+        [colKey]: new Date(ind?.neededFor),
+      };
+    }, {}),
+    ...returnIndents.reduce((completeRow, ind) => {
+      const colKey = ind._id?.toString();
+      return {
+        ...completeRow,
+        [colKey]: new Date(ind?.NeededFor),
+      };
+    }, {}),
+  };
+
+  let contractorRow = { name: "Contractor" };
+
+  contractorRow = {
+    ...contractorRow,
+    ...indents.reduce((completeRow, ind) => {
+      const colKey = ind._id?.toString();
+      const contractorId = ind?.contractor;
+
+      return {
+        ...completeRow,
+        [colKey]: contractors.find((cont) => cont.id == contractorId)?.contractor
+      };
+    }, {}),
+    ...returnIndents.reduce((completeRow, ind) => {
+      const colKey = ind._id?.toString();
+      const contractorId = indents.find((indent) => indent._id == ind?.indentId)?.contractor;
+
+      return {
+        ...completeRow,
+        [colKey]: contractors.find((cont) => cont.id == contractorId)?.contractor
+      };
+    }, {}),
+  };
+
+  idRow = {
+    ...idRow,
+    ...indents.reduce((completeRow, ind) => {
+      const colKey = ind._id?.toString();
+      return {
+        ...completeRow,
+        [colKey]: ind?.indentNo,
+      };
+    }, {}),
+    ...returnIndents.reduce((completeRow, ind) => {
+      const colKey = ind._id?.toString();
+      return {
+        ...completeRow,
+        [colKey]: ind?.indentNo,
+      };
+    }, {}),
+  };
+
   dataRows.push(nameRow);
   dataRows.push(idRow);
   dataRows.push(vehicledataRow);
+  dataRows.push(dateRow);
+  dataRows.push(contractorRow)
 
   stocks.forEach((stock, index) => {
     let stockRow = {
@@ -185,7 +258,7 @@ const exportData = (indents, returnIndents, stocks, workorder) => {
     row.eachCell((cell, index) => {
       cell.border = { right: { style: "thin" } };
     });
-    if (index < 3) {
+    if (index < 5) {
       row.font = { family: 4, size: 12, bold: true };
 
       row.eachCell((cell, index) => {
@@ -362,8 +435,8 @@ router.post("/getReport", async (req, response) => {
   if (indents.length > 0) {
     ReturnsSchema.find({ indentId: { $in: indentsId } }).then(
       (returnIndents) => {
-        stockSchema.find().then((stocks) => {
-          const workbook = exportData(
+        stockSchema.find().then(async (stocks) => {
+          const workbook = await exportData(
             indents,
             returnIndents,
             stocks,

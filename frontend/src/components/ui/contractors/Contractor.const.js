@@ -8,7 +8,22 @@ export const colDefs = [
     maxWidth: 100,
     cellRenderer: EditBtnRender,
   },
-  { field: "firm", headerName: "Firm Name" },
-  { field: "contractor", headerName: "Contractor Name" },
-  { field: "code", headerName: "Contractor Code" },
+  { 
+    field: "firm", 
+    headerName: "Firm Name" ,
+    filter: 'agTextColumnFilter'
+
+  },
+  { 
+    field: "contractor",
+     headerName: "Contractor Name" ,
+     filter: 'agTextColumnFilter'
+
+    },
+  { 
+    field: "code", 
+    headerName: "Contractor Code" ,
+    filter: 'agTextColumnFilter'
+
+  },
 ];

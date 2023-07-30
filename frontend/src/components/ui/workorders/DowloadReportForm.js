@@ -16,7 +16,6 @@ const DowloadReportForm = ({ workorder, setClose }) => {
   const [contractors, setContractors] = useState([]);
 
   useEffect(() => {
-    console.log(workorder);
     const conts = workorder?.contractors.map((con) => {
       return {
         value: con._id,
