@@ -21,9 +21,18 @@ const Grid = ({ rowData, columnDefs, showDownload = false }) => {
       processCellCallback: (params) => {
         const { value, column } = params;
 
-        if (typeof value == "object") {
-          return value?.name;
+        // for contarctor array
+        if(Array.isArray(value)){
+          let  contractors = '';
+          for(let item of value){
+            contractors += item.contractor + ', ' 
+          }
+          return contractors;
         }
+
+        if (typeof value == "object") {
+            return value?.name;
+          }
         return value;
       },
     });
