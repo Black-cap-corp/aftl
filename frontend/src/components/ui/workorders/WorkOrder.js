@@ -12,6 +12,8 @@ import { UserContext } from "../../../App";
 
 const WorkOrder = () => {
   const [show, setShow] = useState(false);
+  let workorderColdefs = [];
+
 
   const showModel = () => setShow(true);
   const hideModel = () => setShow(false);
@@ -25,6 +27,14 @@ const WorkOrder = () => {
     setShow(false);
   };
 
+  if(user.entitlement.includes('webAdminRead')){
+    workorderColdefs = colDefs.filter((col) => col.field !== 'workorder');
+  } else {
+    workorderColdefs = colDefs;
+  }
+
+  
+
   useEffect(() => {
     if (projects.length < 1) {
       dispatch(getAsyncProject());
@@ -36,7 +46,7 @@ const WorkOrder = () => {
       <h2>Work orders</h2>
       <SearchForm data={projects} showModel={showModel} />
 
-      <Grid columnDefs={colDefs} rowData={workorders} showDownload={user.entitlement.includes("webAdminRead")?false: true} />
+      <Grid columnDefs={workorderColdefs} rowData={workorders} showDownload={user.entitlement.includes("webAdminRead")?false: true} />
 
       <ModalPopup
         body={<CreateWorkorderForm onSubmit={onWorkorderCreation} />}
