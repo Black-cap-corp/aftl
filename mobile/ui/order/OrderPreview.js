@@ -7,6 +7,7 @@ import OrdersList from '../../shared/ui/OrdersList';
 
 const OrderPreview = ({route, navigation}) => {
   const workorder = route.params.workorder;
+  console.log(workorder);
   const [stocks, setStocks] = useState(workorder.stocksRequested);
   const [filteredStocks, setFilteredStocks] = useState(
     workorder.stocksRequested,

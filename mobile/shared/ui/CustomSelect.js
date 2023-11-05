@@ -12,12 +12,13 @@ const CustomSelect = ({
   raw,
   value,
   setValue,
+  placeholder = 'Select contractors'
 }) => {
   const [field, meta, helpers] = useField(name);
   return (
     <Select
       value={value}
-      placeholder="Select contractors"
+      placeholder={placeholder}
       onSelect={index => {
         helpers.setValue(index);
         setValue(options[index.row]);

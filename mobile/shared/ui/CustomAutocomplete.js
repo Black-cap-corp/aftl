@@ -3,13 +3,7 @@ import React, {useImperativeHandle} from 'react';
 import {Autocomplete, AutocompleteItem, Layout} from '@ui-kitten/components';
 import {useField} from 'formik';
 
-const movies = [
-  {title: 'Star Wars'},
-  {title: 'Back to the Future'},
-  {title: 'The Matrix'},
-  {title: 'Inception'},
-  {title: 'Interstellar'},
-];
+
 
 const filter = (item, query) =>
   item.title.toLowerCase().includes(query.toLowerCase());

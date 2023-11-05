@@ -10,6 +10,7 @@ import axios from 'axios';
 import {APP_BASE_URL} from '../../app.const';
 import {Text} from '@ui-kitten/components';
 import AntDesign from 'react-native-vector-icons/AntDesign';
+import SimpleAutoComplete from '../../shared/ui/SimpleAutoComplete';
 
 const initialValues = {
   workorder: '',
@@ -22,6 +23,7 @@ const orderSchema = yup.object().shape({
   contractor: yup.string().required('Required'),
   vehicle: yup.string().required('Required'),
   location: yup.string().required('Required'),
+  supervisor: yup.string().required('Required'),
 });
 const ArrowRightIcon = props => (
   <AntDesign name="right" style={{fontSize: 20}} {...props} />
@@ -36,8 +38,11 @@ const OrderForm = ({navigation}) => {
   const [selectedWorkOrder, setSelectedWorkOrder] = React.useState();
   const [noWorkorders, setNoWorkorders] = React.useState(false);
   const [pageError, setPageError] = React.useState(false);
+  const [appUsers, setAppUsers] = React.useState([]);
+  const [selectedSupervisper, setSelectedSupervisper] = React.useState();
 
   const workorderRef = useRef();
+  const supervisorRef = useRef();
 
   useEffect(() => {
     const unsubscribe = navigation.addListener('focus', () => {
@@ -81,8 +86,7 @@ const OrderForm = ({navigation}) => {
   const debouncer = debounce(getWorkorders, 500);
 
   const handleSubmit = (values, {setSubmitting, resetForm}) => {
-    console.log(values);
-    if (!selectedContractor || !selectedWorkOrder) {
+    if (!selectedContractor || !selectedWorkOrder || !selectedSupervisper) {
       setPageError(true);
       setSubmitting(false);
     } else {
@@ -92,6 +96,7 @@ const OrderForm = ({navigation}) => {
         vehicle: values.vehicle,
         location: values.location,
         name: selectedWorkOrder.displayName,
+        requestor: selectedSupervisper,
       };
       setSubmitting(false);
       setPageError(false);
@@ -118,6 +123,16 @@ const OrderForm = ({navigation}) => {
     setContractorsRaw([]);
   };
   const [contractorValue, setContractorValue] = React.useState('');
+
+  useEffect(() => {
+    getAppUsers().then(response => {
+      setAppUsers(response);
+    });
+  }, []);
+
+  const onSupervisorSelect = supervisor => {
+    setSelectedSupervisper(supervisor.id);
+  };
 
   return (
     <Formik
@@ -153,6 +168,14 @@ const OrderForm = ({navigation}) => {
             setSelectedContractor={setSelectedContractor}
           />
 
+          <SimpleAutoComplete
+            label="Supervisor"
+            name="supervisor"
+            onSelectParent={onSupervisorSelect}
+            inputData={appUsers}
+            ref={supervisorRef}
+          />
+
           <CustomInput
             placeholder="Enter Vehicle Number"
             name="vehicle"
@@ -186,12 +209,23 @@ const getWorkorders = async filter => {
     const headers = {
       'Content-Type': 'application/json',
     };
-    console.log(`${APP_BASE_URL}/workorder/getWorkorderByQuery`);
     const result = await axios.post(
       `${APP_BASE_URL}/workorder/getWorkorderByQuery`,
       {filter: filter},
       {headers},
     );
+    return result.data;
+  } catch (e) {
+    console.log('error', e);
+    return [];
+  }
+};
+const getAppUsers = async () => {
+  try {
+    const headers = {
+      'Content-Type': 'application/json',
+    };
+    const result = await axios.get(`${APP_BASE_URL}/appuser`, {headers});
     return result.data;
   } catch (e) {
     console.log('error', e);
