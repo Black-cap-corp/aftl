@@ -78,8 +78,11 @@ const ReturnIndentsDetailsContainer = () => {
         { app: [], mobile: [] }
       );
 
+      ids.mobile.push(selIndent.supervisor || "");
+
       getIdentities(ids).then(
         (res) => {
+          console.log(res.data);
           const identities = res.data;
           setIds(identities);
 

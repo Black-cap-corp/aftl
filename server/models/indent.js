@@ -25,6 +25,7 @@ const indentSchema = mongoose.Schema({
   status: String,
   approved: Boolean,
   statusCode: Number,
+  supervisor: String,
   requestedStocks: [stockSchema],
   history: [historySchema],
   approvers: { type: [String], default: [] },

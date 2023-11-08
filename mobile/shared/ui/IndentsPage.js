@@ -30,7 +30,6 @@ const IndentsPage = ({route, navigation}) => {
 
   useEffect(() => {
     const workorderId = selWorkorder._id;
-    console.log(workorderId);
     getUser().then(value => {
       const user = JSON.parse(value);
       const requestor = user._id;

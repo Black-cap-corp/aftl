@@ -10,6 +10,7 @@ router.get("/", async (req, res) => {
       id: mongoose.Types.ObjectId(user._id),
       name: user._doc.name,
       mobile: user._doc.mobile,
+      password: user._doc.password,
     };
   });
   res.status(201).json(result_data);

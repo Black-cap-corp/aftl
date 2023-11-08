@@ -96,7 +96,7 @@ const OrderForm = ({navigation}) => {
         vehicle: values.vehicle,
         location: values.location,
         name: selectedWorkOrder.displayName,
-        requestor: selectedSupervisper,
+        supervisor: selectedSupervisper,
       };
       setSubmitting(false);
       setPageError(false);

@@ -18,7 +18,8 @@ const Booking = ({route, navigation}) => {
         contractor: workorder.contractor.id,
         location: workorder.location,
         vehicle: workorder.vehicle,
-        requestor: workorder.requestor || user._id,
+        requestor: user._id,
+        supervisor: workorder.supervisor,
         name: workorder.name,
         requestedStocks: workorder.stocksRequested.map(stock => {
           return {

@@ -65,6 +65,7 @@ const IssueDetailsContainer = () => {
         },
         { app: [], mobile: [] }
       );
+      ids.mobile.push(selIndent.supervisor || "");
       getIdentities(ids).then(
         (res) => {
           const identities = res.data;

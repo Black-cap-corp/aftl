@@ -36,6 +36,7 @@ const ReturnStocksPreview = ({route, navigation}) => {
         requestor: user._id,
         name: selIndent.indentNo,
         workorder: selIndent.workorder,
+        supervisor: selIndent.supervisor,
         returnStocks: stocks.map(stock => {
           return {
             stockId: stock.id,

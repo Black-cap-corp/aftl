@@ -12,9 +12,10 @@ const PDFDownloadDocument = ({
   workorder,
   type = INDENT_ENUM.ISSUE,
   user,
-  identity,
+  requestor,
   contractor,
   parentWorkorder,
+  supervisor = "",
 }) => {
   const transcationTimeStamp = selIndent?.history?.find(
     (his) => his.statusCode == 1
@@ -157,10 +158,10 @@ const PDFDownloadDocument = ({
           />
 
           <PDFRow
-            leftLabel="Site Engineer"
-            leftValue={identity?.name}
-            rightLabel=""
-            rightValue=""
+            leftLabel="Site Supervisor"
+            leftValue={supervisor?.name}
+            rightLabel="Requestor"
+            rightValue={requestor?.name}
           />
         </>
 

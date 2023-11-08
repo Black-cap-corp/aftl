@@ -16,12 +16,21 @@ const IssueFooter = ({
   identities = [],
   parentWorkorder,
 }) => {
-  console.log(user);
-  const [identity, setIdentity] = useState({});
+  const [requestor, setRequestor] = useState({});
+  const [supervisor, setSupervisor] = useState({});
+
   useEffect(() => {
     const ide = identities?.find((id) => id._id == selIndent?.requestor);
+
+    const supervisor_ide = identities?.find(
+      (id) => id._id == selIndent?.supervisor
+    );
+
     if (ide) {
-      setIdentity(ide);
+      setRequestor(ide);
+    }
+    if (supervisor_ide) {
+      setSupervisor(supervisor_ide);
     }
   }, [identities]);
   return (
@@ -132,7 +141,8 @@ const IssueFooter = ({
                 user={user.name}
                 contractor={contractor}
                 type={INDENT_ENUM.ISSUE}
-                identity={identity}
+                requestor={requestor}
+                supervisor={supervisor}
                 parentWorkorder={null}
               />
             }
@@ -161,7 +171,8 @@ const IssueFooter = ({
                 user={user.name}
                 type={INDENT_ENUM.RETURN}
                 contractor={contractor}
-                identity={identity}
+                requestor={requestor}
+                supervisor={supervisor}
                 parentWorkorder={parentWorkorder}
               />
             }

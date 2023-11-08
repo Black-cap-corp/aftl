@@ -24,6 +24,7 @@ const returnIndentSchema = mongoose.Schema({
   approved: Boolean,
   statusCode: Number,
   workorder: String,
+  supervisor: String,
   returnStocks: [stockSchema],
   history: [historySchema],
 });
