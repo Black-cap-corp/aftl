@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import {
   setSelectedIndent,
   updateSelectedIndent,
+  clearSelectedIndent,
 } from "../../../redux/issueSlice";
 import axios from "axios";
 import { BASE_URL } from "../../../constants/AppConstant";
@@ -21,7 +22,7 @@ const IssueDetailsContainer = () => {
   const user = useContext(UserContext);
 
   const dispatch = useDispatch();
-  const selIndent = useSelector((state) => state.issues.selIndent);
+  let selIndent = useSelector((state) => state.issues.selIndent);
   const [workorder, setWorkorderDetails] = useState(null);
   const [history, setHistory] = useState([]);
   const [show, setShow] = useState(false);
@@ -41,6 +42,10 @@ const IssueDetailsContainer = () => {
 
   useEffect(() => {
     dispatch(setSelectedIndent(params.id));
+    return () => {
+      console.log("clearing the  indent - ", selIndent);
+      dispatch(clearSelectedIndent());
+    };
   }, []);
 
   useEffect(() => {

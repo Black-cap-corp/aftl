@@ -57,6 +57,11 @@ export const updateSelectedReturnIndent = createAsyncThunk(
 const issueSlice = createSlice({
   initialState: { indents: [], selIndent: null },
   name: "returns",
+  reducers: {
+    clearSelectedIndent: (state) => {
+      return { ...state, selIndent: null };
+    },
+  },
 
   extraReducers: (builder) => {
     builder
@@ -67,7 +72,6 @@ const issueSlice = createSlice({
         return { ...state, selIndent: action.payload.res };
       })
       .addCase(updateSelectedReturnIndent.fulfilled, (state, action) => {
-        console.log("state");
         // return Object.assign({}, state, { selIndent: action.payload.res });
         return JSON.parse(
           JSON.stringify({ ...state, selIndent: action.payload.res })
@@ -77,3 +81,4 @@ const issueSlice = createSlice({
 });
 
 export default issueSlice.reducer;
+export const { clearSelectedIndent } = issueSlice.actions;

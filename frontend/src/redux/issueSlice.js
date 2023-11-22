@@ -60,6 +60,11 @@ export const updateSelectedIndent = createAsyncThunk(
 const issueSlice = createSlice({
   initialState: { indents: [], selIndent: null },
   name: "issues",
+  reducers: {
+    clearSelectedIndent: (state) => {
+      return { ...state, selIndent: null };
+    },
+  },
 
   extraReducers: (builder) => {
     builder
@@ -80,3 +85,4 @@ const issueSlice = createSlice({
 });
 
 export default issueSlice.reducer;
+export const { clearSelectedIndent } = issueSlice.actions;

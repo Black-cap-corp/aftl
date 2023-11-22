@@ -11,11 +11,10 @@ import IssueEditForm from "../issue/IssueEditForm";
 import {
   setSelectedReturnIndent,
   updateSelectedReturnIndent,
+  clearSelectedIndent,
 } from "../../../redux/returnsSlice";
 import { INDENT_ENUM } from "../issue/issue.const";
 import ReturnTopHeader from "./ReturnTopHeader";
-import { PDFRenderer, PDFViewer } from "@react-pdf/renderer";
-import PDFDownloadDocument from "../../shared/PDF/PDFDownload";
 
 const ReturnIndentsDetailsContainer = () => {
   const params = useParams();
@@ -38,6 +37,10 @@ const ReturnIndentsDetailsContainer = () => {
 
   useEffect(() => {
     dispatch(setSelectedReturnIndent(params.id));
+    return () => {
+      console.log("clearing the return indent - ", selIndent);
+      dispatch(clearSelectedIndent());
+    };
   }, []);
 
   useEffect(() => {
@@ -82,7 +85,6 @@ const ReturnIndentsDetailsContainer = () => {
 
       getIdentities(ids).then(
         (res) => {
-          console.log(res.data);
           const identities = res.data;
           setIds(identities);
 

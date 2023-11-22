@@ -23,12 +23,14 @@ const PDFDownloadDocument = ({
 
   const [displayStocks, setDisplayStocks] = useState([]);
   useEffect(() => {
+    setDisplayStocks([]);
     getStocks().then((response) => {
       const rawStocks = response.data;
       let selStocks = selIndent?.requestedStocks;
       if (type == INDENT_ENUM.RETURN) {
         selStocks = selIndent?.returnStocks;
       }
+      console.log("actual", selStocks);
       const editedStocks = selStocks?.map((stock) => {
         const rawStock = rawStocks.find((st) => st.id == stock.stockId);
         return {
@@ -48,6 +50,7 @@ const PDFDownloadDocument = ({
       });
 
       setDisplayStocks(editedStocks);
+      console.log(editedStocks);
     });
   }, [selIndent]);
 
