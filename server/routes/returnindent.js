@@ -128,6 +128,7 @@ router.post("/operator-update", async (req, res) => {
           }
         }),
       };
+      console.log(JSON.stringify(workOrderRequest, null, 4));
 
       workorderSchema
         .findOneAndUpdate(
@@ -205,6 +206,49 @@ router.post("/getReturnsByDate", async (req, res) => {
     )
     .lean();
   res.status(200).json(result);
+});
+
+router.post("/getReturnsByDateAndDivision", async (req, res) => {
+  const { date, division } = req.body;
+  const startTimeStamp = new Date(
+    new Date(date).setHours(0, 0, 0, 0)
+  ).getTime();
+  const endTimeStamp = new Date(
+    new Date(date).setHours(23, 59, 59, 999)
+  ).getTime();
+  console.log("uuuu", division);
+  const workorders = await workorderSchema.find({
+    "division.id": division,
+  });
+  console.log(workorders);
+  if (workorders.length < 1) {
+    res.status(200).json([]);
+  } else {
+    const workorderIds = workorders.map((workorder) => workorder._id);
+    const result = await returnIndentSchema
+      .find(
+        {
+          NeededFor: {
+            $gte: startTimeStamp,
+            $lte: endTimeStamp,
+          },
+          workorder: {
+            $in: workorderIds,
+          },
+        },
+        {
+          _id: 1,
+          status: 1,
+          approved: 1,
+          statusCode: 1,
+          indentNo: 1,
+          vehicle: 1,
+          location: 1,
+        }
+      )
+      .lean();
+    res.status(200).json(result);
+  }
 });
 
 router.post("/getReturnIndentDetails", async (req, res) => {

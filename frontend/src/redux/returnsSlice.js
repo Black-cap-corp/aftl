@@ -19,6 +19,23 @@ export const getAsyncReturns = createAsyncThunk(
   }
 );
 
+export const getAsyncReturnswithDivision = createAsyncThunk(
+  "get/getAsyncReturnswithDivision",
+  async (payload) => {
+    const jwt = sessionStorage.getItem("auth_token");
+    const res = await axios.post(
+      `${BASE_URL}/returnIndents/getReturnsByDateAndDivision`,
+      payload,
+      {
+        headers: {
+          authorization: jwt,
+        },
+      }
+    );
+    return { res: res.data };
+  }
+);
+
 export const setSelectedReturnIndent = createAsyncThunk(
   "get/setSelectedReturnIndent",
   async (id) => {
@@ -66,6 +83,9 @@ const issueSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(getAsyncReturns.fulfilled, (state, action) => {
+        return { ...state, indents: action.payload.res };
+      })
+      .addCase(getAsyncReturnswithDivision.fulfilled, (state, action) => {
         return { ...state, indents: action.payload.res };
       })
       .addCase(setSelectedReturnIndent.fulfilled, (state, action) => {

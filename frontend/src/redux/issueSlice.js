@@ -19,6 +19,24 @@ export const getAsyncIssues = createAsyncThunk(
   }
 );
 
+export const getAsyncIssueswithDivision = createAsyncThunk(
+  "get/getIndentsByDateAndDivision",
+  async (payload) => {
+    console.log(payload);
+    const jwt = sessionStorage.getItem("auth_token");
+    const res = await axios.post(
+      `${BASE_URL}/indent/getIndentsByDateAndDivision`,
+      payload,
+      {
+        headers: {
+          authorization: jwt,
+        },
+      }
+    );
+    return { res: res.data };
+  }
+);
+
 export const setSelectedIndent = createAsyncThunk(
   "get/setSelectedIndent",
   async (id) => {
@@ -80,6 +98,9 @@ const issueSlice = createSlice({
         return JSON.parse(
           JSON.stringify({ ...state, selIndent: action.payload.res })
         );
+      })
+      .addCase(getAsyncIssueswithDivision.fulfilled, (state, action) => {
+        return { ...state, indents: action.payload.res };
       });
   },
 });
