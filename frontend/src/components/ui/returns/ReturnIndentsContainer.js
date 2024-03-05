@@ -8,10 +8,7 @@ import {
   getAsyncReturnswithDivision,
 } from "../../../redux/returnsSlice";
 import { UserContext } from "../../../App";
-import {
-  MANGALORE_STORE_ID,
-  MANGLORE_DIVISION,
-} from "../../../constants/AppConstant";
+import { FILTER_STORES } from "../../../constants/AppConstant";
 
 const ReturnIndentsContainer = () => {
   const [date, setDate] = useState(new Date().toISOString().slice(0, 10));
@@ -20,16 +17,30 @@ const ReturnIndentsContainer = () => {
   const user = useContext(UserContext);
 
   const getIssues = () => {
-    if (user._id === MANGALORE_STORE_ID) {
+    const uniqueStore = FILTER_STORES.find((store) => store.id === user._id);
+    console.log(uniqueStore);
+    if (uniqueStore) {
+      console.log("unique store call");
       dispatch(
         getAsyncReturnswithDivision({
           date: new Date(date).getTime(),
-          division: MANGLORE_DIVISION,
+          division: uniqueStore.divisionId,
         })
       );
     } else {
+      console.log("normal call");
       dispatch(getAsyncReturns(new Date(date).getTime()));
     }
+    // if (user._id === MANGALORE_STORE_ID) {
+    //   dispatch(
+    //     getAsyncReturnswithDivision({
+    //       date: new Date(date).getTime(),
+    //       division: MANGLORE_DIVISION,
+    //     })
+    //   );
+    // } else {
+    //   dispatch(getAsyncReturns(new Date(date).getTime()));
+    // }
   };
   useEffect(() => {
     getIssues();
