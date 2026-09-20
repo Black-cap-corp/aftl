@@ -25,7 +25,7 @@ const Header = ({navigation, onLogoutHandler}) => {
   return (
     <View style={styles.header}>
       <View style={{flex: 8, justifyContent: 'center', alignItems: 'center'}}>
-        <Text category="h5">Asian Fab Tec</Text>
+        <Text category="h5">Asian Infra Projects Limited</Text>
         <Text category="s1">{user?.name}</Text>
       </View>
       <View style={styles.lay}>

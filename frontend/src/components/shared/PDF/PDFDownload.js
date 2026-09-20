@@ -93,7 +93,7 @@ const PDFDownloadDocument = ({
           </Text>
         </View>
         <View style={{ textAlign: "center" }}>
-          <Text style={{ fontSize: 20 }}>Asian Fab Tec Limited</Text>
+          <Text style={{ fontSize: 20 }}>Asian Infra Projects Limited</Text>
         </View>
         {type == INDENT_ENUM.ISSUE && (
           <View style={{ textAlign: "center", marginBottom: 12 }}>

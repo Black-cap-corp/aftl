@@ -4,7 +4,7 @@ import styles from "./Footer.module.css";
 const Footer = () => {
   return (
     <footer className={` ${styles.footer}`}>
-      &#169;&nbsp;2023 Asian fab tec
+      &#169;&nbsp;2026 Asian Infra Projects Limited
     </footer>
   );
 };

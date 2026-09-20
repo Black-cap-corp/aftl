@@ -7,7 +7,7 @@ const Header = () => {
 
   return (
     <header className={`navbar navbar-light bg-light ${styles.header}`}>
-      <h2 style={{ fontWeight: "bolder" }}> Asian Fab tec</h2>
+      <h2 style={{ fontWeight: "bolder" }}> Asian Infra Projects Limited</h2>
       {user && <h5>{user.name}</h5>}
     </header>
   );
